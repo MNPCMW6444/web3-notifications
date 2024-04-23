@@ -1,5 +1,4 @@
 import { BaseProvider, Network, StaticJsonRpcProvider } from '@ethersproject/providers';
-import { logger } from 'ethers';
 
 const DEFAULT_FALL_FORWARD_DELAY = 60000;
 const MAX_RETRIES = 1;
@@ -20,7 +19,7 @@ function sleep(ms: number) {
  */
 export function checkNetworks(networks: Network[]): Network {
   if (networks.length === 0) {
-    logger.throwArgumentError('no networks provided', 'networks', networks);
+   // logger.throwArgumentError('no networks provided', 'networks', networks);
   }
 
   let result: Network | undefined;
@@ -29,7 +28,7 @@ export function checkNetworks(networks: Network[]): Network {
     const network = networks[i];
 
     if (!network) {
-      logger.throwArgumentError('network not defined', 'networks', networks);
+    //  logger.throwArgumentError('network not defined', 'networks', networks);
     }
 
     if (!result) {
@@ -46,12 +45,12 @@ export function checkNetworks(networks: Network[]): Network {
           (result.ensAddress == null && network.ensAddress == null))
       )
     ) {
-      logger.throwArgumentError('provider mismatch', 'networks', networks);
+     // logger.throwArgumentError('provider mismatch', 'networks', networks);
     }
   }
 
   if (!result) {
-    logger.throwArgumentError('no networks defined', 'networks', networks);
+  //  logger.throwArgumentError('no networks defined', 'networks', networks);
   }
 
   return result;
