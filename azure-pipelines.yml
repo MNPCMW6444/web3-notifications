@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '68746a8d-daf3-49fe-8c71-0f73baa1e73c'
   imageRepository: 'server'
   containerRegistry: 'w3notif.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/apps/server/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
