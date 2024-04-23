@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@w3notif/shared": [
+        "libs/shared/src/index.ts"
+      ],
+      "@w3notif/shared-react": [
+        "libs/shared-react/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "apps/**/*",
+    "libs/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}
