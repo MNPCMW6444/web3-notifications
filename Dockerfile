@@ -1,6 +1,6 @@
 FROM node:lts as builder
 WORKDIR /app
-COPY package.json nx.json tsconfig.base.json ./
+COPY package.json nx.json tsconfig.base.json .npmrc ./
 COPY libs/shared libs/shared
 COPY apps/server/ apps/server/
 RUN npm i
