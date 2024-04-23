@@ -6,7 +6,6 @@ COPY libs/shared libs/shared
 COPY apps/server/ apps/server/
 RUN npm i
 RUN npm run build:server
-
 FROM node:lts-slim
 WORKDIR /app
 COPY --from=builder /app .
