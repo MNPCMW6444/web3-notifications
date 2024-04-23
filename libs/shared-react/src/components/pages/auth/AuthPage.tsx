@@ -7,9 +7,7 @@ import {
   axiosErrorToaster,
   backgroundOffice,
   Btn,
-  dayLogoTextOnly,
   Img,
-  nightLogoTextOnly,
   PrimaryText,
   useIsNight,
   useResponsiveness,
@@ -376,7 +374,7 @@ export const AuthPage = () => {
         <Grid item>
           <Tooltip title={server?.version} placement="right-start">
             <Img
-              src={isNight ? nightLogoTextOnly : dayLogoTextOnly}
+              src=""
               width="100%"
               height="100%"
             />

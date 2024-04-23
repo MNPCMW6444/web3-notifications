@@ -18,7 +18,6 @@ import {
 } from "../../context";
 import { useIsNight } from "../../themes";
 import { useResponsiveness } from "../../hooks";
-import { dayLogo } from "../../assets";
 import { Img, PrimaryText } from "../../index";
 
 interface TopBarProps {
@@ -72,7 +71,7 @@ export const TopBar = ({ routes, isGuest }: TopBarProps) => {
       <Grid item>
         <Tooltip title={"version: " + server?.version} placement="right-start">
           <Img
-            src={isNight ? dayLogo : dayLogo}
+            src=""
             width={"80%"}
             onClick={() => navigate("/")}
           />

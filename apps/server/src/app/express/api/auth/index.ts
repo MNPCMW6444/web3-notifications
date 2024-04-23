@@ -9,6 +9,8 @@ import { s3Client } from "../../../s3";
 
 const router = Router();
 
+
+
 router.use("/log", logRouter);
 router.use("/manage", manageRouter);
 router.use("/register", registerRouter);

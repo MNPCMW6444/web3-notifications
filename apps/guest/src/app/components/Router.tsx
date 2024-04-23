@@ -13,9 +13,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       {user ? (
-        <ChatContextProvider>
           <NavBar />
-        </ChatContextProvider>
       ) : (
         <AuthPage />
       )}
