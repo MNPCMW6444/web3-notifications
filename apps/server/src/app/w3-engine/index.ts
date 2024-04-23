@@ -3,7 +3,6 @@ import { getNetworkConfig } from "./marketsAndNetworksConfig";
 import { StaticJsonRpcProvider } from "@ethersproject/providers";
 import { RotationProvider } from "./rotationProvider";
 import userModel from "../mongo/auth/userModel";
-import { User } from "@w3notif/shared";
 import { sendEmail, sendPush, sendSMS } from "./sending";
 
 const marketData = {
@@ -91,29 +90,33 @@ export const notify = async () => {
     setTimeout(handler, userSecrets.interval_inseconds * 1000);
 
   const handler = async (user) => {
-    const u = await userModel().findById(user._id.toString());
-    const userSecrets = u.data.secrets;
+    //console.log("user: ", user);
+    //   console.log("user._id: ", user._id);
+    const uxx = await userModel().findById(user._id);
+    //   console.log("u: ", uxx);
+
+    const userSecrets = uxx.data.secrets;
     try {
       const value = await check();
       console.log("value: ", value);
       console.log("userSecrets.minimum: ", userSecrets.minimum);
       if (value > userSecrets.minimum) {
-        sendSMS(value, userSecrets.minimum, { secrets: userSecrets });
-        sendEmail(value, userSecrets.minimum, { secrets: userSecrets });
-        sendPush(value, userSecrets.minimum, { secrets: userSecrets });
+        sendSMS(value, userSecrets.minimum, userSecrets);
+        sendEmail(value, userSecrets.minimum, userSecrets);
+        sendPush(value, userSecrets.minimum, userSecrets);
 
         user.data.secrets.minimum = value;
         user.save();
 
-        if (userSecrets.loop === "yes") {
-          set(userSecrets, () => handler(userSecrets));
-        }
-      } else {
-        set(userSecrets, () => handler(userSecrets));
-      }
+        /* if (userSecrets.loop === "yes") {
+          set(userSecrets, () => handler(uxx));
+        }*/
+      } /* else {*/
+      set(userSecrets, () => handler(uxx));
+      /*  }*/
     } catch (error) {
       console.error("Error during check:", error);
-      set(userSecrets, () => handler(userSecrets));
+      set(userSecrets, () => handler(uxx));
     }
   };
 
