@@ -1,0 +1,38 @@
+
+variables:
+  # Container registry service connection established during pipeline creation
+  imageRepository: 'server'
+  containerRegistry: 'w3notif.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: Build stage
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - script: az acr login --name w3notif --username $(registryUserName) --password $(registryPassword)
+            displayName: 'Login to ACR'
+          - task: Docker@2
+            inputs:
+              command: 'build'
+              repository: 'w3notif.azurecr.io/server'
+              dockerfile: '**/Dockerfile'
+              buildContext: '$(Build.Repository.LocalPath)'
+              arguments: ''
+              tags: |
+                $(tag)
+          - task: Docker@2
+            inputs:
+              command: 'push'
+              repository: 'w3notif.azurecr.io/server'
+              tags: |
+                $(tag)
+
