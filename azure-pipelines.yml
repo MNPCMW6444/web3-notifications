@@ -3,7 +3,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-  - main
+  - asdasdasd
 
 resources:
   - repo: self
@@ -12,7 +12,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '68746a8d-daf3-49fe-8c71-0f73baa1e73c'
-  imageRepository: 'server'
+  imageRepository: 'guest'
   containerRegistry: 'w3notif.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
@@ -34,7 +34,7 @@ stages:
           - task: Docker@2
             inputs:
               command: 'build'
-              repository: 'w3notif.azurecr.io/server'
+              repository: 'w3notif.azurecr.io/guest'
               dockerfile: '**/Dockerfile'
               buildContext: '$(Build.Repository.LocalPath)'
               arguments: ''
@@ -43,7 +43,7 @@ stages:
           - task: Docker@2
             inputs:
               command: 'push'
-              repository: 'w3notif.azurecr.io/server'
+              repository: 'w3notif.azurecr.io/guest'
               tags: |
                 $(tag)
 
