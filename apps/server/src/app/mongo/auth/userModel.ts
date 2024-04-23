@@ -35,11 +35,11 @@ export default () =>
         twilio_Sender: String,
         twilio_Receiver: Number,
         sendgrid_API: String,
-        loop: { type: String, enum: ["yes", "no"] },
         sendgrid_Address: String,
-        stringified_Devices: [String],
         interval_inseconds: { type: Number, required: true },
+        loop: { type: String, enum: ["yes", "no"] },
         minimum: { type: Number, required: true },
+        stringified_Devices: [String],
       },
     },
   });

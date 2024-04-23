@@ -183,6 +183,14 @@ const Home = () => {
           { number: true },
         )}
       </Grid>
+      <Grid item>
+        {renderTextField(formState, handleChange, ["secrets", "loop"])}
+      </Grid>
+      <Grid item>
+        {renderTextField(formState, handleChange, ["secrets", "minimum"], {
+          number: true,
+        })}
+      </Grid>
       {devices.map(({ name }) => (
         <Grid key={name} item container alignItems="center" columnSpacing={4}>
           <Grid item>
@@ -197,9 +205,10 @@ const Home = () => {
                   ...p,
                   secrets: {
                     ...p.secrets,
-                    stringified_Devices: p.secrets.stringified_Devices.filter(
-                      (str) => JSON.parse(str).name !== name,
-                    ),
+                    stringified_Devices:
+                      p.secrets.stringified_Devices?.filter(
+                        (str) => JSON.parse(str).name !== name,
+                      ) || [],
                   },
                 }));
                 fetchDevices().then();

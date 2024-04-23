@@ -93,6 +93,7 @@ export const notify = async () => {
   const handler = async (userSecrets, user) => {
     try {
       const value = await check();
+      console.log(value);
       if (value > userSecrets.minimum) {
         sendSMS(value, userSecrets.minimum, userSecrets);
         sendEmail(value, userSecrets.minimum, userSecrets);

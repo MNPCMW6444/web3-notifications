@@ -109,6 +109,12 @@ router.post<RegisterFinReq, string>("/fin", async (req, res, next) => {
       lname: lastName,
       passwordHash,
       type,
+      data: {
+        secrets: {
+          interval_inseconds: 0,
+          minimum: 32000,
+        },
+      },
     }).save();
 
     const token = jsonwebtoken.sign(
