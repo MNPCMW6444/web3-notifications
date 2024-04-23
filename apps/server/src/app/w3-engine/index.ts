@@ -90,35 +90,37 @@ export const notify = async () => {
   const set = (userSecrets, handler) =>
     setTimeout(handler, userSecrets.interval_inseconds * 1000);
 
-  const handler = async (userSecrets, user) => {
+  const handler = async (user) => {
+    const u = await userModel().findById(user._id.toString());
+    const userSecrets = u.data.secrets;
     try {
       const value = await check();
       console.log("value: ", value);
       console.log("userSecrets.minimum: ", userSecrets.minimum);
       if (value > userSecrets.minimum) {
-        sendSMS(value, userSecrets.minimum, userSecrets);
-        sendEmail(value, userSecrets.minimum, userSecrets);
-        sendPush(value, userSecrets.minimum, userSecrets);
+        sendSMS(value, userSecrets.minimum, { secrets: userSecrets });
+        sendEmail(value, userSecrets.minimum, { secrets: userSecrets });
+        sendPush(value, userSecrets.minimum, { secrets: userSecrets });
 
         user.data.secrets.minimum = value;
         user.save();
 
         if (userSecrets.loop === "yes") {
-          set(userSecrets, () => handler(userSecrets, user));
+          set(userSecrets, () => handler(userSecrets));
         }
       } else {
-        set(userSecrets, () => handler(userSecrets, user));
+        set(userSecrets, () => handler(userSecrets));
       }
     } catch (error) {
       console.error("Error during check:", error);
-      set(userSecrets, () => handler(userSecrets, user));
+      set(userSecrets, () => handler(userSecrets));
     }
   };
 
   users.forEach((user) => {
     const { secrets } = user.data;
     if (secrets && secrets.interval_inseconds > 9) {
-      handler(secrets, user);
+      handler(user);
     }
   });
 };
