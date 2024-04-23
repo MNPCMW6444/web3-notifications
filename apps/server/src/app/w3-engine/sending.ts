@@ -2,10 +2,10 @@ import { Data } from "@w3notif/shared";
 import twilio from "twilio";
 
 export const sendSMS = (min: number, val: number, userSecrets: Data) => {
-  const sid = userSecrets.secrets.twilio_sid;
-  const auth = userSecrets.secrets.twilio_secret;
-  const number = userSecrets.secrets.twilio_Number;
-  const receiver = userSecrets.secrets.twilio_Receiver;
+  const sid = (userSecrets as any).twilio_sid;
+  const auth = (userSecrets as any).twilio_secret;
+  const number = (userSecrets as any).twilio_Number;
+  const receiver = (userSecrets as any).twilio_Receiver;
 
   if (sid && auth && number && receiver) {
     const client = twilio(sid, auth);
