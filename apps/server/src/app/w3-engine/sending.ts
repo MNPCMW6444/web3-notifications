@@ -1,5 +1,6 @@
 import { Data } from "@w3notif/shared";
 import twilio from "twilio";
+import { sendPushNotification } from "../push";
 
 export const sendSMS = (min: number, val: number, userSecrets) => {
   const sid = (userSecrets as any).twilio_sid;
@@ -20,4 +21,21 @@ export const sendSMS = (min: number, val: number, userSecrets) => {
   } else console.log("Tryied but no data good");
 };
 export const sendEmail = (min: number, val: number, userSecrets: any) => {};
-export const sendPush = (min: number, val: number, userSecrets: any) => {};
+export const sendPush = (min: number, val: number, userSecrets: any) => {
+  const devices = userSecrets.stringified_Devices;
+
+  devices.forEach((device) => {
+    const d = JSON.parse(device);
+
+    sendPushNotification(
+      d.subscription,
+      {
+        title: "Cap is lifted!",
+        body: "from " + min + " to " + val,
+      },
+      {
+        domain: "",
+      },
+    );
+  });
+};
