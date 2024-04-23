@@ -105,7 +105,7 @@ const Home = () => {
             secrets: {
               ...p.secrets,
               stringified_Devices: [
-                ...p.secrets.stringified_Devices,
+                ...(p.secrets.stringified_Devices || []),
                 JSON.stringify({
                   name,
                   subscription,
