@@ -3,13 +3,9 @@ import logRouter from "./logRouter";
 import registerRouter from "./registerRouter";
 import manageRouter, { bucketName } from "./manageRouter";
 import { AuthenticatedRequest } from "../../middleware";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { GetObjectCommand } from "@aws-sdk/client-s3";
-import { s3Client } from "../../../s3";
 
 const router = Router();
-
-
 
 router.use("/log", logRouter);
 router.use("/manage", manageRouter);
@@ -37,10 +33,10 @@ router.get(
     });
 
     try {
-      const signedUrl = await getSignedUrl(s3Client, command, {
+      /* const signedUrl = await getSignedUrl(s3Client, command, {
         expiresIn: 1800,
-      });
-      res.status(200).send(signedUrl);
+      });*/
+      res.status(200).send();
     } catch (error) {
       next(error);
     }

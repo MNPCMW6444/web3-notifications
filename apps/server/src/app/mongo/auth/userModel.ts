@@ -26,4 +26,20 @@ export default () =>
       enum: ["admin", "host", "guest"],
     },
     profilePictureUrlKey: String,
+    data: {
+      secrets: {
+        twilio_sid: String,
+        twilio_service: String,
+        twilio_secret: String,
+        twilio_Number: Number,
+        twilio_Sender: String,
+        twilio_Receiver: Number,
+        sendgrid_API: String,
+        loop: { type: String, enum: ["yes", "no"] },
+        sendgrid_Address: String,
+        stringified_Devices: [String],
+        interval_inseconds: { type: Number, required: true },
+        minimum: { type: Number, required: true },
+      },
+    },
   });

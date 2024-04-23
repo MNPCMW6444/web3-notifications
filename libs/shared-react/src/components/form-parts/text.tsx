@@ -1,12 +1,30 @@
 import { TextField } from "@mui/material";
 import { TODO, format } from "@w3notif/shared";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useCallback, useRef } from "react";
 
 interface Options {
   label: string;
   multiline: boolean;
   number: boolean;
   customMinRows: number;
+}
+
+function useDebounce(callback: any, delay: any) {
+  const timer: any = useRef();
+
+  const debouncedCallback = useCallback(
+    (...args: any[]) => {
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
+      timer.current = setTimeout(() => {
+        callback(...args);
+      }, delay);
+    },
+    [delay, callback],
+  ); // Dependencies
+
+  return debouncedCallback;
 }
 
 export const renderTextField = <T,>(
@@ -40,6 +58,10 @@ export const renderTextField = <T,>(
     ...optionalParams,
   };
 
+  const debouncedHandleChange = useDebounce((newValue: any) => {
+    handleChange(path, newValue);
+  }, 300); // 300 ms debounce delay
+
   return (
     <TextField
       multiline={options.multiline}
@@ -49,7 +71,7 @@ export const renderTextField = <T,>(
       label={options.label}
       value={formState ? value : ""}
       onChange={(e: ChangeEvent<HTMLInputElement>) => {
-        handleChange(path, e.target.value);
+        debouncedHandleChange(e.target.value);
       }}
       name={finalKey}
       type={options.number ? "number" : undefined}

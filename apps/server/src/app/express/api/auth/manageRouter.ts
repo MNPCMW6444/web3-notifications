@@ -19,7 +19,6 @@ import passResetRequestModel from "../../../mongo/auth/passResetRequestModel";
 import PassResetRequestModel from "../../../mongo/auth/passResetRequestModel";
 import multer from "multer";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
-import { s3Client } from "../../../s3";
 import sharp from "sharp";
 
 const router = Router();
@@ -215,24 +214,24 @@ router.put(
         .toBuffer();
 
       // Upload the original image
-      await s3Client.send(
+      /*  await s3Client.send(
         new PutObjectCommand({
           Bucket: bucketName,
           Key: originalKey,
           Body: req.file.buffer,
           ContentType: req.file.mimetype,
         }),
-      );
+      );*/
 
       // Upload the resized image
-      await s3Client.send(
+      /*await s3Client.send(
         new PutObjectCommand({
           Bucket: bucketName,
           Key: resizedKey,
           Body: resizedImageBuffer,
           ContentType: req.file.mimetype,
         }),
-      );
+      );*/
 
       // Assuming you have a way to save the URL or key in your user model
       // For example, saving the key of the original image

@@ -50,10 +50,10 @@ export const AuthContextProvider = ({ children, client }: AuthContextProps) => {
       setUser(undefined);
     } finally {
       try {
-        const urlResponse = await server?.axiosInstance.get(
+        /* const urlResponse = await server?.axiosInstance.get(
           "api/auth/get-signed-profile-picture/128",
         );
-        urlResponse?.data && setProfilePictureUrl(urlResponse.data);
+        urlResponse?.data && setProfilePictureUrl(urlResponse.data);*/
       } catch {
         /* no profile picture */
       }

@@ -1,9 +1,9 @@
-import chat from "./chat";
+/*import chat from "./chat";
 import listings from "./listings";
-import bookings from "./bookings";
+import bookings from "./bookings";*/
 
 export const watchDB = () => {
-  chat();
+  /* chat();
   listings();
-  bookings();
+  bookings();*/
 };

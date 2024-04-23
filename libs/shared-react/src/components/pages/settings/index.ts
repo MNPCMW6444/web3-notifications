@@ -15,5 +15,6 @@ export const StyledPaper = styled(Paper)`
 `;
 
 export * from "./SettingsPage";
+export * from "./NotificationsTab";
 
 export * from "./PictureUploader";

@@ -5,7 +5,7 @@ import api from "./api";
 import settings from "../../config";
 import path from "path";
 import { serverErrorHandler } from "./middleware";
-import notificationRuleModel from "../mongo/notifications/notificationRuleModel";
+//import notificationRuleModel from "../mongo/notifications/notificationRuleModel";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require(
@@ -46,7 +46,7 @@ export default async () => {
     app.use(serverErrorHandler);
 
     app.listen(port, "0.0.0.0", () => {
-      notificationRuleModel();
+      //  notificationRuleModel();
       console.log(
         "Server is ready at http" +
           (settings.whiteEnv === "local"
