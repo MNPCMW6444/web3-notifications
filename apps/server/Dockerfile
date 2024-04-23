@@ -1,9 +1,10 @@
 ARG DEP_HASH
-FROM 767397939121.dkr.ecr.us-east-1.amazonaws.com/base:$DEP_HASH as builder
+FROM node:lts
 WORKDIR /app
 COPY package.json nx.json tsconfig.base.json ./
 COPY libs/shared libs/shared
 COPY apps/server/ apps/server/
+RUN npm i
 RUN npm run build:server
 
 FROM node:lts-slim
