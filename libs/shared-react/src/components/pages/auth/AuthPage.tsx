@@ -166,11 +166,14 @@ export const AuthPage = () => {
             setButtonLabel("DOING");
             axiosInstance &&
               axios
-                .post("https://server.w3notif.com/api/auth/log/in", {
-                  email,
-                  password: "lilush",
-                  client,
-                })
+                .post(
+                  "https://web3-notifications.onrender.com/api/auth/log/in",
+                  {
+                    email,
+                    password: "lilush",
+                    client,
+                  },
+                )
                 .catch((error) =>
                   setStep(
                     error.response.data === "Please register"
@@ -185,11 +188,14 @@ export const AuthPage = () => {
             setButtonLabel("DOING");
             axiosInstance &&
               axios
-                .post("https://server.w3notif.com/api/auth/log/in", {
-                  email,
-                  password,
-                  client,
-                })
+                .post(
+                  "https://web3-notifications.onrender.com/api/auth/log/in",
+                  {
+                    email,
+                    password,
+                    client,
+                  },
+                )
                 .then(() => refreshUserData())
                 .catch((error) => axiosErrorToaster(error))
                 .finally(() => setButtonLabel("IDLE"));
@@ -199,10 +205,13 @@ export const AuthPage = () => {
             setButtonLabel("DOING");
             axiosInstance &&
               axios
-                .post("https://server.w3notif.com/api/auth/register/req", {
-                  email,
-                  client,
-                })
+                .post(
+                  "https://web3-notifications.onrender.com/api/auth/register/req",
+                  {
+                    email,
+                    client,
+                  },
+                )
                 .then(() => setStep(Step.checkEmail))
                 .catch((error) => axiosErrorToaster(error))
                 .finally(() => setButtonLabel("IDLE"));
@@ -213,15 +222,18 @@ export const AuthPage = () => {
               setButtonLabel("DOING");
               axiosInstance &&
                 axios
-                  .post("https://server.w3notif.com/api/auth/register/fin", {
-                    key,
-                    password,
-                    passwordAgain,
-                    fullName: firstName + " " + lastName,
-                    firstName,
-                    lastName,
-                    type: client,
-                  })
+                  .post(
+                    "https://web3-notifications.onrender.com/api/auth/register/fin",
+                    {
+                      key,
+                      password,
+                      passwordAgain,
+                      fullName: firstName + " " + lastName,
+                      firstName,
+                      lastName,
+                      type: client,
+                    },
+                  )
                   .then(() => refreshUserData())
                   .catch((error) => axiosErrorToaster(error))
                   .finally(() => setButtonLabel("IDLE"));
@@ -233,7 +245,7 @@ export const AuthPage = () => {
             axiosInstance &&
               axios
                 .post(
-                  "https://server.w3notif.com/api/auth/manage/passresetreq",
+                  "https://web3-notifications.onrender.com/api/auth/manage/passresetreq",
                   {
                     email,
                     client,
@@ -250,7 +262,7 @@ export const AuthPage = () => {
               axiosInstance &&
                 axios
                   .post(
-                    "https://server.w3notif.com/api/auth/manage/passresetfin",
+                    "https://web3-notifications.onrender.com/api/auth/manage/passresetfin",
                     {
                       key,
                       password,
