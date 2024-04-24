@@ -10,4 +10,4 @@ FROM node:lts-slim
 WORKDIR /app
 COPY --from=builder /app .
 CMD ["node", "dist/apps/server/index.js"]
-EXPOSE 6025
+EXPOSE 6531

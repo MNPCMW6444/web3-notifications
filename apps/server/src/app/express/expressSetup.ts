@@ -13,7 +13,7 @@ const { version } = require(
 );
 
 const app = express();
-const port = 5556;
+const port = 6531;
 
 const middlewares = [
   cookieParser(),
