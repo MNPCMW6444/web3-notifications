@@ -24,6 +24,7 @@ const middlewares = [
       ...Object.values(settings.clientDomains),
       "https://w3notif.com",
       "https://www.w3notif.com",
+      "https://web3-notifications-1.onrender.com",
     ],
     credentials: true,
   }),
