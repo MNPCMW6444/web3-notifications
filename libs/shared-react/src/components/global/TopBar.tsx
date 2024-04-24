@@ -70,11 +70,7 @@ export const TopBar = ({ routes, isGuest }: TopBarProps) => {
     >
       <Grid item>
         <Tooltip title={"version: " + server?.version} placement="right-start">
-          <Img
-            src=""
-            width={"80%"}
-            onClick={() => navigate("/")}
-          />
+          <PrimaryText>W3Notif</PrimaryText>
         </Tooltip>
       </Grid>
       <Grid item>

@@ -373,11 +373,7 @@ export const AuthPage = () => {
         </Grid>
         <Grid item>
           <Tooltip title={server?.version} placement="right-start">
-            <Img
-              src=""
-              width="100%"
-              height="100%"
-            />
+            <PrimaryText>W3Notif</PrimaryText>
           </Tooltip>
         </Grid>
         {client !== "guest" && (
