@@ -12,7 +12,6 @@ import React, { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Delete } from "@mui/icons-material";
 import TextField from "@mui/material/TextField";
 import { PushDevice } from "@w3notif/shared";
-import axios from "axios";
 
 const Home = () => {
   const { user, refreshUserData } = useContext(AuthContext);
@@ -70,10 +69,10 @@ const Home = () => {
   const server = useContext(ServerContext);
 
   useEffect(() => {
-    axios
-      .post("https://server.s3notif.com/api/manage", formState)
+    server?.axiosInstance
+      .post("api/manage", formState)
       .finally(() => refreshUserData());
-  }, [formState]);
+  }, [formState, server?.axiosInstance]);
 
   const handleSubscribeClick = () => {
     navigator.serviceWorker.ready.then((registration) => {

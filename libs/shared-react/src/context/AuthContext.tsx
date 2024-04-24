@@ -9,7 +9,6 @@ import {
 import { ServerContext } from "./index";
 import { User, UserType } from "@w3notif/shared";
 import { MainMessage } from "../components";
-import axios from "axios";
 
 interface AuthContextProps {
   children: ReactNode;
@@ -43,15 +42,15 @@ export const AuthContextProvider = ({ children, client }: AuthContextProps) => {
 
   const refreshUserData = useCallback(async () => {
     try {
-      const response = await axios.get<User>(
-        "https://w3notif.com/api/auth/log/" + client,
+      const response = await server?.axiosInstance.get<User>(
+        "api/auth/log/" + client,
       );
       response?.data && setUser(response?.data);
     } catch {
       setUser(undefined);
     } finally {
       try {
-        /* const urlResponse = await axios.get(
+        /* const urlResponse = await server?.axiosInstance.get(
           "api/auth/get-signed-profile-picture/128",
         );
         urlResponse?.data && setProfilePictureUrl(urlResponse.data);*/
@@ -59,11 +58,11 @@ export const AuthContextProvider = ({ children, client }: AuthContextProps) => {
         /* no profile picture */
       }
     }
-  }, []);
+  }, [server?.axiosInstance]);
 
   const logout = async () => {
     try {
-      await axios.get<undefined>("https://w3notif.com/api/auth/log/out");
+      await server?.axiosInstance.get<undefined>("api/auth/log/out");
       setUser(undefined);
       refreshUserData();
     } catch (error) {
