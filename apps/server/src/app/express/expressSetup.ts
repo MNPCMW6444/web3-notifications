@@ -53,7 +53,7 @@ export default async () => {
             ? "://localhost:" + port + "/"
             : "s://" +
               (settings.whiteEnv === "preprod" ? "pre" : "") +
-              "server.w3notif.com/"),
+              "s3server.delightfulplant-f5e5ca59.eastus.azurecontainerapps.io/"),
       );
     });
   } catch (e) {
