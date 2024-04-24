@@ -4,7 +4,7 @@ import { TODO } from "@w3notif/shared";
 
 const vapidKeys = {
   publicKey:
-    "BOFhGIZEMgip3Nta9OfW7PjaCHzCqmK0PCOsJFamzutLksarYGf2kJse3RxEhddHdTGUFzE7fRXw9mNAWmE0E5w",
+    "BJN3ex816a0jUOWGBQNEZP9jJn6oehivZB4XCSoIXdIVUUqu5o4MOZG5m2ZshFGU89puqpjPpt6Qs3BEQ8aTsQU",
   privateKey: settings.push,
 };
 
