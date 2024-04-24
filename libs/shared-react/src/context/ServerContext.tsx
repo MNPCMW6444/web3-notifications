@@ -53,12 +53,15 @@ export const ServerProvider = ({
 
   const setStatusAsyncly = async () => {
     try {
-      // const response = await axiosInstance.get("api");
-      const newStatus = GOOD_STATUS;
+      const response = await axiosInstance.get("api");
+      const newStatus =
+        response.data.status === "Im alive"
+          ? GOOD_STATUS
+          : BAD_MESSAGE || FIRST_MESSAGE;
 
       setStatus(newStatus);
       if (newStatus === GOOD_STATUS) {
-        setVersion("1.0.0");
+        setVersion(response.data.version);
       } else {
         scheduleNextCheck();
       }
