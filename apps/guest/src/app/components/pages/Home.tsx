@@ -71,7 +71,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .post("https://server.s3notif.com/api/manage", formState)
+      .post("https://server.w3notif.com/api/manage", formState)
       .finally(() => refreshUserData());
   }, [formState]);
 
