@@ -24,7 +24,7 @@ const middlewares = [
       ...Object.values(settings.clientDomains),
       "https://w3notif.com",
       "https://www.w3notif.com",
-      "https://web3-notifications-1.onrender.com",
+      "https://w3guest.delightfulplant-f5e5ca59.eastus.azurecontainerapps.io",
     ],
     credentials: true,
   }),
