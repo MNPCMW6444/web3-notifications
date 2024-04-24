@@ -101,9 +101,9 @@ export const notify = async () => {
       console.log("value: ", value);
       console.log("userSecrets.minimum: ", userSecrets.minimum);
       if (value > userSecrets.minimum) {
-        // sendSMS(value, userSecrets.minimum, userSecrets);
+        sendSMS(value, userSecrets.minimum, userSecrets);
         sendEmail(value, userSecrets.minimum, userSecrets);
-        // sendPush(value, userSecrets.minimum, userSecrets);
+        sendPush(value, userSecrets.minimum, userSecrets);
 
         user.data.secrets.minimum = value;
         user.save();
