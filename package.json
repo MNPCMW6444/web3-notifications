@@ -10,7 +10,7 @@
     "build:guest": "nx build guest && tsc --outDir dist/apps/guest --esModuleInterop apps/guest/server.ts",
     "build:host": "nx build host && tsc --outDir dist/apps/host --esModuleInterop apps/host/server.ts",
     "build:admin": "nx build admin && tsc --outDir dist/apps/admin --esModuleInterop apps/admin/server.ts",
-    "build:server": "npx nx build server"
+    "build:server": "nx build server"
   },
   "main": "index.js",
   "private": true,
