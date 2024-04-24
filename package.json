@@ -1,6 +1,6 @@
 {
   "name": "@w3notif/source",
-  "version": "5.1.1",
+  "version": "5.1.2",
   "license": "MIT",
   "scripts": {
     "start": "nx serve server & nx serve guest & nx serve host & nx serve admin",
