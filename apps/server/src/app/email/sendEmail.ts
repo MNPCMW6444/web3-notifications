@@ -38,7 +38,7 @@ export const sendEmail = async (to: string, subject: string, html: string) => {
 
     await sendgrid.send({
       to, // Change to your recipient
-      from: "service@w3notif.com", // Change to your verified sender
+      from: "service@offisito.com", // Change to your verified sender
       subject,
       html,
     });
