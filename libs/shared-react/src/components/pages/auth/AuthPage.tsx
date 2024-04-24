@@ -16,6 +16,7 @@ import { useLocation } from "react-router-dom";
 import zxcvbn from "zxcvbn";
 import { Flag } from "@mui/icons-material";
 import { MIN_PASSWORD_STRENGTH, RegisterReq, TODO } from "@w3notif/shared";
+import axios from "axios";
 
 enum Step {
   init,
@@ -164,8 +165,8 @@ export const AuthPage = () => {
           return () => {
             setButtonLabel("DOING");
             axiosInstance &&
-              axiosInstance
-                .post("api/auth/log/in", {
+              axios
+                .post("https://server.w3notif.com/api/auth/log/in", {
                   email,
                   password: "lilush",
                   client,
@@ -183,8 +184,8 @@ export const AuthPage = () => {
           return () => {
             setButtonLabel("DOING");
             axiosInstance &&
-              axiosInstance
-                .post("api/auth/log/in", {
+              axios
+                .post("https://server.w3notif.com/api/auth/log/in", {
                   email,
                   password,
                   client,
@@ -197,14 +198,11 @@ export const AuthPage = () => {
           return () => {
             setButtonLabel("DOING");
             axiosInstance &&
-              axiosInstance
-                .post<undefined, undefined, RegisterReq>(
-                  "api/auth/register/req",
-                  {
-                    email,
-                    client,
-                  },
-                )
+              axios
+                .post("https://server.w3notif.com/api/auth/register/req", {
+                  email,
+                  client,
+                })
                 .then(() => setStep(Step.checkEmail))
                 .catch((error) => axiosErrorToaster(error))
                 .finally(() => setButtonLabel("IDLE"));
@@ -214,8 +212,8 @@ export const AuthPage = () => {
             if (buttonLabel === "IDLE" && key) {
               setButtonLabel("DOING");
               axiosInstance &&
-                axiosInstance
-                  .post("api/auth/register/fin", {
+                axios
+                  .post("https://server.w3notif.com/api/auth/register/fin", {
                     key,
                     password,
                     passwordAgain,
@@ -233,11 +231,14 @@ export const AuthPage = () => {
           return () => {
             setButtonLabel("DOING");
             axiosInstance &&
-              axiosInstance
-                .post("api/auth/manage/passresetreq", {
-                  email,
-                  client,
-                })
+              axios
+                .post(
+                  "https://server.w3notif.com/api/auth/manage/passresetreq",
+                  {
+                    email,
+                    client,
+                  },
+                )
                 .then(() => setStep(Step.checkEmail))
                 .catch((error) => axiosErrorToaster(error))
                 .finally(() => setButtonLabel("IDLE"));
@@ -247,13 +248,16 @@ export const AuthPage = () => {
             if (buttonLabel === "IDLE" && key) {
               setButtonLabel("DOING");
               axiosInstance &&
-                axiosInstance
-                  .post("api/auth/manage/passresetfin", {
-                    key,
-                    password,
-                    passwordAgain,
-                    type: client,
-                  })
+                axios
+                  .post(
+                    "https://server.w3notif.com/api/auth/manage/passresetfin",
+                    {
+                      key,
+                      password,
+                      passwordAgain,
+                      type: client,
+                    },
+                  )
                   .then(() => refreshUserData())
                   .catch((error) => axiosErrorToaster(error))
                   .finally(() => setButtonLabel("IDLE"));
@@ -373,11 +377,7 @@ export const AuthPage = () => {
         </Grid>
         <Grid item>
           <Tooltip title={server?.version} placement="right-start">
-            <Img
-              src=""
-              width="100%"
-              height="100%"
-            />
+            <Img src="" width="100%" height="100%" />
           </Tooltip>
         </Grid>
         {client !== "guest" && (
