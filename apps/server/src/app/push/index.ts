@@ -11,7 +11,7 @@ const vapidKeys = {
 webpush.setVapidDetails(
   "mailto:michael@w3notif.com",
   vapidKeys.publicKey,
-  settings.push ||
+  vapidKeys.privateKey ||
     (() => {
       throw new Error("No private key set");
     })(),
