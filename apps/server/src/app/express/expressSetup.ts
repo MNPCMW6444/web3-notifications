@@ -47,6 +47,14 @@ export default async () => {
 
     app.listen(port, "0.0.0.0", () => {
       //  notificationRuleModel();
+      console.log(
+        "Server is ready at http" +
+          (settings.whiteEnv === "local"
+            ? "://localhost:" + port + "/"
+            : "s://" +
+              (settings.whiteEnv === "preprod" ? "pre" : "") +
+              "server.w3notif.com/"),
+      );
     });
   } catch (e) {
     throw new Error("Express setup failed: " + JSON.stringify(e));
