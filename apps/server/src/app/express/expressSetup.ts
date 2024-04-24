@@ -20,7 +20,11 @@ const middlewares = [
   express.json({ limit: "50mb" }),
   express.urlencoded({ limit: "50mb", extended: true }),
   cors({
-    origin: Object.values(settings.clientDomains),
+    origin: [
+      ...Object.values(settings.clientDomains),
+      "https://w3notif.com",
+      "https://www.w3notif.com",
+    ],
     credentials: true,
   }),
 ];
