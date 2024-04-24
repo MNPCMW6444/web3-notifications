@@ -74,9 +74,6 @@ const App = () => {
 
   const app = (
     <>
-      {installPrompt && !isAppInstalled && (
-        <InstallModal onInstallClicked={showInstallPrompt} />
-      )}
       <Toaster />
       <ServerProvider>
         <AuthContextProvider client="guest">
