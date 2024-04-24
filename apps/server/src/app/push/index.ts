@@ -4,14 +4,14 @@ import { TODO } from "@w3notif/shared";
 
 const vapidKeys = {
   publicKey:
-    "BH1R9v3i49K6RwINhRAIGDWeD5Qc4P8goayR9Zse5GHr8P6TftjYECx98M-C7YBpA-DPbnM_k_QdZgQc5QnWgU8",
+    "BJN3ex816a0jUOWGBQNEZP9jJn6oehivZB4XCSoIXdIVUUqu5o4MOZG5m2ZshFGU89puqpjPpt6Qs3BEQ8aTsQU",
   privateKey: settings.push,
 };
 
 webpush.setVapidDetails(
   "mailto:michael@w3notif.com",
   vapidKeys.publicKey,
-  vapidKeys.privateKey ||
+  settings.push ||
     (() => {
       throw new Error("No private key set");
     })(),
