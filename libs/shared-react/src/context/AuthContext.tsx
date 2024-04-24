@@ -44,7 +44,7 @@ export const AuthContextProvider = ({ children, client }: AuthContextProps) => {
   const refreshUserData = useCallback(async () => {
     try {
       const response = await axios.get<User>(
-        "https://web3-notifications.onrender.com/api/auth/log/" + client,
+        "https://server.w3notif.com/api/auth/log/" + client,
       );
       response?.data && setUser(response?.data);
     } catch {
@@ -63,9 +63,7 @@ export const AuthContextProvider = ({ children, client }: AuthContextProps) => {
 
   const logout = async () => {
     try {
-      await axios.get<undefined>(
-        "https://web3-notifications.onrender.com/api/auth/log/out",
-      );
+      await axios.get<undefined>("https://server.w3notif.com/api/auth/log/out");
       setUser(undefined);
       refreshUserData();
     } catch (error) {
