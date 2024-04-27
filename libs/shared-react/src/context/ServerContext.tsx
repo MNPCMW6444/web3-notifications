@@ -33,7 +33,7 @@ const { VITE_WHITE_ENV } = frontendSettings();
 export const getBaseURL = () =>
   VITE_WHITE_ENV === "local"
     ? "http://localhost:5556/"
-    : `https://${VITE_WHITE_ENV === "preprod" ? "pre" : ""}s3server.delightfulplant-f5e5ca59.eastus.azurecontainerapps.io/`;
+    : `https://${VITE_WHITE_ENV === "preprod" ? "pre" : ""}server.w3notif.com/`;
 
 export const ServerProvider = ({
   tryInterval,
