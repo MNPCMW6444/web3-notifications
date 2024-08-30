@@ -143,7 +143,7 @@ jobs:
           DOCKER_BUILDKIT: 1
         run: |
           ECR_REGISTRY=${{ steps.login-ecr.outputs.registry }}
-          docker build --build-arg DEP_HASH=${DEP_HASH} -t $ECR_REGISTRY/web3/server:$VERSION -f ./apps/web3/server/Dockerfile .
+          docker build --build-arg DEP_HASH=${DEP_HASH} -t $ECR_REGISTRY/web3/server:$VERSION -f ./apps/server/Dockerfile .
           docker push $ECR_REGISTRY/web3/server:$VERSION
 
 
