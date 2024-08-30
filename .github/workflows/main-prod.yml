@@ -261,13 +261,13 @@ jobs:
         id: register-task-def-server
         run: |
           TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3server-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
-          echo "TASK_DEF_ARN_w3server=$TASK_DEF_ARN" >> $GITHUB_ENV
+          echo "TASK_DEF_ARN_SERVER" >> $GITHUB_ENV
 
       - name: Register task definition for w3dashboard
         id: register-task-def-w3dashboard
         run: |
           TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3dashboard-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
-          echo "TASK_DEF_ARN_w3dashboard=$TASK_DEF_ARN" >> $GITHUB_ENV
+          echo "TASK_DEF_ARN_DASHBOARD=$TASK_DEF_ARN" >> $GITHUB_ENV
 
 
       - name: Update ECS Service for server
@@ -276,5 +276,5 @@ jobs:
 
       - name: Update ECS Service for dashboard
         run: |
-          aws ecs update-service --cluster w3 --service dashboard --task-definition $TASK_DEF_ARN_dashboard
+          aws ecs update-service --cluster w3 --service dashboard --task-definition TASK_DEF_ARN_DASHBOARD
 
