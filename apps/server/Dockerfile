@@ -8,5 +8,5 @@ RUN npm run build:server
 FROM node:lts-slim
 WORKDIR /app
 COPY --from=builder /app .
-CMD ["node", "dist/apps/server/index.js"]
+CMD ["node", "dist/apps/server/index.mjs"]
 EXPOSE 3450
