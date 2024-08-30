@@ -18,14 +18,7 @@
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "paths": {
-      "@w3notif/shared": [
-        "libs/shared/src/index.ts"
-      ],
-      "@w3notif/shared-react": [
-        "libs/shared-react/src/index.ts"
-      ]
-    }
+    "paths": {}
   },
   "include": [
     "apps/**/*",
