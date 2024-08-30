@@ -7,7 +7,7 @@
     "clean": "rm -rf node_modules dist tmp package-lock.json ./.nx",
     "update": "npx npm-check-updates -u",
     "build:server": "nx build server",
-    "build:dashboard": "nx build dashboard && tsc --outDir dist/apps/dashboard --esModuleInterop apps/dashboard/server.ts",
+    "build:dashboard": "nx build dashboard && tsc --outDir dist/apps/dashboard --esModuleInterop apps/dashboard/server.ts"
   },
   "main": "index.js",
   "private": true,
