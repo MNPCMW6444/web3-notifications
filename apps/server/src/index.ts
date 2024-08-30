@@ -1,7 +1,4 @@
+import { startMongoAndExpress } from '@the-libs/base-backend';
+import { apiRouter } from './new/apiRouter';
 
-import { startMongoAndExpress } from "@the-libs/base-backend";
-
-startMongoAndExpress()
-
-
-
+startMongoAndExpress(apiRouter);
