@@ -148,7 +148,7 @@ jobs:
 
 
 
-  build_web3/dashboard:
+  build_dashboard:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
@@ -198,7 +198,7 @@ jobs:
 
 
   deploy_to_ecs:
-    needs: [ prepare, build_server, build_web3/dashboard ]
+    needs: [ prepare, build_server, build_dashboard ]
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS credentials
