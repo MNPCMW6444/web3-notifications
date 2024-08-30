@@ -276,5 +276,5 @@ jobs:
 
       - name: Update ECS Service for dashboard
         run: |
-          aws ecs update-service --cluster w3 --service dashboard --task-definition TASK_DEF_ARN_DASHBOARD
+          aws ecs update-service --cluster w3 --service dashboard --task-definition $TASK_DEF_ARN_DASHBOARD
 
