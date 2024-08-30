@@ -10,8 +10,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@the-libs/base-backend": "^1.1.11",
-    "eslint-plugin-jsx-a11y": "^6.9.0"
+    "@the-libs/base-backend": "^1.1.11"
   },
   "devDependencies": {
     "@nx/esbuild": "^19.6.4",
@@ -24,8 +23,12 @@
     "@typescript-eslint/parser": "^8.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "nx": "^19.6.4",
+    "react": "^18.3.1",
     "vite": "^5.4.2"
   }
 }
