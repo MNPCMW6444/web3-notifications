@@ -253,7 +253,7 @@ jobs:
 
       - name: Update task definition for w3dashboard
         run: |
-          jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/dashboard:" + $image_tag' current-w3dashboard-task-def.json > intermediate-web3/w3dashboard-task-def.json
+          jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/dashboard:" + $image_tag' current-w3dashboard-task-def.json > intermediate-w3dashboard-task-def.json
           jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-w3dashboard-task-def.json > final-w3dashboard-task-def.json
 
 
