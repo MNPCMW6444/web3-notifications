@@ -16,8 +16,7 @@ const indexPath = path.join(__dirname, '', 'index.html');
 const envVars = {
   VITE_NODE_ENV: process.env.VITE_NODE_ENV || 'production',
   VITE_WHITE_ENV: process.env.VITE_WHITE_ENV || 'prod',
-  VITE_G_MAPS:
-    process.env.VITE_G_MAPS || 'AIzaSyCF3iTH5nJBsdJMxzXeg208RS1Ab_yuE6E',
+  VITE_G_MAPS: process.env.VITE_G_MAPS || '',
 };
 
 app.get('/version', (_, res) => res.status(200).send(version));
