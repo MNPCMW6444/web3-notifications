@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App';
 
 function loadGoogleFontsAsync() {
   const link = document.createElement('link');
@@ -33,4 +34,8 @@ if ('serviceWorker' in navigator) {
     );
 }
 
-root.render(<React.StrictMode>asdasdasd</React.StrictMode>);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
