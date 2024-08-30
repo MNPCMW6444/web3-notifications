@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { ServerProvider } from '@the-libs/base-frontend';
+import { Typography } from '@mui/material';
 
 function loadGoogleFontsAsync() {
   const link = document.createElement('link');
@@ -34,8 +36,14 @@ if ('serviceWorker' in navigator) {
     );
 }
 
+const MainMessage = ({ text }: { text: string }) => (
+  <Typography>{text}</Typography>
+);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ServerProvider domain="server.w3notif.com" MainMessage={MainMessage}>
+      <App />
+    </ServerProvider>
   </React.StrictMode>,
 );
