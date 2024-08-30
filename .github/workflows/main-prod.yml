@@ -240,10 +240,10 @@ jobs:
         run: |
           aws ecs describe-task-definition --task-definition w3server > current-w3server-task-def.json
 
-      - name: Fetch current web3/dashboard task definition
+      - name: Fetch current w3dashboard task definition
         id: current-task-defdashboard
         run: |
-          aws ecs describe-task-definition --task-definition web3/dashboard > current-web3/dashboard-task-def.json
+          aws ecs describe-task-definition --task-definition w3dashboard > current-w3dashboard-task-def.json
 
 
       - name: Update task definition for w3server
@@ -251,10 +251,10 @@ jobs:
           jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/server:" + $image_tag' current-w3server-task-def.json > intermediate-w3server-task-def.json
           jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-w3server-task-def.json > final-w3server-task-def.json
 
-      - name: Update task definition for web3/dashboard
+      - name: Update task definition for w3dashboard
         run: |
-          jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/dashboard:" + $image_tag' current-dashboard-task-def.json > intermediate-web3/dashboard-task-def.json
-          jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-dashboard-task-def.json > final-dashboard-task-def.json
+          jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/dashboard:" + $image_tag' current-w3dashboard-task-def.json > intermediate-web3/w3dashboard-task-def.json
+          jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-w3dashboard-task-def.json > final-w3dashboard-task-def.json
 
 
       - name: Register task definition for server
@@ -263,11 +263,11 @@ jobs:
           TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3server-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
           echo "TASK_DEF_ARN_w3server=$TASK_DEF_ARN" >> $GITHUB_ENV
 
-      - name: Register task definition for dashboard
-        id: register-task-def-dashboard
+      - name: Register task definition for w3dashboard
+        id: register-task-def-w3dashboard
         run: |
-          TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-dashboard-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
-          echo "TASK_DEF_ARN_dashboard=$TASK_DEF_ARN" >> $GITHUB_ENV
+          TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3dashboard-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
+          echo "TASK_DEF_ARN_w3dashboard=$TASK_DEF_ARN" >> $GITHUB_ENV
 
 
       - name: Update ECS Service for server
