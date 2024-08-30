@@ -1,3 +1,4 @@
+/*
 import { ChainId } from '@aave/contract-helpers';
 import {
   AaveV2Avalanche,
@@ -70,11 +71,11 @@ export type MarketDataType = {
     GHO_TOKEN_ADDRESS?: string;
     GHO_UI_DATA_PROVIDER?: string;
   };
-  /**
+  /!**
    * https://www.hal.xyz/ has integrated aave for healtfactor warning notification
    * the integration doesn't follow aave market naming & only supports a subset of markets.
    * When a halIntegration is specified a link to hal will be displayed on the ui.
-   */
+   *!/
   halIntegration?: {
     URL: string;
     marketName: string;
@@ -722,3 +723,4 @@ export const marketsData:any= {
     },
   },
 } as const;
+*/

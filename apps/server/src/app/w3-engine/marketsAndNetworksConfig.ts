@@ -1,3 +1,4 @@
+/*
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { StaticJsonRpcProvider } from '@ethersproject/providers';
 
@@ -45,10 +46,10 @@ const FORK_WS_RPC_URL =
   global?.window?.localStorage.getItem('forkWsRPCUrl') ||
   'ws://127.0.0.1:8545';
 
-/**
+/!**
  * Generates network configs based on networkConfigs & fork settings.
  * Forks will have a rpcOnly clone of their underlying base network config.
- */
+ *!/
 export const networkConfigs = Object.keys(_networkConfigs).reduce((acc, value) => {
   acc[value] = _networkConfigs[value];
   if (FORK_ENABLED && Number(value) === FORK_BASE_CHAIN_ID) {
@@ -66,10 +67,10 @@ export const networkConfigs = Object.keys(_networkConfigs).reduce((acc, value) =
   return acc;
 }, {} as { [key: string]: BaseNetworkConfig });
 
-/**
+/!**
  * Generates network configs based on marketsData & fork settings.
  * Fork markets are generated for all markets on the underlying base chain.
- */
+ *!/
 
 export const marketsData = Object.keys(_marketsData).reduce((acc, value) => {
   acc[value] = _marketsData[value as keyof typeof CustomMarket];
@@ -111,9 +112,9 @@ export function getSupportedChainIds(): number[] {
   );
 }
 
-/**
+/!**
  * selectable markets (markets in a available network + forks when enabled)
- */
+ *!/
 
 export const availableMarkets = Object.keys(marketsData).filter((key) =>
   getSupportedChainIds().includes(marketsData[key as keyof typeof CustomMarket].chainId)
@@ -160,11 +161,11 @@ export const isFeatureEnabled = {
 
 const providers: { [network: string]: any } = {};
 
-/**
+/!**
  * Created a fallback rpc provider in which providers are prioritized from private to public and in case there are multiple public ones, from top to bottom.
  * @param chainId
  * @returns provider or fallbackprovider in case multiple rpcs are configured
- */
+ *!/
 export const getProvider = (chainId: ChainId): any => {
   if (!providers[chainId]) {
     const config = getNetworkConfig(chainId);
@@ -254,3 +255,4 @@ export const frozenProposalMap: Record<string, string> = {
 // reexport so we can forbit config import
 export { CustomMarket };
 export type { MarketDataType, NetworkConfig };
+*/

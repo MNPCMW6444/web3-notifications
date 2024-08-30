@@ -1,6 +1,7 @@
+/*
 import twilio from "twilio";
-import { sendPushNotification } from "../push";
-import { sendEmail as sm } from "../email/sendEmail";
+import { sendPushNotification } from "@the-libs/notifications-backend";
+import { sendEmail as sm } from "@the-libs/email-backend";
 
 export const sendSMS = (min: number, val: number, userSecrets) => {
   const sid = (userSecrets as any).twilio_sid;
@@ -45,3 +46,4 @@ export const sendPush = (min: number, val: number, userSecrets: any) => {
     );
   });
 };
+*/

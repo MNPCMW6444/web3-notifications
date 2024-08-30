@@ -1,3 +1,4 @@
+/*
 import { ChainId } from '@aave/contract-helpers';
 
 export type ExplorerLinkBuilderProps = {
@@ -24,9 +25,9 @@ export type NetworkConfig = {
   // cachingServerUrl?: string;
   // cachingWSServerUrl?: string;
   baseUniswapAdapter?: string;
-  /**
+  /!**
    * When this is set withdrawals will automatically be unwrapped
-   */
+   *!/
   wrappedBaseAssetSymbol: string;
   baseAssetSymbol: string;
   // needed for configuring the chain on metemask when it doesn't exist yet
@@ -488,3 +489,4 @@ export const networkConfigs: Record<string, BaseNetworkConfig> = {
     ratesHistoryApiUrl,
   },
 } as const;
+*/

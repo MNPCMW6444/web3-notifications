@@ -1,3 +1,4 @@
+/*
 import { BaseProvider, Network, StaticJsonRpcProvider } from '@ethersproject/providers';
 
 const DEFAULT_FALL_FORWARD_DELAY = 60000;
@@ -12,11 +13,11 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/**
+/!**
  * Returns the network as long as all agree. Throws an error if any two networks do not match
  * @param networks the list of networks to verify
  * @returns Network
- */
+ *!/
 export function checkNetworks(networks: Network[]): Network {
   if (networks.length === 0) {
    // logger.throwArgumentError('no networks provided', 'networks', networks);
@@ -56,11 +57,11 @@ export function checkNetworks(networks: Network[]): Network {
   return result;
 }
 
-/**
+/!**
  * The provider will rotate rpcs on error.
  * If provider rotates away from the first RPC, rotate back after a set interval to prioritize using most reliable RPC.
  * If provider rotates through all rpcs, delay to avoid spamming rpcs with requests.
- */
+ *!/
 export class RotationProvider extends BaseProvider {
   readonly providers: StaticJsonRpcProvider[];
   private currentProviderIndex = 0;
@@ -81,9 +82,9 @@ export class RotationProvider extends BaseProvider {
     this.fallForwardDelay = config?.fallFowardDelay || DEFAULT_FALL_FORWARD_DELAY;
   }
 
-  /**
+  /!**
    * If we rotate away from the first RPC, rotate back after a set interval to prioritize using most reliable RPC
-   */
+   *!/
   async fallForwardRotation() {
     const now = new Date().getTime();
     const diff = now - this.firstRotationTimestamp;
@@ -93,10 +94,10 @@ export class RotationProvider extends BaseProvider {
     }
   }
 
-  /**
+  /!**
    * If rpc fails, rotate to next available and trigger rotation or fall forward delay where applicable
    * @param prevIndex last updated index, checked to avoid having multiple active rotations
-   */
+   *!/
   private async rotateUrl(prevIndex: number) {
     // don't rotate when another rotation was already triggered
     if (prevIndex !== this.currentProviderIndex) return;
@@ -153,3 +154,4 @@ export class RotationProvider extends BaseProvider {
     }
   }
 }
+*/

@@ -1,3 +1,8 @@
+/*
+import { startMongoAndExpress } from "@the-libs/base-backend";
+
+startMongoAndExpress()
+*/
 
 
-console.log("Connecting to MongoDB...");
+console.log("asdasdsd")

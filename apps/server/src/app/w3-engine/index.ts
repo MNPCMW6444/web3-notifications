@@ -1,3 +1,4 @@
+/*
 import { UiPoolService } from "./UIPoolService";
 import { getNetworkConfig } from "./marketsAndNetworksConfig";
 import { StaticJsonRpcProvider } from "@ethersproject/providers";
@@ -108,12 +109,12 @@ export const notify = async () => {
         user.data.secrets.minimum = value;
         user.save();
 
-        /* if (userSecrets.loop === "yes") {
+        /!* if (userSecrets.loop === "yes") {
           set(userSecrets, () => handler(uxx));
-        }*/
-      } /* else {*/
+        }*!/
+      } /!* else {*!/
       set(userSecrets, () => handler(uxx));
-      /*  }*/
+      /!*  }*!/
     } catch (error) {
       console.error("Error during check:", error);
       set(userSecrets, () => handler(uxx));
@@ -127,3 +128,4 @@ export const notify = async () => {
     }
   });
 };
+*/
