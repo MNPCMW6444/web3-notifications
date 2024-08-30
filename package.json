@@ -10,7 +10,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@the-libs/base-backend": "^1.1.11"
+    "@the-libs/base-backend": "^1.1.15"
   },
   "devDependencies": {
     "@nx/esbuild": "^19.6.4",
