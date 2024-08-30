@@ -14,7 +14,7 @@
         "platform": "node",
         "outputPath": "dist/apps/server",
         "format": [
-          "cjs"
+          "esm"
         ],
         "bundle": true,
         "main": "apps/server/src/index.ts",
@@ -27,7 +27,7 @@
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
-            ".js": ".js"
+            ".js": ".mjs"
           }
         }
       },
@@ -38,7 +38,7 @@
             "sourcemap": false,
             "minify": true,
             "outExtension": {
-              ".js": ".js"
+              ".js": ".mjs"
             }
           }
         }
