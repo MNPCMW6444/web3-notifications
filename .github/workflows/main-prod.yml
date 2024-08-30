@@ -241,7 +241,7 @@ jobs:
           aws ecs describe-task-definition --task-definition w3server > current-w3server-task-def.json
 
       - name: Fetch current web3/dashboard task definition
-        id: current-task-def-web3/dashboard
+        id: current-task-defdashboard
         run: |
           aws ecs describe-task-definition --task-definition web3/dashboard > current-web3/dashboard-task-def.json
 
