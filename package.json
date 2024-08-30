@@ -12,9 +12,9 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@the-libs/base-backend": "^1.1.36",
-    "@the-libs/base-frontend": "^1.1.26",
-    "@the-libs/notifications-backend": "^1.1.36",
+    "@the-libs/base-backend": "^1.1.39",
+    "@the-libs/base-frontend": "^1.1.39",
+    "@the-libs/notifications-backend": "^1.1.39",
     "express": "^4.19.2"
   },
   "devDependencies": {
