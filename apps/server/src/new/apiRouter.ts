@@ -1,9 +1,9 @@
-import { Router } from 'express';
 import { highOrderHandler } from '@the-libs/base-backend';
-import { sendPushNotification } from '@the-libs/notifications-backend';
-
-export let tmp = false;
-
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { Router } = require('express');
+{
+}
 export const apiRouter = Router();
 
 apiRouter.get(
