@@ -1,4 +1,4 @@
-name: prod - main
+name: w3 - main
 
 on:
   push:
@@ -272,9 +272,9 @@ jobs:
 
       - name: Update ECS Service for server
         run: |
-          aws ecs update-service --cluster prod --service server --task-definition $TASK_DEF_ARN_SERVER
+          aws ecs update-service --cluster w3 --service server --task-definition $TASK_DEF_ARN_SERVER
 
       - name: Update ECS Service for dashboard
         run: |
-          aws ecs update-service --cluster prod --service dashboard --task-definition $TASK_DEF_ARN_dashboard
+          aws ecs update-service --cluster w3 --service dashboard --task-definition $TASK_DEF_ARN_dashboard
 
