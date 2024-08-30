@@ -12,18 +12,19 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@the-libs/base-backend": "^1.1.39",
-    "@the-libs/base-frontend": "^1.1.39",
-    "@the-libs/notifications-backend": "^1.1.39",
+    "@the-libs/base-backend": "^1.1.41",
+    "@the-libs/notifications-backend": "^1.1.41",
     "express": "^4.19.2"
   },
   "devDependencies": {
     "@emotion/react": "^11.13.3",
+    "@mui/material": "^6.0.1",
     "@nx/esbuild": "^19.6.4",
     "@nx/eslint": "^19.6.4",
     "@nx/eslint-plugin": "^19.6.4",
     "@nx/react": "^19.6.4",
     "@nx/vite": "^19.6.4",
+    "@the-libs/base-frontend": "^1.1.41",
     "@types/express": "^4.17.21",
     "@types/node": "^22.5.1",
     "@types/react-dom": "^18.3.0",
