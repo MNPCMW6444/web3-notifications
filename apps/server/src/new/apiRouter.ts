@@ -1,9 +1,9 @@
 import { highOrderHandler } from '@the-libs/base-backend';
 import { createRequire } from 'module';
+import { pushDevice } from '@the-libs/notifications-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
-{
-}
+
 export const apiRouter = Router();
 
 apiRouter.get(
@@ -14,5 +14,20 @@ apiRouter.get(
     /* if (data && !tmp) sendPushNotification();
     if (data !== tmp) tmp = data;*/
     return { statusCode: 200 };
+  }),
+);
+
+apiRouter.get(
+  '/devices',
+  highOrderHandler(async () => {
+    return { statusCode: 200, body: await pushDevice().find() };
+  }),
+);
+
+apiRouter.post(
+  '/registerDevice',
+  highOrderHandler(async (req) => {
+    const newDevice = new (pushDevice())({});
+    return { statusCode: 201 };
   }),
 );
