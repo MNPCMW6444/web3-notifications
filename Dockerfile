@@ -1,13 +1,5 @@
-FROM node:lts as builder
+# Dockerfile.base
+FROM node:lts AS base
 WORKDIR /app
-COPY package.json nx.json tsconfig.base.json .npmrc ./
-COPY libs/shared libs/shared
-COPY apps/server/ apps/server/
+COPY package.json .npmrc .eslintrc.json .eslintrc.json .eslintignore  ./
 RUN npm i
-RUN npm run build:server
-
-FROM node:lts-slim
-WORKDIR /app
-COPY --from=builder /app .
-CMD ["node", "dist/apps/server/index.js"]
-EXPOSE 6025
