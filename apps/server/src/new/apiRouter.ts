@@ -7,6 +7,7 @@ apiRouter.get(
   '/event/:data',
   highOrderHandler((req) => {
     const data = req.params.data;
+    console.log(data);
     return { statusCode: 200 };
   }),
 );
