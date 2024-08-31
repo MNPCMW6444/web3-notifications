@@ -25,14 +25,14 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('push', function (event) {
-  const data = event.data.json();
+ // const data = event.data.json();
   const options = {
     body: data.body,
-    data: data, // This line ensures that data used in the notificationclick event is available
+   // data: data, // This line ensures that data used in the notificationclick event is available
   };
   event.waitUntil(self.registration.showNotification(data.title, options));
 });
-
+/* 
 self.addEventListener('notificationclick', function (event) {
   const notificationData = event.notification.data;
   event.notification.close();
@@ -50,4 +50,4 @@ self.addEventListener('notificationclick', function (event) {
       }
     }),
   );
-});
+}); */
