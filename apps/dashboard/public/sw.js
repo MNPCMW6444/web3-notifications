@@ -25,11 +25,8 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('push', function (event) {
- const data = JSON.parse(event.data)
-  const options = {
-    body: JSON.stringify(data),
-  };
-  event.waitUntil(self.registration.showNotification(data.title, options));
+
+  event.waitUntil(self.registration.showNotification(JSON.stringify(event)));
 });
 
 
