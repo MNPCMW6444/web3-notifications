@@ -25,9 +25,9 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('push', function (event) {
- // const data = event.data.json();
+ const data = event.data
   const options = {
-    body: data.body,
+    body: data?.body || data,
    // data: data, // This line ensures that data used in the notificationclick event is available
   };
   event.waitUntil(self.registration.showNotification(data.title, options));
