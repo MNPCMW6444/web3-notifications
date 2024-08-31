@@ -31,16 +31,19 @@ const App = () => {
       <Grid2>
         <Button
           onClick={() => {
-            handleSubscribeClick((pushSubscription) => {
-              /*  const res = await server?.axiosInstance?.post('/registerDevice', {
+            handleSubscribeClick(
+              'BPYxL1BdQA3nmQT0Qtv4cD4p3lPIR2UIF0FdfDll1hvac6nQJ84dHiHjoZM10zZAWVvp2juEpfpr5F9yQEV3zvM',
+              (pushSubscription) => {
+                /*  const res = await server?.axiosInstance?.post('/registerDevice', {
                 subscription: pushSubscription,
               });*/
-              axios
-                .post(d + '/api/' + 'registerDevice', {
-                  subscription: pushSubscription,
-                })
-                .then(() => fetchDevices().then());
-            });
+                axios
+                  .post(d + '/api/' + 'registerDevice', {
+                    subscription: pushSubscription,
+                  })
+                  .then(() => fetchDevices().then());
+              },
+            );
           }}
         >
           Add this device
