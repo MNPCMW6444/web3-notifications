@@ -20,7 +20,9 @@ const spn = async () => {
         title: 'new usdt usde update',
         body: 'the is ' + tmp + ' the time',
       },
-      null,
+      {
+        domain: '',
+      },
     ),
   );
 };
