@@ -18,7 +18,10 @@ const spn = async () => {
       subscription,
       {
         title: 'new usdt usde update',
-        body: 'the is ' + tmp + ' the time',
+        body:
+          '999000 usdt is now' +
+          (tmp ? '' : ' not!') +
+          ' more than 1000000 usde',
       },
       {
         domain: '',
