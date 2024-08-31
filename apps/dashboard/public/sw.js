@@ -24,9 +24,14 @@ self.addEventListener('message', (event) => {
   }
 });
 
-self.addEventListener('push', function (event) {
+self.addEventListener("push", function (event) {
+  const data = event.data.json();
 
-  event.waitUntil(self.registration.showNotification(JSON.stringify(event)));
+  const options = {
+    body: data.body,
+  };
+
+  event.waitUntil(self.registration.showNotification(data.title, options));
 });
 
 
