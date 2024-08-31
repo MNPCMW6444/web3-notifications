@@ -25,13 +25,14 @@ self.addEventListener('message', (event) => {
 });
 
 self.addEventListener('push', function (event) {
- const data = event.data
+ const data = JSON.parse(event.data)
   const options = {
-    body: JSON.stringify(data?.body || data),
-   // data: data, // This line ensures that data used in the notificationclick event is available
+    body: JSON.stringify(data),
   };
   event.waitUntil(self.registration.showNotification(data.title, options));
 });
+
+
 /* 
 self.addEventListener('notificationclick', function (event) {
   const notificationData = event.notification.data;
