@@ -2,10 +2,13 @@ import { Button, Grid2, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { TODO, handleSubscribeClick } from '@the-libs/base-shared';
 import axios from 'axios';
+import { frontendSettings } from '@the-libs/base-frontend';
 
 const d =
-  //  "https://server.w3notif.com"
-  'http://localhost:3450';
+  // frontendSettings().VITE_NODE_ENV === 'development'
+  //  ? 'http://localhost:3450'
+  // :
+  'https://server.w3notif.com';
 
 const App = () => {
   // const server = useContext(ServerContext);
