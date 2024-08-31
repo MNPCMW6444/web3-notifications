@@ -1,18 +1,37 @@
 import { highOrderHandler } from '@the-libs/base-backend';
 import { createRequire } from 'module';
-import { pushDevice } from '@the-libs/notifications-backend';
+import {
+  pushDevice,
+  sendPushNotification,
+} from '@the-libs/notifications-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
 
 export const apiRouter = Router();
+
+let tmp = false;
+
+const spn = async () => {
+  const devices = await pushDevice().find();
+  devices.forEach(({ subscription }) =>
+    sendPushNotification(
+      subscription,
+      {
+        title: 'new usdt usde update',
+        body: 'the is ' + tmp + ' the time',
+      },
+      null,
+    ),
+  );
+};
 
 apiRouter.get(
   '/event/:data',
   highOrderHandler((req) => {
     const data = req.params.data;
     console.log(data);
-    /* if (data && !tmp) sendPushNotification();
-    if (data !== tmp) tmp = data;*/
+    if (data && !tmp) spn().then();
+    if (data !== tmp) tmp = data;
     return { statusCode: 200 };
   }),
 );
@@ -27,7 +46,12 @@ apiRouter.get(
 apiRouter.post(
   '/registerDevice',
   highOrderHandler(async (req) => {
-    const newDevice = new (pushDevice())({});
+    const { subscription } = req.body;
+    const newDevice = new (pushDevice())({
+      subscription,
+      name: 'device ' + (await pushDevice().find()).length,
+    });
+    await newDevice.save();
     return { statusCode: 201 };
   }),
 );
