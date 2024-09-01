@@ -11,7 +11,7 @@ export const apiRouter = Router();
 
 let tmp = false;
 
-const spn = async () => {
+const spn = async (x:boolean) => {
   const devices = await pushDevice().find();
   devices.forEach(({ subscription }) =>
     sendPushNotification(
@@ -19,7 +19,7 @@ const spn = async () => {
       {
         title: 'new usdt usde update',
         body: '99900 usdt is now' +
-          (tmp ? '' : ' not!') +
+          (x ? '' : ' not!') +
           ' more than 100025 usde',
       },
       {
@@ -34,7 +34,7 @@ apiRouter.get(
   highOrderHandler((req) => {
     const data = req.params.data;
     console.log(data);
-    if (data !== tmp) {spn().then();
+    if (data !== tmp) {spn(data).then();
      tmp = data;}
     return { statusCode: 200 };
   }),
