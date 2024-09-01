@@ -31,7 +31,7 @@ const App = () => {
         <Button
           onClick={() => {
             handleSubscribeClick(
-              'BPYxL1BdQA3nmQT0Qtv4cD4p3lPIR2UIF0FdfDll1hvac6nQJ84dHiHjoZM10zZAWVvp2juEpfpr5F9yQEV3zvM',
+              'BEVTZDBLq4rn0uWqN3N3-DxpAJUuwjEtwcKggfdGcwFFLawai-g2gmuHsgBMdocSywRpoGUboFkau4QCfkhFgOc',
               (pushSubscription) => {
                 /*  const res = await server?.axiosInstance?.post('/registerDevice', {
                 subscription: pushSubscription,
