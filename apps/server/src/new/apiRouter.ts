@@ -9,9 +9,9 @@ const { Router } = require('express');
 
 export const apiRouter = Router();
 
-let tmp = false;
+let tmp = 'false';
 
-const spn = async (x:boolean) => {
+const spn = async (x:string) => {
   const devices = await pushDevice().find();
   devices.forEach(({ subscription }) =>
     sendPushNotification(
