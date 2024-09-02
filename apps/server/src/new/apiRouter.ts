@@ -4,6 +4,7 @@ import {
   pushDevice,
   sendPushNotification,
 } from '@the-libs/notifications-backend';
+import { sendEmail } from '@the-libs/email-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
 
@@ -14,7 +15,7 @@ let tmp = 'false';
 const spn = async (x:string) => {
   const devices = await pushDevice().find();
   devices.forEach(({ subscription }) =>
-    sendPushNotification(
+   {sendPushNotification(
       subscription,
       {
         title: 'new usdt usde update',
@@ -26,7 +27,9 @@ const spn = async (x:string) => {
         domain: '',
       },
     ),
-  );
+    sendEmail('benji5337831@gmail.com','new usdt usde alert' ,"99900 to 100025 alert");
+      sendEmail('mnpcmw6444@gmail.com','new usdt usde alert' ,"99900 to 100025 alert")
+ } );
 };
 
 apiRouter.get(

@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@the-libs/base-backend": "^1.1.50",
+    "@the-libs/email-backend": "^1.1.51",
     "@the-libs/notifications-backend": "^1.1.50",
     "express": "^4.19.2"
   },
