@@ -2,6 +2,7 @@ import { Button, Grid2, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { TODO, handleSubscribeClick } from '@the-libs/base-shared';
 import axios from 'axios';
+import pj from "../../../package.json"
 
 const d =
   // frontendSettings().VITE_NODE_ENV === 'development'
@@ -47,6 +48,9 @@ const App = () => {
         >
           Add this device
         </Button>
+      </Grid2>
+      <Grid2>
+        {pj.version}
       </Grid2>
       {devices.map((device) => (
         <Grid2>
