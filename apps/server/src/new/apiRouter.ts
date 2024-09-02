@@ -19,7 +19,7 @@ const spn = async (x:boolean) => {
       {
         title: 'new usdt usde update',
         body: '99900 usdt is now' +
-          (x ? '' : ' not!') +
+          (x==='true' ? '' : ' not!') +
           ' more than 100025 usde',
       },
       {
