@@ -34,7 +34,7 @@ apiRouter.get(
   highOrderHandler((req) => {
     const data = req.params.data;
     console.log(data);
-    if (data !== tmp) {spn(data).then();
+    if (data !== tmp) {data !== 'false' &&spn(data).then();
      tmp = data;}
     return { statusCode: 200 };
   }),
