@@ -10,7 +10,8 @@ const { Router } = require('express');
 
 export const apiRouter = Router();
 
-let tmp = 'false';
+let tmpSWAP = 'false';
+let tmpCAP = 'false';
 
 const spn = async (x:string) => {
   const devices = await pushDevice().find();
@@ -32,13 +33,43 @@ const spn = async (x:string) => {
  } );
 };
 
+const spnX = async (x:string) => {
+  const devices = await pushDevice().find();
+  devices.forEach(({ subscription }) =>
+   {sendPushNotification(
+      subscription,
+      {
+        title: 'new wETH cap lift',
+        body: 'there is more than 2k now',
+      },
+      {
+        domain: '',
+      },
+    ),
+    sendEmail('benji5337831@gmail.com','new wETH cap lift' ,"there is more than 2k now");
+      sendEmail('mnpcmw6444@gmail.com','new wETH cap lift' ,"there is more than 2k now")
+ } );
+};
+
 apiRouter.get(
   '/event/:data',
   highOrderHandler((req) => {
     const data = req.params.data;
     console.log(data);
-    if (data !== tmp) {data !== 'false' &&spn(data).then();
-     tmp = data;}
+    if (data !== tmpSWAP) {data !== 'false' &&spn(data).then();
+     tmpSWAP = data;}
+    return { statusCode: 200 };
+  }),
+);
+
+
+apiRouter.get(
+  '/eventX/:data',
+  highOrderHandler((req) => {
+    const data = req.params.data;
+    console.log(data);
+    if (data !== tmpCAP) {data !== 'false' &&spnX(data).then();
+     tmpCAP = data;}
     return { statusCode: 200 };
   }),
 );
