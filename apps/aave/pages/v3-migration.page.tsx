@@ -29,7 +29,7 @@ import {
 } from '@/utils/marketsAndNetworksConfig';
 
 const MigrateV3Modal = dynamic(() =>
-  import('src/components/transactions/MigrateV3/MigrateV3Modal').then(
+  import('@/components/transactions/MigrateV3/MigrateV3Modal').then(
     (module) => module.MigrateV3Modal
   )
 );

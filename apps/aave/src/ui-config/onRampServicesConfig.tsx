@@ -1,4 +1,4 @@
-import TransakLogo from 'public/icons/onRampServices/transak.svg';
+import TransakLogo from '@/public/icons/onRampServices/transak.svg';
 import { ReactNode } from 'react';
 
 interface MakeLinkParams {

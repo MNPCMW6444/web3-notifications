@@ -26,58 +26,56 @@ import { AppGlobalStyles } from '../src/layouts/AppGlobalStyles';
 import { LanguageProvider } from '../src/libs/LanguageProvider';
 
 const SwitchModal = dynamic(() =>
-  import('src/components/transactions/Switch/SwitchModal').then((module) => module.SwitchModal)
+  import('@/components/transactions/Switch/SwitchModal').then((module) => module.SwitchModal)
 );
 
 const BridgeModal = dynamic(() =>
-  import('src/components/transactions/Bridge/BridgeModal').then((module) => module.BridgeModal)
+  import('@/components/transactions/Bridge/BridgeModal').then((module) => module.BridgeModal)
 );
 
 const BorrowModal = dynamic(() =>
-  import('src/components/transactions/Borrow/BorrowModal').then((module) => module.BorrowModal)
+  import('@/components/transactions/Borrow/BorrowModal').then((module) => module.BorrowModal)
 );
 const ClaimRewardsModal = dynamic(() =>
-  import('src/components/transactions/ClaimRewards/ClaimRewardsModal').then(
+  import('@/components/transactions/ClaimRewards/ClaimRewardsModal').then(
     (module) => module.ClaimRewardsModal
   )
 );
 const CollateralChangeModal = dynamic(() =>
-  import('src/components/transactions/CollateralChange/CollateralChangeModal').then(
+  import('@/components/transactions/CollateralChange/CollateralChangeModal').then(
     (module) => module.CollateralChangeModal
   )
 );
 const DebtSwitchModal = dynamic(() =>
-  import('src/components/transactions/DebtSwitch/DebtSwitchModal').then(
+  import('@/components/transactions/DebtSwitch/DebtSwitchModal').then(
     (module) => module.DebtSwitchModal
   )
 );
 const EmodeModal = dynamic(() =>
-  import('src/components/transactions/Emode/EmodeModal').then((module) => module.EmodeModal)
+  import('@/components/transactions/Emode/EmodeModal').then((module) => module.EmodeModal)
 );
 const FaucetModal = dynamic(() =>
-  import('src/components/transactions/Faucet/FaucetModal').then((module) => module.FaucetModal)
+  import('@/components/transactions/Faucet/FaucetModal').then((module) => module.FaucetModal)
 );
 const RateSwitchModal = dynamic(() =>
-  import('src/components/transactions/RateSwitch/RateSwitchModal').then(
+  import('@/components/transactions/RateSwitch/RateSwitchModal').then(
     (module) => module.RateSwitchModal
   )
 );
 const RepayModal = dynamic(() =>
-  import('src/components/transactions/Repay/RepayModal').then((module) => module.RepayModal)
+  import('@/components/transactions/Repay/RepayModal').then((module) => module.RepayModal)
 );
 const SupplyModal = dynamic(() =>
-  import('src/components/transactions/Supply/SupplyModal').then((module) => module.SupplyModal)
+  import('@/components/transactions/Supply/SupplyModal').then((module) => module.SupplyModal)
 );
 const SwapModal = dynamic(() =>
-  import('src/components/transactions/Swap/SwapModal').then((module) => module.SwapModal)
+  import('@/components/transactions/Swap/SwapModal').then((module) => module.SwapModal)
 );
 const WithdrawModal = dynamic(() =>
-  import('src/components/transactions/Withdraw/WithdrawModal').then(
-    (module) => module.WithdrawModal
-  )
+  import('@/components/transactions/Withdraw/WithdrawModal').then((module) => module.WithdrawModal)
 );
 const StakingMigrateModal = dynamic(() =>
-  import('src/components/transactions/StakingMigrate/StakingMigrateModal').then(
+  import('@/components/transactions/StakingMigrate/StakingMigrateModal').then(
     (module) => module.StakingMigrateModal
   )
 );
