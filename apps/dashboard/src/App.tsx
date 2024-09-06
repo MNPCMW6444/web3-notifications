@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import { ServerProvider } from '@the-libs/base-frontend';
+// import { ServerProvider } from '@the-libs/base-frontend';
 import Dashboard from './Dashboard';
 
 const MainMessage = ({ text }: { text: string }) => (
