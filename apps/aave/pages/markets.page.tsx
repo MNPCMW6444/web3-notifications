@@ -1,9 +1,9 @@
 import { Box, Container } from '@mui/material';
 import { ReactNode, useEffect } from 'react';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { MarketAssetsListContainer } from 'src/modules/markets/MarketAssetsListContainer';
-import { MarketsTopPanel } from 'src/modules/markets/MarketsTopPanel';
-import { useRootStore } from 'src/store/root';
+import { MainLayout } from '@/layouts/MainLayout';
+import { MarketAssetsListContainer } from '@/modules/markets/MarketAssetsListContainer';
+import { MarketsTopPanel } from '@/modules/markets/MarketsTopPanel';
+import { useRootStore } from '@/store/root';
 
 interface MarketContainerProps {
   children: ReactNode;

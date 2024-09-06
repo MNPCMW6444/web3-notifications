@@ -1,9 +1,9 @@
 import { useQueries } from '@tanstack/react-query';
-import { UserPoolTokensBalances } from 'src/services/WalletBalanceService';
-import { useRootStore } from 'src/store/root';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { POLLING_INTERVAL, queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { UserPoolTokensBalances } from '@/services/WalletBalanceService';
+import { useRootStore } from '@/store/root';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { POLLING_INTERVAL, queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { HookOpts } from '../commonTypes';
 

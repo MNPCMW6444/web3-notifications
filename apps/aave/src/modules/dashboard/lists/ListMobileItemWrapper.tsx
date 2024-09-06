@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
-import { BorrowDisabledToolTip } from 'src/components/infoTooltips/BorrowDisabledToolTip';
-import { OffboardingTooltip } from 'src/components/infoTooltips/OffboardingToolTip';
-import { PausedTooltip } from 'src/components/infoTooltips/PausedTooltip';
-import { StETHCollateralToolTip } from 'src/components/infoTooltips/StETHCollateralToolTip';
-import { SuperFestTooltip } from 'src/components/infoTooltips/SuperFestTooltip';
-import { AssetsBeingOffboarded } from 'src/components/Warnings/OffboardingWarning';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
+import { BorrowDisabledToolTip } from '@/components/infoTooltips/BorrowDisabledToolTip';
+import { OffboardingTooltip } from '@/components/infoTooltips/OffboardingToolTip';
+import { PausedTooltip } from '@/components/infoTooltips/PausedTooltip';
+import { StETHCollateralToolTip } from '@/components/infoTooltips/StETHCollateralToolTip';
+import { SuperFestTooltip } from '@/components/infoTooltips/SuperFestTooltip';
+import { AssetsBeingOffboarded } from '@/components/Warnings/OffboardingWarning';
+import { CustomMarket } from '@/ui-config/marketsConfig';
 
 import { AMPLToolTip } from '../../../components/infoTooltips/AMPLToolTip';
 import { FrozenTooltip } from '../../../components/infoTooltips/FrozenTooltip';

@@ -5,9 +5,9 @@ import { Button, ListItemIcon, ListItemText, SvgIcon, Typography } from '@mui/ma
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { NAV_BAR } from 'src/utils/mixPanelEvents';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { NAV_BAR } from '@/utils/mixPanelEvents';
 
 import { Link } from '../components/primitives/Link';
 import { moreNavigation } from '../ui-config/menu-items';

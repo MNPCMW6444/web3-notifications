@@ -2,17 +2,17 @@ import { FormattedGhoReserveData, valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import { Box, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { BigNumber } from 'bignumber.js';
-import { CapsCircularStatus } from 'src/components/caps/CapsCircularStatus';
-import { FixedAPYTooltip } from 'src/components/infoTooltips/FixedAPYTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ReserveSubheader } from 'src/components/ReserveSubheader';
+import { CapsCircularStatus } from '@/components/caps/CapsCircularStatus';
+import { FixedAPYTooltip } from '@/components/infoTooltips/FixedAPYTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ReserveSubheader } from '@/components/ReserveSubheader';
 import {
   ComputedReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { getBorrowCapData } from 'src/hooks/useAssetCaps';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { getBorrowCapData } from '@/hooks/useAssetCaps';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { PanelItem } from '../ReservePanels';
 

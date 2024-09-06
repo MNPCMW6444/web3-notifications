@@ -3,9 +3,9 @@ import { Trans } from '@lingui/macro';
 import { Box, SvgIcon, Typography } from '@mui/material';
 import { formatUnits } from 'ethers/lib/utils';
 import React from 'react';
-import { DarkTooltip } from 'src/components/infoTooltips/DarkTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
+import { DarkTooltip } from '@/components/infoTooltips/DarkTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
 
 import { BorrowRateModeBlock } from '../actions/BorrowRateModeBlock';
 import { fetchIconSymbolAndNameHistorical } from '../helpers';

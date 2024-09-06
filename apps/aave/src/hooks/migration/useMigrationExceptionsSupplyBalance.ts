@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { MigrationSupplyException } from 'src/store/v3MigrationSlice';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { MigrationSupplyException } from '@/store/v3MigrationSlice';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 import invariant from 'tiny-invariant';
 
 export const useMigrationExceptionsSupplyBalance = (

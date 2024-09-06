@@ -19,9 +19,9 @@ import {
 } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import NumberFormat, { NumberFormatProps } from 'react-number-format';
-import { TokenInfoWithBalance } from 'src/hooks/generic/useTokensBalance';
-import { useRootStore } from 'src/store/root';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { TokenInfoWithBalance } from '@/hooks/generic/useTokensBalance';
+import { useRootStore } from '@/store/root';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { COMMON_SWAPS } from '../../../ui-config/TokenList';
 import { FormattedNumber } from '../../primitives/FormattedNumber';

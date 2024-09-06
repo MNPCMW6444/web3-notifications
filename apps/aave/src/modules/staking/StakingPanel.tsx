@@ -20,16 +20,16 @@ import React from 'react';
 import {
   MeritIncentivesButton,
   UserMeritIncentivesButton,
-} from 'src/components/incentives/IncentivesButton';
-import { DarkTooltip } from 'src/components/infoTooltips/DarkTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { StakeTokenFormatted } from 'src/hooks/stake/useGeneralStakeUiData';
-import { useCurrentTimestamp } from 'src/hooks/useCurrentTimestamp';
-import { useModalContext } from 'src/hooks/useModal';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+} from '@/components/incentives/IncentivesButton';
+import { DarkTooltip } from '@/components/infoTooltips/DarkTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { StakeTokenFormatted } from '@/hooks/stake/useGeneralStakeUiData';
+import { useCurrentTimestamp } from '@/hooks/useCurrentTimestamp';
+import { useModalContext } from '@/hooks/useModal';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { StakeActionBox } from './StakeActionBox';
 import { StakingPanelSkeleton } from './StakingPanelSkeleton';

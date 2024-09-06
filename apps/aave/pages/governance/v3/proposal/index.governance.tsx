@@ -1,15 +1,15 @@
 import { Grid } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import { Meta } from 'src/components/Meta';
-import { useProposal } from 'src/hooks/governance/useProposal';
-import { useProposalVotes } from 'src/hooks/governance/useProposalVotes';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { ProposalLifecycle } from 'src/modules/governance/proposal/ProposalLifecycle';
-import { ProposalOverview } from 'src/modules/governance/proposal/ProposalOverview';
-import { ProposalTopPanel } from 'src/modules/governance/proposal/ProposalTopPanel';
-import { VoteInfo } from 'src/modules/governance/proposal/VoteInfo';
-import { VotingResults } from 'src/modules/governance/proposal/VotingResults';
+import { Meta } from '@/components/Meta';
+import { useProposal } from '@/hooks/governance/useProposal';
+import { useProposalVotes } from '@/hooks/governance/useProposalVotes';
+import { MainLayout } from '@/layouts/MainLayout';
+import { ProposalLifecycle } from '@/modules/governance/proposal/ProposalLifecycle';
+import { ProposalOverview } from '@/modules/governance/proposal/ProposalOverview';
+import { ProposalTopPanel } from '@/modules/governance/proposal/ProposalTopPanel';
+import { VoteInfo } from '@/modules/governance/proposal/VoteInfo';
+import { VotingResults } from '@/modules/governance/proposal/VotingResults';
 
 import { ContentContainer } from '../../../../src/components/ContentContainer';
 

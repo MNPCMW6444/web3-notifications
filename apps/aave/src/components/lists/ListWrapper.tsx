@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
 import { Box, BoxProps, Paper, PaperProps, Typography } from '@mui/material';
 import { ReactNode, useState } from 'react';
-import { useRootStore } from 'src/store/root';
-import { DASHBOARD } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { DASHBOARD } from '@/utils/mixPanelEvents';
 
 import { toggleLocalStorageClick } from '../../helpers/toggle-local-storage-click';
 

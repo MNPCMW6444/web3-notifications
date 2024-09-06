@@ -1,13 +1,13 @@
 import { Trans } from '@lingui/macro';
 import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { MeritIncentivesButton } from 'src/components/incentives/IncentivesButton';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { StakeTokenFormatted, useGeneralStakeUiData } from 'src/hooks/stake/useGeneralStakeUiData';
-import { useRootStore } from 'src/store/root';
+import { MeritIncentivesButton } from '@/components/incentives/IncentivesButton';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { StakeTokenFormatted, useGeneralStakeUiData } from '@/hooks/stake/useGeneralStakeUiData';
+import { useRootStore } from '@/store/root';
 
 export interface StakingPanelNoWalletProps {
   description?: React.ReactNode;

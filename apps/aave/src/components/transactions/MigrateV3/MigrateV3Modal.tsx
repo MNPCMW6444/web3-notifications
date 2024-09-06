@@ -1,10 +1,10 @@
 import React from 'react';
-import { BasicModal } from 'src/components/primitives/BasicModal';
-import { useUserMigrationReserves } from 'src/hooks/migration/useUserMigrationReserves';
-import { useUserSummaryForMigration } from 'src/hooks/migration/useUserSummaryForMigration';
-import { ModalType, useModalContext } from 'src/hooks/useModal';
-import { selectCurrentChainIdV3MarketData } from 'src/store/poolSelectors';
-import { useRootStore } from 'src/store/root';
+import { BasicModal } from '@/components/primitives/BasicModal';
+import { useUserMigrationReserves } from '@/hooks/migration/useUserMigrationReserves';
+import { useUserSummaryForMigration } from '@/hooks/migration/useUserSummaryForMigration';
+import { ModalType, useModalContext } from '@/hooks/useModal';
+import { selectCurrentChainIdV3MarketData } from '@/store/poolSelectors';
+import { useRootStore } from '@/store/root';
 
 import { MigrateV3ModalContent } from './MigrateV3ModalContent';
 

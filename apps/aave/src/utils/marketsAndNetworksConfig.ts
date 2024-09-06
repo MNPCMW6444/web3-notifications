@@ -1,6 +1,6 @@
 import { ChainId, ChainIdToNetwork } from '@aave/contract-helpers';
 import { StaticJsonRpcProvider } from '@ethersproject/providers';
-import { ProviderWithSend } from 'src/components/transactions/GovVote/temporary/VotingMachineService';
+import { ProviderWithSend } from '@/components/transactions/GovVote/temporary/VotingMachineService';
 
 import {
   CustomMarket,
@@ -50,42 +50,48 @@ const FORK_WS_RPC_URL =
  * Generates network configs based on networkConfigs & fork settings.
  * Forks will have a rpcOnly clone of their underlying base network config.
  */
-export const networkConfigs = Object.keys(_networkConfigs).reduce((acc, value) => {
-  acc[value] = _networkConfigs[value];
-  if (FORK_ENABLED && Number(value) === FORK_BASE_CHAIN_ID) {
-    acc[FORK_CHAIN_ID] = {
-      ..._networkConfigs[value],
-      name: `${_networkConfigs[value].name} Fork`,
-      isFork: true,
-      privateJsonRPCUrl: FORK_RPC_URL,
-      privateJsonRPCWSUrl: FORK_WS_RPC_URL,
-      publicJsonRPCUrl: [],
-      publicJsonRPCWSUrl: '',
-      underlyingChainId: FORK_BASE_CHAIN_ID,
-    };
-  }
-  return acc;
-}, {} as { [key: string]: BaseNetworkConfig });
+export const networkConfigs = Object.keys(_networkConfigs).reduce(
+  (acc, value) => {
+    acc[value] = _networkConfigs[value];
+    if (FORK_ENABLED && Number(value) === FORK_BASE_CHAIN_ID) {
+      acc[FORK_CHAIN_ID] = {
+        ..._networkConfigs[value],
+        name: `${_networkConfigs[value].name} Fork`,
+        isFork: true,
+        privateJsonRPCUrl: FORK_RPC_URL,
+        privateJsonRPCWSUrl: FORK_WS_RPC_URL,
+        publicJsonRPCUrl: [],
+        publicJsonRPCWSUrl: '',
+        underlyingChainId: FORK_BASE_CHAIN_ID,
+      };
+    }
+    return acc;
+  },
+  {} as { [key: string]: BaseNetworkConfig }
+);
 
 /**
  * Generates network configs based on marketsData & fork settings.
  * Fork markets are generated for all markets on the underlying base chain.
  */
 
-export const marketsData = Object.keys(_marketsData).reduce((acc, value) => {
-  acc[value] = _marketsData[value as keyof typeof CustomMarket];
-  if (
-    FORK_ENABLED &&
-    _marketsData[value as keyof typeof CustomMarket].chainId === FORK_BASE_CHAIN_ID
-  ) {
-    acc[`fork_${value}`] = {
-      ..._marketsData[value as keyof typeof CustomMarket],
-      chainId: FORK_CHAIN_ID,
-      isFork: true,
-    };
-  }
-  return acc;
-}, {} as { [key: string]: MarketDataType });
+export const marketsData = Object.keys(_marketsData).reduce(
+  (acc, value) => {
+    acc[value] = _marketsData[value as keyof typeof CustomMarket];
+    if (
+      FORK_ENABLED &&
+      _marketsData[value as keyof typeof CustomMarket].chainId === FORK_BASE_CHAIN_ID
+    ) {
+      acc[`fork_${value}`] = {
+        ..._marketsData[value as keyof typeof CustomMarket],
+        chainId: FORK_CHAIN_ID,
+        isFork: true,
+      };
+    }
+    return acc;
+  },
+  {} as { [key: string]: MarketDataType }
+);
 
 export function getDefaultChainId() {
   return marketsData[availableMarkets[0]].chainId;

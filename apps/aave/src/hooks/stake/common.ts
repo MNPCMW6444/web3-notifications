@@ -1,5 +1,5 @@
 import { Stake } from '@aave/contract-helpers';
-import { stakeConfig } from 'src/ui-config/stakeConfig';
+import { stakeConfig } from '@/ui-config/stakeConfig';
 
 export const {
   tokens: {

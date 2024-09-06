@@ -3,13 +3,13 @@ import { valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useState } from 'react';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { fetchIconSymbolAndName } from '@/ui-config/reservePatches';
+import { GHO_SYMBOL } from '@/utils/ghoUtilities';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { APYTypeTooltip } from '../../../../components/infoTooltips/APYTypeTooltip';
 import { BorrowPowerTooltip } from '../../../../components/infoTooltips/BorrowPowerTooltip';
@@ -74,39 +74,42 @@ export const BorrowedPositionsList = () => {
     return <ListLoader title={<Trans>Your borrows</Trans>} head={head.map((c) => c.title)} />;
 
   let borrowPositions =
-    user?.userReservesData.reduce((acc, userReserve) => {
-      if (userReserve.variableBorrows !== '0') {
-        acc.push({
-          ...userReserve,
-          borrowRateMode: InterestRate.Variable,
-          reserve: {
-            ...userReserve.reserve,
-            ...(userReserve.reserve.isWrappedBaseAsset
-              ? fetchIconSymbolAndName({
-                  symbol: currentNetworkConfig.baseAssetSymbol,
-                  underlyingAsset: API_ETH_MOCK_ADDRESS.toLowerCase(),
-                })
-              : {}),
-          },
-        });
-      }
-      if (userReserve.stableBorrows !== '0') {
-        acc.push({
-          ...userReserve,
-          borrowRateMode: InterestRate.Stable,
-          reserve: {
-            ...userReserve.reserve,
-            ...(userReserve.reserve.isWrappedBaseAsset
-              ? fetchIconSymbolAndName({
-                  symbol: currentNetworkConfig.baseAssetSymbol,
-                  underlyingAsset: API_ETH_MOCK_ADDRESS.toLowerCase(),
-                })
-              : {}),
-          },
-        });
-      }
-      return acc;
-    }, [] as (ComputedUserReserveData & { borrowRateMode: InterestRate })[]) || [];
+    user?.userReservesData.reduce(
+      (acc, userReserve) => {
+        if (userReserve.variableBorrows !== '0') {
+          acc.push({
+            ...userReserve,
+            borrowRateMode: InterestRate.Variable,
+            reserve: {
+              ...userReserve.reserve,
+              ...(userReserve.reserve.isWrappedBaseAsset
+                ? fetchIconSymbolAndName({
+                    symbol: currentNetworkConfig.baseAssetSymbol,
+                    underlyingAsset: API_ETH_MOCK_ADDRESS.toLowerCase(),
+                  })
+                : {}),
+            },
+          });
+        }
+        if (userReserve.stableBorrows !== '0') {
+          acc.push({
+            ...userReserve,
+            borrowRateMode: InterestRate.Stable,
+            reserve: {
+              ...userReserve.reserve,
+              ...(userReserve.reserve.isWrappedBaseAsset
+                ? fetchIconSymbolAndName({
+                    symbol: currentNetworkConfig.baseAssetSymbol,
+                    underlyingAsset: API_ETH_MOCK_ADDRESS.toLowerCase(),
+                  })
+                : {}),
+            },
+          });
+        }
+        return acc;
+      },
+      [] as (ComputedUserReserveData & { borrowRateMode: InterestRate })[]
+    ) || [];
 
   // Move GHO to top of borrowed positions list
   const ghoReserve = borrowPositions.filter((pos) => pos.reserve.symbol === GHO_SYMBOL);

@@ -23,13 +23,13 @@ import {
 } from '@mui/material';
 import dayjs from 'dayjs';
 import { useState } from 'react';
-import { DarkTooltip } from 'src/components/infoTooltips/DarkTooltip';
-import { Link } from 'src/components/primitives/Link';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { DarkTooltip } from '@/components/infoTooltips/DarkTooltip';
+import { Link } from '@/components/primitives/Link';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import {
   getLifecycleStateTimestamp,
@@ -295,8 +295,8 @@ const ProposalStep = ({
             background: completed
               ? theme.palette.primary.main
               : active
-              ? 'unset'
-              : theme.palette.text.disabled,
+                ? 'unset'
+                : theme.palette.text.disabled,
             borderColor:
               completed || active ? theme.palette.primary.main : theme.palette.text.disabled,
             my: 1,

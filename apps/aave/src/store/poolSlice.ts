@@ -43,14 +43,14 @@ import {
 import { AaveSafetyModule, AaveV3Ethereum } from '@bgd-labs/aave-address-book';
 import { BigNumber, PopulatedTransaction, Signature, utils } from 'ethers';
 import { splitSignature } from 'ethers/lib/utils';
-import { ClaimRewardsActionsProps } from 'src/components/transactions/ClaimRewards/ClaimRewardsActions';
-import { DebtSwitchActionProps } from 'src/components/transactions/DebtSwitch/DebtSwitchActions';
-import { CollateralRepayActionProps } from 'src/components/transactions/Repay/CollateralRepayActions';
-import { SwapActionProps } from 'src/components/transactions/Swap/SwapActions';
-import { WithdrawAndSwitchActionProps } from 'src/components/transactions/Withdraw/WithdrawAndSwitchActions';
-import { Approval } from 'src/helpers/useTransactionHandler';
-import { FormattedReservesAndIncentives } from 'src/hooks/pool/usePoolFormattedReserves';
-import { minBaseTokenRemainingByNetwork, optimizedPath } from 'src/utils/utils';
+import { ClaimRewardsActionsProps } from '@/components/transactions/ClaimRewards/ClaimRewardsActions';
+import { DebtSwitchActionProps } from '@/components/transactions/DebtSwitch/DebtSwitchActions';
+import { CollateralRepayActionProps } from '@/components/transactions/Repay/CollateralRepayActions';
+import { SwapActionProps } from '@/components/transactions/Swap/SwapActions';
+import { WithdrawAndSwitchActionProps } from '@/components/transactions/Withdraw/WithdrawAndSwitchActions';
+import { Approval } from '@/helpers/useTransactionHandler';
+import { FormattedReservesAndIncentives } from '@/hooks/pool/usePoolFormattedReserves';
+import { minBaseTokenRemainingByNetwork, optimizedPath } from '@/utils/utils';
 import { StateCreator } from 'zustand';
 
 import { RootStore } from './root';

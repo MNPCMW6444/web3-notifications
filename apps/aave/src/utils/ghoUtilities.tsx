@@ -1,5 +1,5 @@
 import { GhoReserveData, GhoUserData, normalize } from '@aave/math-utils';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
 
 export const GHO_SYMBOL = 'GHO';
 

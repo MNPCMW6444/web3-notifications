@@ -1,8 +1,8 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Divider, SvgIcon, Typography } from '@mui/material';
-import { Link } from 'src/components/primitives/Link';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
+import { Link } from '@/components/primitives/Link';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
 
 import { ReserveEModePanel } from '../ReserveEModePanel';
 import { PanelRow, PanelTitle } from '../ReservePanels';

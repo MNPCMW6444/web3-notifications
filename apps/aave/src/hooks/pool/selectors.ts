@@ -1,5 +1,5 @@
 import { ReservesDataHumanized } from '@aave/contract-helpers';
-import { UserReservesDataHumanized } from 'src/services/UIPoolService';
+import { UserReservesDataHumanized } from '@/services/UIPoolService';
 
 export const selectBaseCurrencyData = (poolReserve: ReservesDataHumanized) =>
   poolReserve.baseCurrencyData;

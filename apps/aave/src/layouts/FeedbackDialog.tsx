@@ -2,10 +2,10 @@ import { XIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Button, CircularProgress, SvgIcon, TextField, Typography } from '@mui/material';
 import { FormEvent, useEffect, useState } from 'react';
-import { BasicModal } from 'src/components/primitives/BasicModal';
-import { Link } from 'src/components/primitives/Link';
-import { BaseSuccessView } from 'src/components/transactions/FlowCommons/BaseSuccess';
-import { useRootStore } from 'src/store/root';
+import { BasicModal } from '@/components/primitives/BasicModal';
+import { Link } from '@/components/primitives/Link';
+import { BaseSuccessView } from '@/components/transactions/FlowCommons/BaseSuccess';
+import { useRootStore } from '@/store/root';
 
 export const FeedbackModal = () => {
   const [feedbackDialogOpen, setFeedbackOpen] = useRootStore((state) => [

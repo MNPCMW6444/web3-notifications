@@ -9,6 +9,9 @@ if (process.env.NEXT_PUBLIC_ENABLE_STAKING === 'true') pageExtensions.push('stak
 
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -39,3 +42,4 @@ module.exports = withBundleAnalyzer({
     ignoreBuildErrors: true,
   },
 });
+1;

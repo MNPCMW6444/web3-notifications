@@ -27,14 +27,14 @@ import {
 import { SignatureLike } from '@ethersproject/bytes';
 import BigNumber from 'bignumber.js';
 import { BigNumberish } from 'ethers';
-import { Approval } from 'src/helpers/useTransactionHandler';
+import { Approval } from '@/helpers/useTransactionHandler';
 import {
   BorrowMigrationReserve,
   SupplyMigrationReserve,
   UserMigrationReserves,
-} from 'src/hooks/migration/useUserMigrationReserves';
-import { UserSummaryForMigration } from 'src/hooks/migration/useUserSummaryForMigration';
-import { FormattedUserReserves } from 'src/hooks/pool/useUserSummaryAndIncentives';
+} from '@/hooks/migration/useUserMigrationReserves';
+import { UserSummaryForMigration } from '@/hooks/migration/useUserSummaryForMigration';
+import { FormattedUserReserves } from '@/hooks/pool/useUserSummaryAndIncentives';
 
 import { RootStore } from './root';
 import {
@@ -187,10 +187,20 @@ export const selectUserReservesMapFromUserReserves = (
     ReserveDataHumanized & FormatReserveUSDResponse & Partial<CalculateReserveIncentivesResponse>
   >[]
 ) => {
-  const v3ReservesMap = userReservesData.reduce((obj, item) => {
-    obj[item.underlyingAsset] = item;
-    return obj;
-  }, {} as Record<string, ComputedUserReserve<ReserveDataHumanized & FormatReserveUSDResponse & Partial<CalculateReserveIncentivesResponse>>>);
+  const v3ReservesMap = userReservesData.reduce(
+    (obj, item) => {
+      obj[item.underlyingAsset] = item;
+      return obj;
+    },
+    {} as Record<
+      string,
+      ComputedUserReserve<
+        ReserveDataHumanized &
+          FormatReserveUSDResponse &
+          Partial<CalculateReserveIncentivesResponse>
+      >
+    >
+  );
 
   return v3ReservesMap;
 };

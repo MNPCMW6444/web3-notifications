@@ -2,8 +2,8 @@ import { Trans } from '@lingui/macro';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackOutlined';
 import { Box, Button, SvgIcon, useMediaQuery, useTheme } from '@mui/material';
 import { useRouter } from 'next/router';
-import { ROUTES } from 'src/components/primitives/Link';
-import { TopInfoPanel } from 'src/components/TopInfoPanel/TopInfoPanel';
+import { ROUTES } from '@/components/primitives/Link';
+import { TopInfoPanel } from '@/components/TopInfoPanel/TopInfoPanel';
 
 export const MigrationTopPanel = () => {
   const router = useRouter();

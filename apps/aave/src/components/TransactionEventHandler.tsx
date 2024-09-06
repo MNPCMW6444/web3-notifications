@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useRootStore } from 'src/store/root';
-import { selectSuccessfulTransactions } from 'src/store/transactionsSelectors';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { selectSuccessfulTransactions } from '@/store/transactionsSelectors';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 export const TransactionEventHandler = () => {
   const [postedTransactions, setPostedTransactions] = useState<{ [chainId: string]: string[] }>({});

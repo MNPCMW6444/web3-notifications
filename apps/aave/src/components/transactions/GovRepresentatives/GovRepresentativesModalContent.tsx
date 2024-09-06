@@ -4,12 +4,12 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { Box, Checkbox, FormControlLabel, OutlinedInput, Stack, Typography } from '@mui/material';
 import { isAddress, parseUnits } from 'ethers/lib/utils';
 import { useState } from 'react';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { ZERO_ADDRESS } from 'src/modules/governance/utils/formatProposal';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getNetworkConfig, networkConfigs } from 'src/utils/marketsAndNetworksConfig';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { ZERO_ADDRESS } from '@/modules/governance/utils/formatProposal';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getNetworkConfig, networkConfigs } from '@/utils/marketsAndNetworksConfig';
 
 import { BaseSuccessView } from '../FlowCommons/BaseSuccess';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';

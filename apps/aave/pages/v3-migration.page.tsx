@@ -3,30 +3,30 @@ import { Box } from '@mui/material';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { ConnectWalletPaper } from 'src/components/ConnectWalletPaper';
-import { ContentContainer } from 'src/components/ContentContainer';
-import { getMarketInfoById } from 'src/components/MarketSwitcher';
-import { useUserMigrationReserves } from 'src/hooks/migration/useUserMigrationReserves';
-import { useUserSummaryAfterMigration } from 'src/hooks/migration/useUserSummaryAfterMigration';
-import { useUserPoolReservesHumanized } from 'src/hooks/pool/useUserPoolReserves';
-import { useUserSummaryAndIncentives } from 'src/hooks/pool/useUserSummaryAndIncentives';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { DashboardContentNoData } from 'src/modules/dashboard/DashboardContentNoData';
-import { MigrationBottomPanel } from 'src/modules/migration/MigrationBottomPanel';
-import { MigrationListBorrowItem } from 'src/modules/migration/MigrationListBorrowItem';
-import { MigrationListItem } from 'src/modules/migration/MigrationListItem';
-import { MigrationListItemLoader } from 'src/modules/migration/MigrationListItemLoader';
-import { MigrationLists } from 'src/modules/migration/MigrationLists';
-import { MigrationTopPanel } from 'src/modules/migration/MigrationTopPanel';
-import { selectCurrentChainIdV3MarketData } from 'src/store/poolSelectors';
-import { useRootStore } from 'src/store/root';
+import { ConnectWalletPaper } from '@/components/ConnectWalletPaper';
+import { ContentContainer } from '@/components/ContentContainer';
+import { getMarketInfoById } from '@/components/MarketSwitcher';
+import { useUserMigrationReserves } from '@/hooks/migration/useUserMigrationReserves';
+import { useUserSummaryAfterMigration } from '@/hooks/migration/useUserSummaryAfterMigration';
+import { useUserPoolReservesHumanized } from '@/hooks/pool/useUserPoolReserves';
+import { useUserSummaryAndIncentives } from '@/hooks/pool/useUserSummaryAndIncentives';
+import { MainLayout } from '@/layouts/MainLayout';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { DashboardContentNoData } from '@/modules/dashboard/DashboardContentNoData';
+import { MigrationBottomPanel } from '@/modules/migration/MigrationBottomPanel';
+import { MigrationListBorrowItem } from '@/modules/migration/MigrationListBorrowItem';
+import { MigrationListItem } from '@/modules/migration/MigrationListItem';
+import { MigrationListItemLoader } from '@/modules/migration/MigrationListItemLoader';
+import { MigrationLists } from '@/modules/migration/MigrationLists';
+import { MigrationTopPanel } from '@/modules/migration/MigrationTopPanel';
+import { selectCurrentChainIdV3MarketData } from '@/store/poolSelectors';
+import { useRootStore } from '@/store/root';
 import {
   CustomMarket,
   getNetworkConfig,
   MarketDataType,
   marketsData,
-} from 'src/utils/marketsAndNetworksConfig';
+} from '@/utils/marketsAndNetworksConfig';
 
 const MigrateV3Modal = dynamic(() =>
   import('src/components/transactions/MigrateV3/MigrateV3Modal').then(

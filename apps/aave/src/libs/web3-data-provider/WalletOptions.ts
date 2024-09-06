@@ -7,7 +7,7 @@ import { InjectedConnector } from '@web3-react/injected-connector';
 import { TorusConnector } from '@web3-react/torus-connector';
 import { ConnectorUpdate } from '@web3-react/types';
 import { WalletLinkConnector } from '@web3-react/walletlink-connector';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 // import { LedgerHQFrameConnector } from 'web3-ledgerhq-frame-connector';
 import { WalletConnectConnector } from './WalletConnectConnector';

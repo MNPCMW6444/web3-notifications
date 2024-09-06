@@ -12,7 +12,7 @@ import { WithTooltipProvidedProps } from '@visx/tooltip/lib/enhancers/withToolti
 import { bisector, extent, max } from 'd3-array';
 import { timeFormat } from 'd3-time-format';
 import React, { Fragment, ReactNode, useCallback, useMemo } from 'react';
-import { FormattedReserveHistoryItem, ReserveRateTimeRange } from 'src/hooks/useReservesHistory';
+import { FormattedReserveHistoryItem, ReserveRateTimeRange } from '@/hooks/useReservesHistory';
 
 type TooltipData = FormattedReserveHistoryItem;
 

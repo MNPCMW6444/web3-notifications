@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Button } from '@mui/material';
 import dynamic from 'next/dynamic';
-import { useWalletModalContext } from 'src/hooks/useWalletModal';
-import { useRootStore } from 'src/store/root';
-import { AUTH } from 'src/utils/mixPanelEvents';
+import { useWalletModalContext } from '@/hooks/useWalletModal';
+import { useRootStore } from '@/store/root';
+import { AUTH } from '@/utils/mixPanelEvents';
 
 const WalletModal = dynamic(() => import('./WalletModal').then((module) => module.WalletModal));
 

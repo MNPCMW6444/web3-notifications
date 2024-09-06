@@ -1,12 +1,12 @@
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Button, SvgIcon, Typography } from '@mui/material';
-import { BasicModal } from 'src/components/primitives/BasicModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { onRampServices } from 'src/ui-config/onRampServicesConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { BasicModal } from '@/components/primitives/BasicModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { onRampServices } from '@/ui-config/onRampServicesConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 type BuyWithFiatModalProps = {
   cryptoSymbol: string;

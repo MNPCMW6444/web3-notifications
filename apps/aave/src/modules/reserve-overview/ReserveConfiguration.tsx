@@ -1,23 +1,23 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Divider, SvgIcon } from '@mui/material';
-import { getFrozenProposalLink } from 'src/components/infoTooltips/FrozenTooltip';
-import { PausedTooltipText } from 'src/components/infoTooltips/PausedTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { Warning } from 'src/components/primitives/Warning';
-import { AMPLWarning } from 'src/components/Warnings/AMPLWarning';
-import { BorrowDisabledWarning } from 'src/components/Warnings/BorrowDisabledWarning';
+import { getFrozenProposalLink } from '@/components/infoTooltips/FrozenTooltip';
+import { PausedTooltipText } from '@/components/infoTooltips/PausedTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { Warning } from '@/components/primitives/Warning';
+import { AMPLWarning } from '@/components/Warnings/AMPLWarning';
+import { BorrowDisabledWarning } from '@/components/Warnings/BorrowDisabledWarning';
 import {
   AssetsBeingOffboarded,
   OffboardingWarning,
-} from 'src/components/Warnings/OffboardingWarning';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { BROKEN_ASSETS } from 'src/hooks/useReservesHistory';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+} from '@/components/Warnings/OffboardingWarning';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { BROKEN_ASSETS } from '@/hooks/useReservesHistory';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { BorrowInfo } from './BorrowInfo';
 import { InterestRateModelGraphContainer } from './graphs/InterestRateModelGraphContainer';

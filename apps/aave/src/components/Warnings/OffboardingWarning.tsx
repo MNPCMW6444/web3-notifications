@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
+import { CustomMarket } from '@/ui-config/marketsConfig';
 
 import { Link } from '../primitives/Link';
 

@@ -1,10 +1,7 @@
 import { ChainId } from '@aave/contract-helpers';
 import { useQuery } from '@tanstack/react-query';
 import request, { gql } from 'graphql-request';
-import {
-  getDestinationChainFor,
-  laneConfig,
-} from 'src/components/transactions/Bridge/BridgeConfig';
+import { getDestinationChainFor, laneConfig } from '@/components/transactions/Bridge/BridgeConfig';
 
 type SubgraphBridgeTransaction = {
   id: string;
@@ -103,7 +100,7 @@ const getSendRequests = async (url: string, sender: string) => {
 };
 
 const mergeAndSortTransactions = (transactions: BridgeTransaction[][]) => {
-  return (transactions as any).flat().sort((a:any, b:any) => b.blockTimestamp - a.blockTimestamp);
+  return (transactions as any).flat().sort((a: any, b: any) => b.blockTimestamp - a.blockTimestamp);
 };
 
 export const useBridgeTransactionHistory = (sender: string) => {

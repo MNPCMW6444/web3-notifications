@@ -1,8 +1,8 @@
 import { FeeData } from '@ethersproject/abstract-provider';
 import { useQueries } from '@tanstack/react-query';
-import { GasOption } from 'src/components/transactions/GasStation/GasStationProvider';
-import { useRootStore } from 'src/store/root';
-import { queryKeysFactory } from 'src/ui-config/queries';
+import { GasOption } from '@/components/transactions/GasStation/GasStationProvider';
+import { useRootStore } from '@/store/root';
+import { queryKeysFactory } from '@/ui-config/queries';
 
 type GasInfo = {
   legacyGasPrice: string;

@@ -10,8 +10,8 @@ import {
 } from '@aave/contract-helpers';
 import { BigNumber } from 'ethers';
 import { formatUnits } from 'ethers/lib/utils';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 export type PayloadParams = {
   payloadControllerAddress: string;

@@ -1,15 +1,15 @@
 import { ArrowNarrowRightIcon, ExternalLinkIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Button, Paper, Stack, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { ConnectWalletPaper } from 'src/components/ConnectWalletPaper';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { ListWrapper } from 'src/components/lists/ListWrapper';
-import { Link } from 'src/components/primitives/Link';
-import { useBridgeTransactionHistory } from 'src/hooks/useBridgeTransactionHistory';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
+import { ConnectWalletPaper } from '@/components/ConnectWalletPaper';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { ListWrapper } from '@/components/lists/ListWrapper';
+import { Link } from '@/components/primitives/Link';
+import { useBridgeTransactionHistory } from '@/hooks/useBridgeTransactionHistory';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
 
 import LandingGhost from '/public/resting-gho-hat-purple.svg';
 

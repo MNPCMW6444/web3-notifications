@@ -9,8 +9,8 @@ import {
 } from '@mui/material';
 import { isAddress } from 'ethers/lib/utils';
 import { useEffect, useState } from 'react';
-import { useIsContractAddress } from 'src/hooks/useIsContractAddress';
-import { getENSProvider } from 'src/utils/marketsAndNetworksConfig';
+import { useIsContractAddress } from '@/hooks/useIsContractAddress';
+import { getENSProvider } from '@/utils/marketsAndNetworksConfig';
 
 export const BridgeDestinationInput = ({
   connectedAccount,
@@ -132,8 +132,8 @@ export const BridgeDestinationInput = ({
             useConnectedAccount || fetchingIsContractAddress
               ? 'hidden'
               : showWarning
-              ? 'visible'
-              : 'hidden',
+                ? 'visible'
+                : 'hidden',
         }}
         variant="helperText"
         color="error.main"

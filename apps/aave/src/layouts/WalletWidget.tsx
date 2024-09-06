@@ -19,15 +19,15 @@ import {
   useTheme,
 } from '@mui/material';
 import React, { useState } from 'react';
-import { AvatarSize } from 'src/components/Avatar';
-import { CompactMode } from 'src/components/CompactableTypography';
-import { Warning } from 'src/components/primitives/Warning';
-import { UserDisplay } from 'src/components/UserDisplay';
-import { WalletModal } from 'src/components/WalletConnection/WalletModal';
-import { useWalletModalContext } from 'src/hooks/useWalletModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { AUTH, GENERAL } from 'src/utils/mixPanelEvents';
+import { AvatarSize } from '@/components/Avatar';
+import { CompactMode } from '@/components/CompactableTypography';
+import { Warning } from '@/components/primitives/Warning';
+import { UserDisplay } from '@/components/UserDisplay';
+import { WalletModal } from '@/components/WalletConnection/WalletModal';
+import { useWalletModalContext } from '@/hooks/useWalletModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { AUTH, GENERAL } from '@/utils/mixPanelEvents';
 
 import { Link } from '../components/primitives/Link';
 import { ENABLE_TESTNET, getNetworkConfig, STAGING_ENV } from '../utils/marketsAndNetworksConfig';

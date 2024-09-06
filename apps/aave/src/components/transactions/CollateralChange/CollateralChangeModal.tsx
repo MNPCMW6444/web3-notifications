@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import React from 'react';
-import { UserAuthenticated } from 'src/components/UserAuthenticated';
-import { ModalContextType, ModalType, useModalContext } from 'src/hooks/useModal';
+import { UserAuthenticated } from '@/components/UserAuthenticated';
+import { ModalContextType, ModalType, useModalContext } from '@/hooks/useModal';
 
 import { BasicModal } from '../../primitives/BasicModal';
 import { ModalWrapper } from '../FlowCommons/ModalWrapper';

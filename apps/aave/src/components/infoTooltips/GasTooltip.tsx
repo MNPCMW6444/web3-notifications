@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { TextWithTooltip, TextWithTooltipProps } from '../TextWithTooltip';
 

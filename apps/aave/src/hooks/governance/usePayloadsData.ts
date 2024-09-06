@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { PayloadParams } from 'src/services/GovernanceV3Service';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { PayloadParams } from '@/services/GovernanceV3Service';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const usePayloadsData = (params: PayloadParams[]) => {
   const { governanceV3Service } = useSharedDependencies();

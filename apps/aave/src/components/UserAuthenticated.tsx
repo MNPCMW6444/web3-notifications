@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import {
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
+} from '@/hooks/app-data-provider/useAppDataProvider';
 import invariant from 'tiny-invariant';
 
 interface UserAuthenticatedProps {

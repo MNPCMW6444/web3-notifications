@@ -1,5 +1,5 @@
 import { DelegationType } from '@aave/contract-helpers';
-import { useGovernanceDelegate } from 'src/helpers/useGovernanceDelegate';
+import { useGovernanceDelegate } from '@/helpers/useGovernanceDelegate';
 
 import { DelegationTxsWrapper } from '../DelegationTxsWrapper';
 import { DelegationTokenType } from './DelegationTokenSelector';

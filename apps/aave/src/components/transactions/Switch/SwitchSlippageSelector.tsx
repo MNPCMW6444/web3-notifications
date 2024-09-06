@@ -12,8 +12,8 @@ import {
   Typography,
 } from '@mui/material';
 import { MouseEvent, useState } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Warning } from 'src/components/primitives/Warning';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Warning } from '@/components/primitives/Warning';
 
 import { ValidationData } from './SwitchModalContent';
 

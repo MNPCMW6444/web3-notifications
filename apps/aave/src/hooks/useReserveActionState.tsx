@@ -1,18 +1,18 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Button, Stack, SvgIcon, Typography } from '@mui/material';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { Warning } from 'src/components/primitives/Warning';
-import { getEmodeMessage } from 'src/components/transactions/Emode/EmodeNaming';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { Warning } from '@/components/primitives/Warning';
+import { getEmodeMessage } from '@/components/transactions/Emode/EmodeNaming';
 import {
   ComputedReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { WalletEmptyInfo } from 'src/modules/dashboard/lists/SupplyAssetsList/WalletEmptyInfo';
-import { useRootStore } from 'src/store/root';
-import { assetCanBeBorrowedByUser } from 'src/utils/getMaxAmountAvailableToBorrow';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { WalletEmptyInfo } from '@/modules/dashboard/lists/SupplyAssetsList/WalletEmptyInfo';
+import { useRootStore } from '@/store/root';
+import { assetCanBeBorrowedByUser } from '@/utils/getMaxAmountAvailableToBorrow';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
 
 import { useModalContext } from './useModal';
 

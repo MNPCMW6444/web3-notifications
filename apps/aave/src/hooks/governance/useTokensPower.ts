@@ -1,10 +1,10 @@
 import { useQueries } from '@tanstack/react-query';
-import { FixedPointDecimal } from 'src/architecture/FixedPointDecimal';
-import { TokenDelegationPower } from 'src/services/DelegationTokenService';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { FixedPointDecimal } from '@/architecture/FixedPointDecimal';
+import { TokenDelegationPower } from '@/services/DelegationTokenService';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const useTokensPowers = (tokens: string[]) => {
   const { delegationTokenService } = useSharedDependencies();

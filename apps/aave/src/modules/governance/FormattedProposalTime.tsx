@@ -3,7 +3,7 @@ import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { useCurrentTimestamp } from 'src/hooks/useCurrentTimestamp';
+import { useCurrentTimestamp } from '@/hooks/useCurrentTimestamp';
 
 dayjs.extend(relativeTime);
 

@@ -1,8 +1,8 @@
 import { QueryObserverResult, RefetchOptions, RefetchQueryFilters } from '@tanstack/react-query';
 import { ethers } from 'ethers';
 import { BigNumber } from 'ethers/lib/ethers';
-import { Powers } from 'src/services/GovernanceService';
-import { GovernanceTokensBalance } from 'src/services/WalletBalanceService';
+import { Powers } from '@/services/GovernanceService';
+import { GovernanceTokensBalance } from '@/services/WalletBalanceService';
 
 import { useGovernanceTokens } from './useGovernanceTokens';
 import { usePowers } from './usePowers';

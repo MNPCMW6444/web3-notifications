@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
+import { CustomMarket } from '@/ui-config/marketsConfig';
 
 // Add support for the sx prop for consistency with the other branches.
 const Anchor = styled('a')({});

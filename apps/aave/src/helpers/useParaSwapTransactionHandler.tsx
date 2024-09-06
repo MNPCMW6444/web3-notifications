@@ -3,13 +3,13 @@ import { SignatureLike } from '@ethersproject/bytes';
 import { TransactionResponse } from '@ethersproject/providers';
 import { useQueryClient } from '@tanstack/react-query';
 import { DependencyList, useEffect, useRef, useState } from 'react';
-import { SIGNATURE_AMOUNT_MARGIN } from 'src/hooks/paraswap/common';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { ApprovalMethod } from 'src/store/walletSlice';
-import { getErrorTextFromError, TxAction } from 'src/ui-config/errorMapping';
-import { queryKeysFactory } from 'src/ui-config/queries';
+import { SIGNATURE_AMOUNT_MARGIN } from '@/hooks/paraswap/common';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { ApprovalMethod } from '@/store/walletSlice';
+import { getErrorTextFromError, TxAction } from '@/ui-config/errorMapping';
+import { queryKeysFactory } from '@/ui-config/queries';
 
 import { MOCK_SIGNED_HASH } from './useTransactionHandler';
 

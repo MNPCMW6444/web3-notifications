@@ -2,8 +2,8 @@ import { InformationCircleIcon } from '@heroicons/react/outline';
 import { Box, BoxProps, IconButton, SvgIcon, Typography } from '@mui/material';
 import { TypographyProps } from '@mui/material/Typography';
 import { JSXElementConstructor, ReactElement, ReactNode, useState } from 'react';
-import { TrackEventProps } from 'src/store/analyticsSlice';
-import { useRootStore } from 'src/store/root';
+import { TrackEventProps } from '@/store/analyticsSlice';
+import { useRootStore } from '@/store/root';
 
 import { ContentWithTooltip } from './ContentWithTooltip';
 

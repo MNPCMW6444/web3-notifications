@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Paper, Typography } from '@mui/material';
-import { ConnectWalletButton } from 'src/components/WalletConnection/ConnectWalletButton';
-import { useRootStore } from 'src/store/root';
+import { ConnectWalletButton } from '@/components/WalletConnection/ConnectWalletButton';
+import { useRootStore } from '@/store/root';
 
 import { DelegatedInfoPanel } from './DelegatedInfoPanel';
 import { RepresentativesInfoPanel } from './RepresentativesInfoPanel';

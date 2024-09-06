@@ -3,18 +3,18 @@ import { normalize, UserIncentiveData } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { Reward } from 'src/helpers/types';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { Reward } from '@/helpers/types';
 import {
   ComputedReserveData,
   ExtendedFormattedUser,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 import { TxErrorView } from '../FlowCommons/Error';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';

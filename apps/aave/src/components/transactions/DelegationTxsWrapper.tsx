@@ -2,9 +2,9 @@ import { CheckIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, BoxProps, Button, CircularProgress, SvgIcon, Typography } from '@mui/material';
 import { ReactNode } from 'react';
-import { TxStateType, useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { TxAction } from 'src/ui-config/errorMapping';
+import { TxStateType, useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { TxAction } from '@/ui-config/errorMapping';
 
 interface TxActionsWrapperProps extends BoxProps {
   approvalTxState?: TxStateType;

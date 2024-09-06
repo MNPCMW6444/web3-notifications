@@ -1,11 +1,11 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button, Typography, useTheme } from '@mui/material';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
-import { AIP } from 'src/utils/mixPanelEvents';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
+import { AIP } from '@/utils/mixPanelEvents';
 
 import { LensIcon } from '../../../components/icons/LensIcon';
 import { TxErrorView } from '../FlowCommons/Error';

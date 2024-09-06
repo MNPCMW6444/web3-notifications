@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const useRepresentatives = (user: string) => {
   const { governanceV3Service } = useSharedDependencies();

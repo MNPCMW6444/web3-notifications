@@ -3,11 +3,11 @@ import { Trans } from '@lingui/macro';
 import { Box, Menu, MenuItem, SvgIcon, Typography } from '@mui/material';
 import * as React from 'react';
 import { useState } from 'react';
-import { CircleIcon } from 'src/components/CircleIcon';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
+import { CircleIcon } from '@/components/CircleIcon';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
 
 import { RESERVE_DETAILS } from '../../utils/mixPanelEvents';
 

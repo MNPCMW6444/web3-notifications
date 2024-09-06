@@ -8,7 +8,7 @@ import {
   SvgIcon,
   Typography,
 } from '@mui/material';
-import { MarketLogo } from 'src/components/MarketSwitcher';
+import { MarketLogo } from '@/components/MarketSwitcher';
 
 import { SupportedNetworkWithChainId } from './common';
 

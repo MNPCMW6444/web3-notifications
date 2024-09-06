@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
-import { MainLayout } from 'src/layouts/MainLayout';
-import FaucetAssetsList from 'src/modules/faucet/FaucetAssetsList';
-import { FaucetTopPanel } from 'src/modules/faucet/FaucetTopPanel';
+import { MainLayout } from '@/layouts/MainLayout';
+import FaucetAssetsList from '@/modules/faucet/FaucetAssetsList';
+import { FaucetTopPanel } from '@/modules/faucet/FaucetTopPanel';
 
 import { ContentContainer } from '../src/components/ContentContainer';
 

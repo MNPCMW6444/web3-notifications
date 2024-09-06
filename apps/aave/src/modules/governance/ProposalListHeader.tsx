@@ -8,8 +8,8 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { useRootStore } from 'src/store/root';
-import { GOVERNANCE_PAGE } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { GOVERNANCE_PAGE } from '@/utils/mixPanelEvents';
 
 import { SearchInput } from '../../components/SearchInput';
 import { TitleWithSearchBar } from '../../components/TitleWithSearchBar';

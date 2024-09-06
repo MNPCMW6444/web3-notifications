@@ -1,7 +1,7 @@
 import { ArrowNarrowRightIcon } from '@heroicons/react/outline';
 import { Skeleton, Stack, SvgIcon } from '@mui/material';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListItem } from 'src/components/lists/ListItem';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListItem } from '@/components/lists/ListItem';
 
 export const TransactionListItemLoader = () => {
   return (

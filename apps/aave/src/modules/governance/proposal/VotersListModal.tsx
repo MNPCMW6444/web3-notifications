@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { useState } from 'react';
-import { Row } from 'src/components/primitives/Row';
-import StyledToggleButton from 'src/components/StyledToggleButton';
-import StyledToggleButtonGroup from 'src/components/StyledToggleButtonGroup';
-import { ProposalVotes } from 'src/hooks/governance/useProposalVotes';
+import { Row } from '@/components/primitives/Row';
+import StyledToggleButton from '@/components/StyledToggleButton';
+import StyledToggleButtonGroup from '@/components/StyledToggleButtonGroup';
+import { ProposalVotes } from '@/hooks/governance/useProposalVotes';
 
 import { BasicModal } from '../../../components/primitives/BasicModal';
 import { ProposalVoteInfo } from '../utils/formatProposal';

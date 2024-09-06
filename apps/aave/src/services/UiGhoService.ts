@@ -1,7 +1,7 @@
 import { GhoService } from '@aave/contract-helpers';
 import { Provider } from '@ethersproject/providers';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { GHO_MINTING_MARKETS } from 'src/utils/ghoUtilities';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { GHO_MINTING_MARKETS } from '@/utils/ghoUtilities';
 import invariant from 'tiny-invariant';
 
 export class UiGhoService {

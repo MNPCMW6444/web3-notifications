@@ -2,10 +2,10 @@ import { ChainId } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
 import { Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
-import { Warning } from 'src/components/primitives/Warning';
-import { useRootStore } from 'src/store/root';
-import { NetworkConfig } from 'src/ui-config/networksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { Warning } from '@/components/primitives/Warning';
+import { useRootStore } from '@/store/root';
+import { NetworkConfig } from '@/ui-config/networksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { Link } from '../../../../components/primitives/Link';
 

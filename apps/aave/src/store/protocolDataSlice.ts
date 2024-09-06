@@ -1,11 +1,11 @@
 import { providers, utils } from 'ethers';
-import { permitByChainAndToken } from 'src/ui-config/permitConfig';
+import { permitByChainAndToken } from '@/ui-config/permitConfig';
 import {
   availableMarkets,
   getNetworkConfig,
   getProvider,
   marketsData,
-} from 'src/utils/marketsAndNetworksConfig';
+} from '@/utils/marketsAndNetworksConfig';
 import { StateCreator } from 'zustand';
 
 import { CustomMarket, MarketDataType } from '../ui-config/marketsConfig';

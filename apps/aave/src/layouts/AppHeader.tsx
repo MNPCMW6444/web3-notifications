@@ -19,10 +19,10 @@ import {
 import Box from '@mui/material/Box';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { ContentWithTooltip } from 'src/components/ContentWithTooltip';
-import { useModalContext } from 'src/hooks/useModal';
-import { useRootStore } from 'src/store/root';
-import { ENABLE_TESTNET, FORK_ENABLED } from 'src/utils/marketsAndNetworksConfig';
+import { ContentWithTooltip } from '@/components/ContentWithTooltip';
+import { useModalContext } from '@/hooks/useModal';
+import { useRootStore } from '@/store/root';
+import { ENABLE_TESTNET, FORK_ENABLED } from '@/utils/marketsAndNetworksConfig';
 
 import { Link } from '../components/primitives/Link';
 import { useProtocolDataContext } from '../hooks/useProtocolDataContext';

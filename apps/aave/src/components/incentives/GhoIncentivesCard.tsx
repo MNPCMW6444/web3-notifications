@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { Box, Tooltip, Typography, TypographyProps } from '@mui/material';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
 
 import { PopperComponent } from '../ContentWithTooltip';
 import GhoBorrowApyRange from '../GhoBorrowApyRange';

@@ -1,12 +1,12 @@
 import { Trans } from '@lingui/macro';
 import { Button } from '@mui/material';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { useModalContext } from 'src/hooks/useModal';
-import { useRootStore } from 'src/store/root';
-import { DashboardReserve } from 'src/utils/dashboardSortUtils';
-import { GENERAL } from 'src/utils/mixPanelEvents';
-import { showSuperFestTooltip, Side } from 'src/utils/utils';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { useModalContext } from '@/hooks/useModal';
+import { useRootStore } from '@/store/root';
+import { DashboardReserve } from '@/utils/dashboardSortUtils';
+import { GENERAL } from '@/utils/mixPanelEvents';
+import { showSuperFestTooltip, Side } from '@/utils/utils';
 
 import { ListColumn } from '../../../../components/lists/ListColumn';
 import { useProtocolDataContext } from '../../../../hooks/useProtocolDataContext';

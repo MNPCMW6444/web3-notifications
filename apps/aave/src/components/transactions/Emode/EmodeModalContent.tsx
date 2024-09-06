@@ -3,20 +3,20 @@ import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, Link, SvgIcon, Typography } from '@mui/material';
 import { useState } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { Warning } from 'src/components/primitives/Warning';
-import { EmodeCategory } from 'src/helpers/types';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { Warning } from '@/components/primitives/Warning';
+import { EmodeCategory } from '@/helpers/types';
 import {
   AppDataContextType,
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useCurrentTimestamp } from 'src/hooks/useCurrentTimestamp';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useCurrentTimestamp } from '@/hooks/useCurrentTimestamp';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 import LightningBoltGradient from '/public/lightningBoltGradient.svg';
 

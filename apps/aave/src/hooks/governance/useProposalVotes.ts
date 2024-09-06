@@ -3,8 +3,8 @@ import { normalizeBN } from '@aave/math-utils';
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { Contract } from 'ethers';
 import request, { gql } from 'graphql-request';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 export type ProposalVote = {
   proposalId: string;

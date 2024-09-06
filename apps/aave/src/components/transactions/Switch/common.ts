@@ -1,9 +1,9 @@
-import { BaseNetworkConfig } from 'src/ui-config/networksConfig';
+import { BaseNetworkConfig } from '@/ui-config/networksConfig';
 import {
   getSupportedChainIds,
   marketsData,
   networkConfigs,
-} from 'src/utils/marketsAndNetworksConfig';
+} from '@/utils/marketsAndNetworksConfig';
 
 export interface SupportedNetworkWithChainId extends BaseNetworkConfig {
   chainId: number;

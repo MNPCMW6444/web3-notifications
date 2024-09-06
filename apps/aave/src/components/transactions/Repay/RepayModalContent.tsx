@@ -16,12 +16,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 import { Asset, AssetInput } from '../AssetInput';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';
@@ -287,7 +287,7 @@ export const RepayModalContent = ({
         poolReserve={poolReserve}
         amountToRepay={isMaxSelected ? repayMax : amount}
         poolAddress={
-          repayWithATokens ? poolReserve.underlyingAsset : tokenToRepayWith.address ?? ''
+          repayWithATokens ? poolReserve.underlyingAsset : (tokenToRepayWith.address ?? '')
         }
         isWrongNetwork={isWrongNetwork}
         symbol={modalSymbol}

@@ -3,14 +3,14 @@ import { Trans } from '@lingui/macro';
 import { Box, Button, Paper, Typography } from '@mui/material';
 import { constants } from 'ethers';
 import { formatUnits } from 'ethers/lib/utils';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { Warning } from 'src/components/primitives/Warning';
-import { ConnectWalletButton } from 'src/components/WalletConnection/ConnectWalletButton';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { useVotingPowerAt } from 'src/hooks/governance/useVotingPowerAt';
-import { useModalContext } from 'src/hooks/useModal';
-import { useRootStore } from 'src/store/root';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { Warning } from '@/components/primitives/Warning';
+import { ConnectWalletButton } from '@/components/WalletConnection/ConnectWalletButton';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { useVotingPowerAt } from '@/hooks/governance/useVotingPowerAt';
+import { useModalContext } from '@/hooks/useModal';
+import { useRootStore } from '@/store/root';
 
 import { networkConfigs } from '../../../ui-config/networksConfig';
 

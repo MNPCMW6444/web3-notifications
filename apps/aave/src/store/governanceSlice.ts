@@ -5,8 +5,8 @@ import {
   GovDelegateByType,
   GovernancePowerDelegationTokenService,
 } from '@aave/contract-helpers';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 import { StateCreator } from 'zustand';
 
 import { RootStore } from './root';

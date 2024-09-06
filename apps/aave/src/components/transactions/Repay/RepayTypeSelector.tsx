@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
-import { StyledTxModalToggleButton } from 'src/components/StyledToggleButton';
-import { StyledTxModalToggleGroup } from 'src/components/StyledToggleButtonGroup';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { REPAY_MODAL } from 'src/utils/mixPanelEvents';
+import { StyledTxModalToggleButton } from '@/components/StyledToggleButton';
+import { StyledTxModalToggleGroup } from '@/components/StyledToggleButtonGroup';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { REPAY_MODAL } from '@/utils/mixPanelEvents';
 
 export enum RepayType {
   BALANCE,

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { ContentContainer } from 'src/components/ContentContainer';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { HistoryTopPanel } from 'src/modules/history/HistoryTopPanel';
-import { HistoryWrapper } from 'src/modules/history/HistoryWrapper';
-import { useRootStore } from 'src/store/root';
+import { ContentContainer } from '@/components/ContentContainer';
+import { MainLayout } from '@/layouts/MainLayout';
+import { HistoryTopPanel } from '@/modules/history/HistoryTopPanel';
+import { HistoryWrapper } from '@/modules/history/HistoryWrapper';
+import { useRootStore } from '@/store/root';
 
 export default function History() {
   const trackEvent = useRootStore((store) => store.trackEvent);

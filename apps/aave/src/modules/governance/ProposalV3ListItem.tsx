@@ -1,10 +1,10 @@
 import { Box, Stack, Typography } from '@mui/material';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { useRootStore } from 'src/store/root';
-import { GOVERNANCE_PAGE } from 'src/utils/mixPanelEvents';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { useRootStore } from '@/store/root';
+import { GOVERNANCE_PAGE } from '@/utils/mixPanelEvents';
 
 import { StateBadge } from './StateBadge';
 import { VoteBar } from './VoteBar';

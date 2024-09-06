@@ -1,11 +1,11 @@
 import { InterestRate } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
 import React, { useState } from 'react';
-import { UserAuthenticated } from 'src/components/UserAuthenticated';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { ModalContextType, ModalType, useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { isFeatureEnabled } from 'src/utils/marketsAndNetworksConfig';
+import { UserAuthenticated } from '@/components/UserAuthenticated';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
+import { ModalContextType, ModalType, useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { isFeatureEnabled } from '@/utils/marketsAndNetworksConfig';
 
 import { BasicModal } from '../../primitives/BasicModal';
 import { ModalWrapper } from '../FlowCommons/ModalWrapper';

@@ -1,9 +1,9 @@
 import { ProtocolAction } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
-import { useTransactionHandler } from 'src/helpers/useTransactionHandler';
-import { UserMigrationReserves } from 'src/hooks/migration/useUserMigrationReserves';
-import { UserSummaryForMigration } from 'src/hooks/migration/useUserSummaryForMigration';
-import { useRootStore } from 'src/store/root';
+import { useTransactionHandler } from '@/helpers/useTransactionHandler';
+import { UserMigrationReserves } from '@/hooks/migration/useUserMigrationReserves';
+import { UserSummaryForMigration } from '@/hooks/migration/useUserSummaryForMigration';
+import { useRootStore } from '@/store/root';
 
 import { TxActionsWrapper } from '../TxActionsWrapper';
 

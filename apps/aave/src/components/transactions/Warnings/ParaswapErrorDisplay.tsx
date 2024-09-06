@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
-import { Warning } from 'src/components/primitives/Warning';
-import { TxErrorType } from 'src/ui-config/errorMapping';
+import { Warning } from '@/components/primitives/Warning';
+import { TxErrorType } from '@/ui-config/errorMapping';
 
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';
 

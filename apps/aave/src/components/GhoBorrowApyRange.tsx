@@ -8,7 +8,7 @@ import {
 import { Variant } from '@mui/material/styles/createTypography';
 import { OverridableStringUnion } from '@mui/types';
 import React from 'react';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
 
 import { FormattedNumber } from './primitives/FormattedNumber';
 

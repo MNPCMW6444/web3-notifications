@@ -1,8 +1,8 @@
 import { InterestRate } from '@aave/contract-helpers';
 import { valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
-import { Warning } from 'src/components/primitives/Warning';
-import { useModalContext } from 'src/hooks/useModal';
+import { Warning } from '@/components/primitives/Warning';
+import { useModalContext } from '@/hooks/useModal';
 
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';
 import { ModalWrapperProps } from '../FlowCommons/ModalWrapper';

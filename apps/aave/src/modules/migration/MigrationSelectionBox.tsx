@@ -1,6 +1,6 @@
 import { CheckIcon, MinusSmIcon } from '@heroicons/react/solid';
 import { Box, SvgIcon, useTheme } from '@mui/material';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
 
 interface MigrationSelectionBoxProps {
   allSelected: boolean;

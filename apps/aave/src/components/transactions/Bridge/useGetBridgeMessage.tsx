@@ -2,7 +2,7 @@ import { BigNumber, constants, Contract, utils } from 'ethers';
 import { formatEther, formatUnits, parseUnits } from 'ethers/lib/utils';
 import debounce from 'lodash/debounce';
 import { useEffect, useMemo, useState } from 'react';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 import { MessageDetails, TokenAmount } from './BridgeActions';
 import { getChainSelectorFor, getRouterFor, laneConfig } from './BridgeConfig';

@@ -1,6 +1,6 @@
 import { UiIncentiveDataProvider } from '@aave/contract-helpers';
 import { Provider } from '@ethersproject/providers';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 import invariant from 'tiny-invariant';
 
 export class UiIncentivesService {

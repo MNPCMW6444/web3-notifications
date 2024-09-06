@@ -1,7 +1,7 @@
 import { UiStakeDataProviderV3 } from '@aave/contract-helpers';
 import { Provider } from '@ethersproject/providers';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { stakeConfig } from 'src/ui-config/stakeConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { stakeConfig } from '@/ui-config/stakeConfig';
 
 export class UiStakeDataService {
   constructor(private readonly getProvider: (chainId: number) => Provider) {}

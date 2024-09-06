@@ -7,22 +7,22 @@ import {
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 import { useState } from 'react';
-import { APYTypeTooltip } from 'src/components/infoTooltips/APYTypeTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { StyledTxModalToggleButton } from 'src/components/StyledToggleButton';
-import { StyledTxModalToggleGroup } from 'src/components/StyledToggleButtonGroup';
+import { APYTypeTooltip } from '@/components/infoTooltips/APYTypeTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { StyledTxModalToggleButton } from '@/components/StyledToggleButton';
+import { StyledTxModalToggleGroup } from '@/components/StyledToggleButtonGroup';
 import {
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { ERC20TokenType } from 'src/libs/web3-data-provider/Web3Provider';
-import { getMaxAmountAvailableToBorrow } from 'src/utils/getMaxAmountAvailableToBorrow';
-import { GENERAL } from 'src/utils/mixPanelEvents';
-import { roundToTokenDecimals } from 'src/utils/utils';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { ERC20TokenType } from '@/libs/web3-data-provider/Web3Provider';
+import { getMaxAmountAvailableToBorrow } from '@/utils/getMaxAmountAvailableToBorrow';
+import { GENERAL } from '@/utils/mixPanelEvents';
+import { roundToTokenDecimals } from '@/utils/utils';
 
 import { CapType } from '../../caps/helper';
 import { AssetInput } from '../AssetInput';

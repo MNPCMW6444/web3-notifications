@@ -1,5 +1,5 @@
 import { formatUnits } from 'ethers/lib/utils';
-import { fetchIconSymbolAndName, IconSymbolInterface } from 'src/ui-config/reservePatches';
+import { fetchIconSymbolAndName, IconSymbolInterface } from '@/ui-config/reservePatches';
 
 import {
   hasAmountAndReserve,
@@ -38,18 +38,21 @@ export const downloadData = (fileName: string, content: string, mimeType: string
 export const groupByDate = (
   transactions: TransactionHistoryItemUnion[]
 ): Record<string, TransactionHistoryItemUnion[]> => {
-  return transactions.reduce((grouped, transaction) => {
-    const date = new Intl.DateTimeFormat(undefined, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }).format(new Date(transaction.timestamp * 1000));
-    if (!grouped[date]) {
-      grouped[date] = [];
-    }
-    grouped[date].push(transaction);
-    return grouped;
-  }, {} as Record<string, TransactionHistoryItemUnion[]>);
+  return transactions.reduce(
+    (grouped, transaction) => {
+      const date = new Intl.DateTimeFormat(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }).format(new Date(transaction.timestamp * 1000));
+      if (!grouped[date]) {
+        grouped[date] = [];
+      }
+      grouped[date].push(transaction);
+      return grouped;
+    },
+    {} as Record<string, TransactionHistoryItemUnion[]>
+  );
 };
 
 interface MappedReserveData {

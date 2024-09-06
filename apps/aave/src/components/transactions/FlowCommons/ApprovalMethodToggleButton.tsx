@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import * as React from 'react';
-import { ApprovalMethod } from 'src/store/walletSlice';
+import { ApprovalMethod } from '@/store/walletSlice';
 
 interface ApprovalMethodToggleButtonProps {
   currentMethod: ApprovalMethod;

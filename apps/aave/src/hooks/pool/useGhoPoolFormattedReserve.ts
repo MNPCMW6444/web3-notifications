@@ -1,7 +1,7 @@
 import { ReservesDataHumanized } from '@aave/contract-helpers';
 import { formatGhoReserveData, GhoReserveData } from '@aave/math-utils';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { GHO_SYMBOL } from '@/utils/ghoUtilities';
 
 import { useGhoPoolsReserve } from './useGhoPoolReserve';
 import { usePoolsReservesHumanized } from './usePoolReserves';

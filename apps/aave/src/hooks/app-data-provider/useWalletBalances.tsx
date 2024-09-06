@@ -1,9 +1,9 @@
 import { API_ETH_MOCK_ADDRESS, ReservesDataHumanized } from '@aave/contract-helpers';
 import { nativeToUSD, normalize, USD_DECIMALS } from '@aave/math-utils';
 import { BigNumber } from 'bignumber.js';
-import { UserPoolTokensBalances } from 'src/services/WalletBalanceService';
-import { useRootStore } from 'src/store/root';
-import { MarketDataType, networkConfigs } from 'src/utils/marketsAndNetworksConfig';
+import { UserPoolTokensBalances } from '@/services/WalletBalanceService';
+import { useRootStore } from '@/store/root';
+import { MarketDataType, networkConfigs } from '@/utils/marketsAndNetworksConfig';
 
 import { usePoolsReservesHumanized } from '../pool/usePoolReserves';
 import { usePoolsTokensBalance } from '../pool/usePoolTokensBalance';

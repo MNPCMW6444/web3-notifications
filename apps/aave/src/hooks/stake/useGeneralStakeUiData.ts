@@ -4,9 +4,9 @@ import { normalize } from '@aave/math-utils';
 import { useQuery } from '@tanstack/react-query';
 import { BigNumber } from 'ethers';
 import { formatUnits } from 'ethers/lib/utils';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { POLLING_INTERVAL, queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { POLLING_INTERVAL, queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { getStakeIndex, oracles, stakedTokens } from './common';
 

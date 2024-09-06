@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalType, useModalContext } from 'src/hooks/useModal';
+import { ModalType, useModalContext } from '@/hooks/useModal';
 
 import { BasicModal } from '../../primitives/BasicModal';
 import { UnStakeModalContent } from './UnStakeModalContent';

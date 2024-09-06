@@ -1,7 +1,7 @@
 import { Box, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import { Fragment } from 'react';
-import { ProposalVote } from 'src/hooks/governance/useProposalVotes';
+import { ProposalVote } from '@/hooks/governance/useProposalVotes';
 
 import { VotersListItem } from './VotersListItem';
 

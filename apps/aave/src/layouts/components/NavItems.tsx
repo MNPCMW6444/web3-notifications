@@ -1,8 +1,8 @@
 import { useLingui } from '@lingui/react';
 import { Button, List, ListItem, Typography, useMediaQuery, useTheme } from '@mui/material';
 import * as React from 'react';
-import { useRootStore } from 'src/store/root';
-import { NAV_BAR } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { NAV_BAR } from '@/utils/mixPanelEvents';
 
 import { Link } from '../../components/primitives/Link';
 import { useProtocolDataContext } from '../../hooks/useProtocolDataContext';

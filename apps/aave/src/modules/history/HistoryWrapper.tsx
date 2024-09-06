@@ -11,13 +11,13 @@ import {
   useTheme,
 } from '@mui/material';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { ConnectWalletPaper } from 'src/components/ConnectWalletPaper';
-import { ListWrapper } from 'src/components/lists/ListWrapper';
-import { SearchInput } from 'src/components/SearchInput';
-import { applyTxHistoryFilters, useTransactionHistory } from 'src/hooks/useTransactionHistory';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { TRANSACTION_HISTORY } from 'src/utils/mixPanelEvents';
+import { ConnectWalletPaper } from '@/components/ConnectWalletPaper';
+import { ListWrapper } from '@/components/lists/ListWrapper';
+import { SearchInput } from '@/components/SearchInput';
+import { applyTxHistoryFilters, useTransactionHistory } from '@/hooks/useTransactionHistory';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { TRANSACTION_HISTORY } from '@/utils/mixPanelEvents';
 
 import LandingGhost from '/public/resting-gho-hat-purple.svg';
 

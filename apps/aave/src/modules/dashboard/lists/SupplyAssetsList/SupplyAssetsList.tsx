@@ -4,16 +4,16 @@ import { Trans } from '@lingui/macro';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import BigNumber from 'bignumber.js';
 import { Fragment, useState } from 'react';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { Warning } from 'src/components/primitives/Warning';
-import { MarketWarning } from 'src/components/transactions/Warnings/MarketWarning';
-import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
-import { useWrappedTokens } from 'src/hooks/useWrappedTokens';
-import { useRootStore } from 'src/store/root';
-import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { Warning } from '@/components/primitives/Warning';
+import { MarketWarning } from '@/components/transactions/Warnings/MarketWarning';
+import { AssetCapsProvider } from '@/hooks/useAssetCaps';
+import { useWrappedTokens } from '@/hooks/useWrappedTokens';
+import { useRootStore } from '@/store/root';
+import { fetchIconSymbolAndName } from '@/ui-config/reservePatches';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
 
 import { ListWrapper } from '../../../../components/lists/ListWrapper';
 import { Link, ROUTES } from '../../../../components/primitives/Link';
@@ -100,8 +100,8 @@ export const SupplyAssetsList = () => {
         ? reserve.reserveLiquidationThreshold !== '0' &&
           (!isIsolated || (isIsolated && !hasDifferentCollateral))
         : !isIsolated
-        ? false
-        : !hasDifferentCollateral;
+          ? false
+          : !hasDifferentCollateral;
 
       if (reserve.isWrappedBaseAsset) {
         let baseAvailableToDeposit = valueToBigNumber(
@@ -190,8 +190,8 @@ export const SupplyAssetsList = () => {
   const supplyReserves: unknown = isShowZeroAssets
     ? sortedSupplyReserves
     : filteredSupplyReserves.length >= 1
-    ? filteredSupplyReserves
-    : sortedSupplyReserves;
+      ? filteredSupplyReserves
+      : sortedSupplyReserves;
 
   // Transform to the DashboardReserve schema so the sort utils can work with it
   const preSortedReserves = supplyReserves as DashboardReserve[];

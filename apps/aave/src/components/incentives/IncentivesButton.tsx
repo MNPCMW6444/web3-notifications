@@ -3,9 +3,9 @@ import { ReserveIncentiveResponse } from '@aave/math-utils/dist/esm/formatters/i
 import { DotsHorizontalIcon } from '@heroicons/react/solid';
 import { Box, SvgIcon, Typography } from '@mui/material';
 import { useState } from 'react';
-import { useMeritIncentives, useUserMeritIncentives } from 'src/hooks/useMeritIncentives';
-import { useRootStore } from 'src/store/root';
-import { DASHBOARD } from 'src/utils/mixPanelEvents';
+import { useMeritIncentives, useUserMeritIncentives } from '@/hooks/useMeritIncentives';
+import { useRootStore } from '@/store/root';
+import { DASHBOARD } from '@/utils/mixPanelEvents';
 
 import { ContentWithTooltip } from '../ContentWithTooltip';
 import { FormattedNumber } from '../primitives/FormattedNumber';
@@ -113,8 +113,8 @@ export const IncentivesButton = ({ incentives, symbol, displayBlank }: Incentive
   const incentivesNetAPR = isIncentivesInfinity
     ? 'Infinity'
     : incentivesAPRSum !== 'Infinity'
-    ? valueToBigNumber(incentivesAPRSum || 0).toNumber()
-    : 'Infinity';
+      ? valueToBigNumber(incentivesAPRSum || 0).toNumber()
+      : 'Infinity';
 
   return (
     <ContentWithTooltip

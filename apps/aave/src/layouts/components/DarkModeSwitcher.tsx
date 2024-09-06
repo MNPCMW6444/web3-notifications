@@ -9,8 +9,8 @@ import {
   useTheme,
 } from '@mui/material';
 import React from 'react';
-import { useRootStore } from 'src/store/root';
-import { SETTINGS } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { SETTINGS } from '@/utils/mixPanelEvents';
 
 import { ColorModeContext } from '../AppGlobalStyles';
 

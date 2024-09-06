@@ -2,9 +2,9 @@ import { CreditCardIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Button, SvgIcon } from '@mui/material';
 import { useState } from 'react';
-import { useCryptoBuyAvailable } from 'src/hooks/useCryptoBuyAvailable';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { useCryptoBuyAvailable } from '@/hooks/useCryptoBuyAvailable';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { BuyWithFiatModal } from './BuyWithFiatModal';
 

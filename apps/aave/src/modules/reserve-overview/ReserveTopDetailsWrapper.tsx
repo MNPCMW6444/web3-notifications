@@ -12,10 +12,10 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { getMarketInfoById, MarketLogo } from 'src/components/MarketSwitcher';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { getMarketInfoById, MarketLogo } from '@/components/MarketSwitcher';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
 
 import { TopInfoPanel } from '../../components/TopInfoPanel/TopInfoPanel';
 import { TopInfoPanelItem } from '../../components/TopInfoPanel/TopInfoPanelItem';

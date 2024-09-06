@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { AlertProps } from '@mui/material';
-import { AssetCapData } from 'src/hooks/useAssetCaps';
+import { AssetCapData } from '@/hooks/useAssetCaps';
 
 import { Link } from '../../primitives/Link';
 import { Warning } from '../../primitives/Warning';

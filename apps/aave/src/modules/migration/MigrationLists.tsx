@@ -4,9 +4,9 @@ import { ReactNode } from 'react';
 import {
   BorrowMigrationReserve,
   SupplyMigrationReserve,
-} from 'src/hooks/migration/useUserMigrationReserves';
-import { useRootStore } from 'src/store/root';
-import { computeSelections, IsolatedReserve } from 'src/store/v3MigrationSelectors';
+} from '@/hooks/migration/useUserMigrationReserves';
+import { useRootStore } from '@/store/root';
+import { computeSelections, IsolatedReserve } from '@/store/v3MigrationSelectors';
 
 import { MigrationList } from './MigrationList';
 

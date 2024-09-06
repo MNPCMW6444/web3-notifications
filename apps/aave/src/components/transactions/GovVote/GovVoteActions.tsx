@@ -4,14 +4,14 @@ import { Trans } from '@lingui/macro';
 import { useQueryClient } from '@tanstack/react-query';
 import { AbiCoder, keccak256, RLP } from 'ethers/lib/utils';
 import { useState } from 'react';
-import { MOCK_SIGNED_HASH } from 'src/helpers/useTransactionHandler';
-import { useGovernanceTokensAndPowers } from 'src/hooks/governance/useGovernanceTokensAndPowers';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { MOCK_SIGNED_HASH } from '@/helpers/useTransactionHandler';
+import { useGovernanceTokensAndPowers } from '@/hooks/governance/useGovernanceTokensAndPowers';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 import { TxActionsWrapper } from '../TxActionsWrapper';
 import { VotingMachineService } from './temporary/VotingMachineService';
@@ -165,11 +165,10 @@ const getVotingBalanceProofs = (
       );
 
       return provider
-        .send<unknown, GetProofResponse>('eth_getProof', [
-          asset.underlyingAsset,
-          [votingPowerSlot],
-          blockHash,
-        ])
+        .send<
+          unknown,
+          GetProofResponse
+        >('eth_getProof', [asset.underlyingAsset, [votingPowerSlot], blockHash])
         .then((rawProof) => {
           return {
             underlyingAsset: asset.underlyingAsset,

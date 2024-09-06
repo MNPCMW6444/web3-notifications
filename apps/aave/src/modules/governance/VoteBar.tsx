@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { Box, BoxProps, experimental_sx, Skeleton, styled, Typography } from '@mui/material';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
 
 const OuterBar = styled('div')(
   experimental_sx({

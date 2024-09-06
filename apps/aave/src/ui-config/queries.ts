@@ -1,4 +1,4 @@
-import { MigrationSupplyException } from 'src/store/v3MigrationSlice';
+import { MigrationSupplyException } from '@/store/v3MigrationSlice';
 
 import { MarketDataType } from './marketsConfig';
 import { TokenInfo } from './TokenList';

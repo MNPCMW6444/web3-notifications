@@ -2,10 +2,10 @@ import { ApproveType, MAX_UINT_AMOUNT, ProtocolAction } from '@aave/contract-hel
 import { SignatureLike } from '@ethersproject/bytes';
 import { constants } from 'ethers';
 import { parseUnits } from 'ethers/lib/utils';
-import { MOCK_SIGNED_HASH } from 'src/helpers/useTransactionHandler';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { getErrorTextFromError, TxAction } from 'src/ui-config/errorMapping';
+import { MOCK_SIGNED_HASH } from '@/helpers/useTransactionHandler';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { getErrorTextFromError, TxAction } from '@/ui-config/errorMapping';
 
 import { useModalContext } from './useModal';
 

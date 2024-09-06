@@ -1,4 +1,4 @@
-import { useWalletModalContext } from 'src/hooks/useWalletModal';
+import { useWalletModalContext } from '@/hooks/useWalletModal';
 
 import { BasicModal } from '../primitives/BasicModal';
 import { WalletSelector } from './WalletSelector';

@@ -1,7 +1,7 @@
-import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { DashboardReserve } from 'src/utils/dashboardSortUtils';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { AssetCapsProvider } from '@/hooks/useAssetCaps';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { DashboardReserve } from '@/utils/dashboardSortUtils';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
 
 import { BorrowedPositionsListItem } from './BorrowedPositionsListItem';
 import { GhoBorrowedPositionsListItem } from './GhoBorrowedPositionsListItem';

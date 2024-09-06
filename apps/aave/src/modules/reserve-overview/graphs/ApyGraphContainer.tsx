@@ -2,9 +2,9 @@ import { Trans } from '@lingui/macro';
 import { Box, Button, CircularProgress, Typography } from '@mui/material';
 import { ParentSize } from '@visx/responsive';
 import { useState } from 'react';
-import type { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { ReserveRateTimeRange, useReserveRatesHistory } from 'src/hooks/useReservesHistory';
-import { MarketDataType } from 'src/utils/marketsAndNetworksConfig';
+import type { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { ReserveRateTimeRange, useReserveRatesHistory } from '@/hooks/useReservesHistory';
+import { MarketDataType } from '@/utils/marketsAndNetworksConfig';
 
 import { ESupportedTimeRanges } from '../TimeRangeSelector';
 import { ApyGraph, PlaceholderChart } from './ApyGraph';

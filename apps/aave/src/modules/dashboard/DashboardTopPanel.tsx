@@ -5,17 +5,17 @@ import { Box, Button, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Link from 'next/link';
 import * as React from 'react';
 import { useState } from 'react';
-import { NetAPYTooltip } from 'src/components/infoTooltips/NetAPYTooltip';
-import { getMarketInfoById } from 'src/components/MarketSwitcher';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ROUTES } from 'src/components/primitives/Link';
-import { PageTitle } from 'src/components/TopInfoPanel/PageTitle';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { selectIsMigrationAvailable } from 'src/store/v3MigrationSelectors';
-import { DASHBOARD, GENERAL } from 'src/utils/mixPanelEvents';
+import { NetAPYTooltip } from '@/components/infoTooltips/NetAPYTooltip';
+import { getMarketInfoById } from '@/components/MarketSwitcher';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ROUTES } from '@/components/primitives/Link';
+import { PageTitle } from '@/components/TopInfoPanel/PageTitle';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { selectIsMigrationAvailable } from '@/store/v3MigrationSelectors';
+import { DASHBOARD, GENERAL } from '@/utils/mixPanelEvents';
 
 import { HealthFactorNumber } from '../../components/HealthFactorNumber';
 import { NoData } from '../../components/primitives/NoData';

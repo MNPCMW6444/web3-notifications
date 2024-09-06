@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 dayjs.extend(relativeTime);
 

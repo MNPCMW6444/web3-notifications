@@ -1,42 +1,35 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es2016",
-    "module": "esnext",
     "jsx": "preserve",
     "allowJs": false,
-    "strict": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["dom", "es2017"],
-    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "jsxImportSource": "@emotion/react",
+    "types": [
+      "vite/client",
+      "vitest"
+    ],
     "noEmit": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "incremental": true,
-    "useUnknownInCatchVariables": false,
+    "isolatedModules": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ]}
   },
-  "exclude": [
-    "dist",
-    ".next",
-    "out",
-    "node_modules",
-    "next.config.js",
-    "postcss.config.js",
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "coverage",
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
   ],
-  "include": ["custom.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "extends": "../../tsconfig.base.json"
 }

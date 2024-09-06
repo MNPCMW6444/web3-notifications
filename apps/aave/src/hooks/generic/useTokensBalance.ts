@@ -1,9 +1,9 @@
 import { formatUnits } from '@ethersproject/units';
 import { useQuery } from '@tanstack/react-query';
 import { Multicall } from 'ethereum-multicall';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { TokenInfo } from 'src/ui-config/TokenList';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { TokenInfo } from '@/ui-config/TokenList';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 export interface TokenInfoWithBalance extends TokenInfo {
   balance: string;

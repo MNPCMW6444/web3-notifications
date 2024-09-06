@@ -6,8 +6,8 @@ import {
   getRouterFor,
   getSupportedSourceChains,
   MessageExecutionState,
-} from 'src/components/transactions/Bridge/BridgeConfig';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+} from '@/components/transactions/Bridge/BridgeConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 import routerAbi from '../components/transactions/Bridge/Router-abi.json';
 

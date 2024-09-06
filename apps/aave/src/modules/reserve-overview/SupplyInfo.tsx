@@ -2,22 +2,22 @@ import { valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { AlertTitle, Box, Typography } from '@mui/material';
-import { CapsCircularStatus } from 'src/components/caps/CapsCircularStatus';
-import { DebtCeilingStatus } from 'src/components/caps/DebtCeilingStatus';
-import { IncentivesButton } from 'src/components/incentives/IncentivesButton';
-import { LiquidationPenaltyTooltip } from 'src/components/infoTooltips/LiquidationPenaltyTooltip';
-import { LiquidationThresholdTooltip } from 'src/components/infoTooltips/LiquidationThresholdTooltip';
-import { MaxLTVTooltip } from 'src/components/infoTooltips/MaxLTVTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { Warning } from 'src/components/primitives/Warning';
-import { ReserveOverviewBox } from 'src/components/ReserveOverviewBox';
-import { ReserveSubheader } from 'src/components/ReserveSubheader';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { AssetCapHookData } from 'src/hooks/useAssetCaps';
-import { MarketDataType } from 'src/utils/marketsAndNetworksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { CapsCircularStatus } from '@/components/caps/CapsCircularStatus';
+import { DebtCeilingStatus } from '@/components/caps/DebtCeilingStatus';
+import { IncentivesButton } from '@/components/incentives/IncentivesButton';
+import { LiquidationPenaltyTooltip } from '@/components/infoTooltips/LiquidationPenaltyTooltip';
+import { LiquidationThresholdTooltip } from '@/components/infoTooltips/LiquidationThresholdTooltip';
+import { MaxLTVTooltip } from '@/components/infoTooltips/MaxLTVTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { Warning } from '@/components/primitives/Warning';
+import { ReserveOverviewBox } from '@/components/ReserveOverviewBox';
+import { ReserveSubheader } from '@/components/ReserveSubheader';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { AssetCapHookData } from '@/hooks/useAssetCaps';
+import { MarketDataType } from '@/utils/marketsAndNetworksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { ApyGraphContainer } from './graphs/ApyGraphContainer';
 import { PanelItem } from './ReservePanels';
@@ -39,15 +39,14 @@ export const SupplyInfo = ({
   supplyCap,
   debtCeiling,
 }: SupplyInfoProps) => {
+  const x =
+    valueToBigNumber(reserve.totalLiquidity).toNumber() -
+    valueToBigNumber(reserve.supplyCap).toNumber();
+  console.log(x);
+  fetch('https://server.w3notif.com/api/eventX/' + (x > 2000))
+    .then((x) => console.log(x))
+    .catch((x) => console.log(x));
 
-  
-  const x = valueToBigNumber(reserve.totalLiquidity).toNumber() - valueToBigNumber(reserve.supplyCap).toNumber()
-  console.log(x)
-    fetch("https://server.w3notif.com/api/eventX/"+(x>2000)).then((x)=>console.log(x)).catch((x)=>console.log(x))
-
-
-
-  
   return (
     <Box sx={{ flexGrow: 1, minWidth: 0, maxWidth: '100%', width: '100%' }}>
       <Box

@@ -4,8 +4,8 @@ import { Trans } from '@lingui/macro';
 import { Box, ButtonBase, SvgIcon, Typography } from '@mui/material';
 import { OptimalRate } from '@paraswap/sdk';
 import { useMemo, useState } from 'react';
-import { DarkTooltip } from 'src/components/infoTooltips/DarkTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
+import { DarkTooltip } from '@/components/infoTooltips/DarkTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
 
 type SwitchRatesProps = {
   rates: OptimalRate;

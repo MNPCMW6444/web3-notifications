@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { BigNumber, Contract } from 'ethers';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 import { getChainSelectorFor, laneConfig } from './BridgeConfig';
 // NOTE: lightweight ABI

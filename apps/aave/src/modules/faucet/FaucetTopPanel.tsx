@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import * as React from 'react';
-import { Link } from 'src/components/primitives/Link';
-import { PageTitle } from 'src/components/TopInfoPanel/PageTitle';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
+import { Link } from '@/components/primitives/Link';
+import { PageTitle } from '@/components/TopInfoPanel/PageTitle';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
 
 import { TopInfoPanel } from '../../components/TopInfoPanel/TopInfoPanel';
 

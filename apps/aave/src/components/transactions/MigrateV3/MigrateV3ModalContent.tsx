@@ -3,16 +3,16 @@ import { Trans } from '@lingui/macro';
 import { Box, Button } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
-import { UserMigrationReserves } from 'src/hooks/migration/useUserMigrationReserves';
-import { UserSummaryForMigration } from 'src/hooks/migration/useUserSummaryForMigration';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
+import { UserMigrationReserves } from '@/hooks/migration/useUserMigrationReserves';
+import { UserSummaryForMigration } from '@/hooks/migration/useUserSummaryForMigration';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
 import {
   selectedUserSupplyReservesForMigration,
   selectSelectedBorrowReservesForMigrationV3,
-} from 'src/store/v3MigrationSelectors';
-import { CustomMarket, getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+} from '@/store/v3MigrationSelectors';
+import { CustomMarket, getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 import { TxErrorView } from '../FlowCommons/Error';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';

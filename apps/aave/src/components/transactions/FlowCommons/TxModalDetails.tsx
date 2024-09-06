@@ -8,9 +8,9 @@ import {
   IsolatedDisabledBadge,
   IsolatedEnabledBadge,
   UnavailableDueToIsolationBadge,
-} from 'src/components/isolationMode/IsolatedBadge';
-import { Row } from 'src/components/primitives/Row';
-import { CollateralType } from 'src/helpers/types';
+} from '@/components/isolationMode/IsolatedBadge';
+import { Row } from '@/components/primitives/Row';
+import { CollateralType } from '@/helpers/types';
 
 import { HealthFactorNumber } from '../../HealthFactorNumber';
 import { IncentivesButton } from '../../incentives/IncentivesButton';

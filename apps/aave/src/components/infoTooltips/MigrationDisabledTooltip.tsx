@@ -2,7 +2,7 @@ import { ExclamationIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 import { ReactNode } from 'react';
-import { MigrationDisabled } from 'src/store/v3MigrationSelectors';
+import { MigrationDisabled } from '@/store/v3MigrationSelectors';
 
 import { Link } from '../primitives/Link';
 import { TextWithTooltip } from '../TextWithTooltip';

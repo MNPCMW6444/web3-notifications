@@ -7,9 +7,9 @@ import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { ReactNode, useEffect, useState } from 'react';
-import { MarketLogo } from 'src/components/MarketSwitcher';
-import { Link } from 'src/components/primitives/Link';
-import { useRootStore } from 'src/store/root';
+import { MarketLogo } from '@/components/MarketSwitcher';
+import { Link } from '@/components/primitives/Link';
+import { useRootStore } from '@/store/root';
 
 interface TopBarNotifyProps {
   notifyText: ReactNode;

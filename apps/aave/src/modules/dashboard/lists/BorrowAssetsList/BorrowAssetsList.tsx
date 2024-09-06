@@ -3,19 +3,16 @@ import { USD_DECIMALS, valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Fragment, useState } from 'react';
-import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { Warning } from 'src/components/primitives/Warning';
-import { MarketWarning } from 'src/components/transactions/Warnings/MarketWarning';
-import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
-import { fetchIconSymbolAndName } from 'src/ui-config/reservePatches';
-import {
-  displayGhoForMintableMarket,
-  findAndFilterMintableGhoReserve,
-} from 'src/utils/ghoUtilities';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { VariableAPYTooltip } from '@/components/infoTooltips/VariableAPYTooltip';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { Warning } from '@/components/primitives/Warning';
+import { MarketWarning } from '@/components/transactions/Warnings/MarketWarning';
+import { AssetCapsProvider } from '@/hooks/useAssetCaps';
+import { fetchIconSymbolAndName } from '@/ui-config/reservePatches';
+import { displayGhoForMintableMarket, findAndFilterMintableGhoReserve } from '@/utils/ghoUtilities';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { CapType } from '../../../../components/caps/helper';
 import { AvailableTooltip } from '../../../../components/infoTooltips/AvailableTooltip';

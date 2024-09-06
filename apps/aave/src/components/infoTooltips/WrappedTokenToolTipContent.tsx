@@ -1,7 +1,7 @@
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, Skeleton, Stack, SvgIcon, Typography } from '@mui/material';
-import { useTokenOutForTokenIn } from 'src/hooks/token-wrapper/useTokenWrapper';
+import { useTokenOutForTokenIn } from '@/hooks/token-wrapper/useTokenWrapper';
 
 import { FormattedNumber } from '../primitives/FormattedNumber';
 

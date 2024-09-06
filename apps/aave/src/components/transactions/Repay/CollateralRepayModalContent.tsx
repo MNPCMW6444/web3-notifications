@@ -5,26 +5,26 @@ import { Trans } from '@lingui/macro';
 import { Box, Stack, SvgIcon, Typography } from '@mui/material';
 import BigNumber from 'bignumber.js';
 import { useRef, useState } from 'react';
-import { PriceImpactTooltip } from 'src/components/infoTooltips/PriceImpactTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
+import { PriceImpactTooltip } from '@/components/infoTooltips/PriceImpactTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
 import {
   ComputedReserveData,
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
+} from '@/hooks/app-data-provider/useAppDataProvider';
 import {
   maxInputAmountWithSlippage,
   minimumReceivedAfterSlippage,
   SwapVariant,
-} from 'src/hooks/paraswap/common';
-import { useCollateralRepaySwap } from 'src/hooks/paraswap/useCollateralRepaySwap';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useZeroLTVBlockingWithdraw } from 'src/hooks/useZeroLTVBlockingWithdraw';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { ListSlippageButton } from 'src/modules/dashboard/lists/SlippageList';
-import { calculateHFAfterRepay } from 'src/utils/hfUtils';
+} from '@/hooks/paraswap/common';
+import { useCollateralRepaySwap } from '@/hooks/paraswap/useCollateralRepaySwap';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useZeroLTVBlockingWithdraw } from '@/hooks/useZeroLTVBlockingWithdraw';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { ListSlippageButton } from '@/modules/dashboard/lists/SlippageList';
+import { calculateHFAfterRepay } from '@/utils/hfUtils';
 
 import { Asset, AssetInput } from '../AssetInput';
 import { ModalWrapperProps } from '../FlowCommons/ModalWrapper';

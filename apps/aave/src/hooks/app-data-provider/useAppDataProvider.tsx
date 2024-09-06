@@ -7,10 +7,10 @@ import {
 } from '@aave/math-utils';
 import { formatUnits } from 'ethers/lib/utils';
 import React, { useContext } from 'react';
-import { EmodeCategory } from 'src/helpers/types';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { GHO_MINTING_MARKETS } from 'src/utils/ghoUtilities';
+import { EmodeCategory } from '@/helpers/types';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { GHO_MINTING_MARKETS } from '@/utils/ghoUtilities';
 
 import { formatEmodes } from '../../store/poolSelectors';
 import {

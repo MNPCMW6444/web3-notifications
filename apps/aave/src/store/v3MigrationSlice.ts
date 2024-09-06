@@ -11,13 +11,13 @@ import { SignatureLike } from '@ethersproject/bytes';
 import dayjs from 'dayjs';
 import { BigNumberish } from 'ethers';
 import { produce } from 'immer';
-import { Approval } from 'src/helpers/useTransactionHandler';
+import { Approval } from '@/helpers/useTransactionHandler';
 import {
   BorrowMigrationReserve,
   SupplyMigrationReserve,
   UserMigrationReserves,
-} from 'src/hooks/migration/useUserMigrationReserves';
-import { UserSummaryForMigration } from 'src/hooks/migration/useUserSummaryForMigration';
+} from '@/hooks/migration/useUserMigrationReserves';
+import { UserSummaryForMigration } from '@/hooks/migration/useUserSummaryForMigration';
 import { StateCreator } from 'zustand';
 
 import { selectCurrentChainIdV3MarketData } from './poolSelectors';

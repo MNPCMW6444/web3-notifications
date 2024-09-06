@@ -1,13 +1,13 @@
 import { Trans } from '@lingui/macro';
 import { Box, Paper, Skeleton, Typography } from '@mui/material';
-import { AvatarSize } from 'src/components/Avatar';
-import { CompactMode } from 'src/components/CompactableTypography';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { UserDisplay } from 'src/components/UserDisplay';
-import { usePowers } from 'src/hooks/governance/usePowers';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { AvatarSize } from '@/components/Avatar';
+import { CompactMode } from '@/components/CompactableTypography';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { UserDisplay } from '@/components/UserDisplay';
+import { usePowers } from '@/hooks/governance/usePowers';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 export function VotingPowerInfoPanel() {
   const { data: powers } = usePowers();

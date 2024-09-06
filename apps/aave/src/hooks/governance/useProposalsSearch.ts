@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import request, { gql } from 'graphql-request';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { fetchProposals, fetchSubgraphProposalsByIds } from './useProposals';
 

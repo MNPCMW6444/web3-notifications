@@ -1,11 +1,11 @@
 import { Trans } from '@lingui/macro';
 import { Button } from '@mui/material';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { DashboardReserve } from 'src/utils/dashboardSortUtils';
-import { DASHBOARD } from 'src/utils/mixPanelEvents';
-import { showSuperFestTooltip, Side } from 'src/utils/utils';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { DashboardReserve } from '@/utils/dashboardSortUtils';
+import { DASHBOARD } from '@/utils/mixPanelEvents';
+import { showSuperFestTooltip, Side } from '@/utils/utils';
 
 import { CapsHint } from '../../../../components/caps/CapsHint';
 import { CapType } from '../../../../components/caps/helper';

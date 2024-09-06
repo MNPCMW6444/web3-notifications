@@ -13,7 +13,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
 
 import { GhoPieChart, PieChartData } from './GhoPieChart';
 

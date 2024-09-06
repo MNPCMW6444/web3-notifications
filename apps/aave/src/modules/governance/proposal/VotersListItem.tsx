@@ -1,11 +1,11 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { Avatar, Box, SvgIcon, Typography } from '@mui/material';
 import { blo } from 'blo';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { ProposalVote } from 'src/hooks/governance/useProposalVotes';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { ProposalVote } from '@/hooks/governance/useProposalVotes';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { textCenterEllipsis } from '../../../helpers/text-center-ellipsis';
 // import type { GovernanceVoter } from './VotersListContainer';
@@ -55,12 +55,12 @@ export const VotersListItem = ({ compact, voter }: VotersListItemProps): JSX.Ele
     displayVotingPower < 1
       ? 4
       : displayVotingPower < 10
-      ? 3
-      : displayVotingPower < 1000 || displayVotingPower > 1000000
-      ? 2
-      : displayVotingPower > 100000
-      ? 1
-      : 0;
+        ? 3
+        : displayVotingPower < 1000 || displayVotingPower > 1000000
+          ? 2
+          : displayVotingPower > 100000
+            ? 1
+            : 0;
 
   // Don't show any results that come back with zero or negative voting power
   if (Number(voter.votingPower) <= 0) return null;

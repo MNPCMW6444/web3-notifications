@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { ReactNode } from 'react';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { ListWrapper } from 'src/components/lists/ListWrapper';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { ListWrapper } from '@/components/lists/ListWrapper';
 
 import { MigrationSelectionBox } from './MigrationSelectionBox';
 

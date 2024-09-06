@@ -1,11 +1,11 @@
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Link, SvgIcon, Typography } from '@mui/material';
-import { ApprovalMethodToggleButton } from 'src/components/transactions/FlowCommons/ApprovalMethodToggleButton';
-import { MOCK_SIGNED_HASH } from 'src/helpers/useTransactionHandler';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { ApprovalMethod } from 'src/store/walletSlice';
+import { ApprovalMethodToggleButton } from '@/components/transactions/FlowCommons/ApprovalMethodToggleButton';
+import { MOCK_SIGNED_HASH } from '@/helpers/useTransactionHandler';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { ApprovalMethod } from '@/store/walletSlice';
 
 export type RightHelperTextProps = {
   approvalHash?: string;

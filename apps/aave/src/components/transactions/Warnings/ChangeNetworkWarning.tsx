@@ -1,10 +1,10 @@
 import { ChainId } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
 import { AlertProps, Button, Typography } from '@mui/material';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { TrackEventProps } from 'src/store/analyticsSlice';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { TrackEventProps } from '@/store/analyticsSlice';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { Warning } from '../../primitives/Warning';
 

@@ -1,8 +1,8 @@
 import { normalize } from '@aave/math-utils';
 import { AaveV3Ethereum } from '@bgd-labs/aave-address-book';
-import { useRootStore } from 'src/store/root';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
-import { amountToUsd } from 'src/utils/utils';
+import { useRootStore } from '@/store/root';
+import { CustomMarket } from '@/ui-config/marketsConfig';
+import { amountToUsd } from '@/utils/utils';
 
 import { useAppDataContext } from './app-data-provider/useAppDataProvider';
 

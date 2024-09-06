@@ -1,6 +1,6 @@
-import { DomainType, WalletDomain } from 'src/store/walletDomains';
-import { getENSProvider } from 'src/utils/marketsAndNetworksConfig';
-import { tFetch } from 'src/utils/tFetch';
+import { DomainType, WalletDomain } from '@/store/walletDomains';
+import { getENSProvider } from '@/utils/marketsAndNetworksConfig';
+import { tFetch } from '@/utils/tFetch';
 
 const mainnetProvider = getENSProvider();
 

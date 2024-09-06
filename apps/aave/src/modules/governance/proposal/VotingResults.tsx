@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { Box, Paper, Skeleton, Typography } from '@mui/material';
-import { CheckBadge } from 'src/components/primitives/CheckBadge';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { ProposalVotes } from 'src/hooks/governance/useProposalVotes';
+import { CheckBadge } from '@/components/primitives/CheckBadge';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { ProposalVotes } from '@/hooks/governance/useProposalVotes';
 
 import { StateBadge } from '../StateBadge';
 import { VoteBar } from '../VoteBar';

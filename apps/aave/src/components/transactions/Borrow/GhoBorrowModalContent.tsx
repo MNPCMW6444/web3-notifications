@@ -11,28 +11,28 @@ import React, { useState } from 'react';
 import {
   GhoIncentivesCard,
   GhoIncentivesCardProps,
-} from 'src/components/incentives/GhoIncentivesCard';
-import { APYTypeTooltip } from 'src/components/infoTooltips/APYTypeTooltip';
-import { FixedAPYTooltip } from 'src/components/infoTooltips/FixedAPYTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ROUTES } from 'src/components/primitives/Link';
-import { NoData } from 'src/components/primitives/NoData';
-import { Row } from 'src/components/primitives/Row';
-import { StyledTxModalToggleButton } from 'src/components/StyledToggleButton';
-import { StyledTxModalToggleGroup } from 'src/components/StyledToggleButtonGroup';
+} from '@/components/incentives/GhoIncentivesCard';
+import { APYTypeTooltip } from '@/components/infoTooltips/APYTypeTooltip';
+import { FixedAPYTooltip } from '@/components/infoTooltips/FixedAPYTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ROUTES } from '@/components/primitives/Link';
+import { NoData } from '@/components/primitives/NoData';
+import { Row } from '@/components/primitives/Row';
+import { StyledTxModalToggleButton } from '@/components/StyledToggleButton';
+import { StyledTxModalToggleGroup } from '@/components/StyledToggleButtonGroup';
 import {
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useGhoPoolReserve } from 'src/hooks/pool/useGhoPoolReserve';
-import { useUserGhoPoolReserve } from 'src/hooks/pool/useUserGhoPoolReserve';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { useModalContext } from 'src/hooks/useModal';
-import { useRootStore } from 'src/store/root';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
-import { getMaxGhoMintAmount } from 'src/utils/getMaxAmountAvailableToBorrow';
-import { ghoUserQualifiesForDiscount, weightedAverageAPY } from 'src/utils/ghoUtilities';
-import { roundToTokenDecimals } from 'src/utils/utils';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useGhoPoolReserve } from '@/hooks/pool/useGhoPoolReserve';
+import { useUserGhoPoolReserve } from '@/hooks/pool/useUserGhoPoolReserve';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { useModalContext } from '@/hooks/useModal';
+import { useRootStore } from '@/store/root';
+import { CustomMarket } from '@/ui-config/marketsConfig';
+import { getMaxGhoMintAmount } from '@/utils/getMaxAmountAvailableToBorrow';
+import { ghoUserQualifiesForDiscount, weightedAverageAPY } from '@/utils/ghoUtilities';
+import { roundToTokenDecimals } from '@/utils/utils';
 
 import { CapType } from '../../caps/helper';
 import { AssetInput } from '../AssetInput';

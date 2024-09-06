@@ -1,7 +1,7 @@
 import { blo } from 'blo';
 import { utils } from 'ethers';
 import { useEffect, useState } from 'react';
-import { getENSProvider } from 'src/utils/marketsAndNetworksConfig';
+import { getENSProvider } from '@/utils/marketsAndNetworksConfig';
 
 const mainnetProvider = getENSProvider();
 

@@ -1,16 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { constants } from 'ethers';
 import request, { gql } from 'graphql-request';
-import { lifecycleToBadge } from 'src/modules/governance/StateBadge';
-import {
-  getLifecycleState,
-  getProposalVoteInfo,
-} from 'src/modules/governance/utils/formatProposal';
-import { GovernanceV3Service } from 'src/services/GovernanceV3Service';
-import { VotingMachineService } from 'src/services/VotingMachineService';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { lifecycleToBadge } from '@/modules/governance/StateBadge';
+import { getLifecycleState, getProposalVoteInfo } from '@/modules/governance/utils/formatProposal';
+import { GovernanceV3Service } from '@/services/GovernanceV3Service';
+import { VotingMachineService } from '@/services/VotingMachineService';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import {
   getSubgraphProposalMetadata,

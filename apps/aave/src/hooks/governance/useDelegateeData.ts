@@ -1,8 +1,8 @@
 import { useQueries } from '@tanstack/react-query';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const useTokenDelegatees = (tokens: string[]) => {
   const { delegationTokenService } = useSharedDependencies();
@@ -22,12 +22,15 @@ export const useGovernanceDelegatees = () => {
   const isLoading = queries.some((elem) => elem.isLoading);
   const error = queries.find((elem) => elem.error)?.error;
   const refetch = () => queries.forEach((elem) => elem.refetch());
-  const allData = queries.reduce((acum, elem) => {
-    if (elem.data) {
-      return acum.concat([elem.data]);
-    }
-    return acum;
-  }, [] as { votingDelegatee: string; propositionDelegatee: string }[]);
+  const allData = queries.reduce(
+    (acum, elem) => {
+      if (elem.data) {
+        return acum.concat([elem.data]);
+      }
+      return acum;
+    },
+    [] as { votingDelegatee: string; propositionDelegatee: string }[]
+  );
   if (allData.length !== 3) {
     return {
       data: undefined,

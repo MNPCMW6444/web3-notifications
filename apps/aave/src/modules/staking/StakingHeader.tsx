@@ -1,13 +1,13 @@
 import { ChainId } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
 import { Box, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { ChainAvailabilityText } from 'src/components/ChainAvailabilityText';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { TopInfoPanel } from 'src/components/TopInfoPanel/TopInfoPanel';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { ChainAvailabilityText } from '@/components/ChainAvailabilityText';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { TopInfoPanel } from '@/components/TopInfoPanel/TopInfoPanel';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { Link } from '../../components/primitives/Link';
 import { TopInfoPanelItem } from '../../components/TopInfoPanel/TopInfoPanelItem';

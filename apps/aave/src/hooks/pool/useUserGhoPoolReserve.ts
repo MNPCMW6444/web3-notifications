@@ -1,10 +1,10 @@
 import { GhoUserData } from '@aave/math-utils';
 import { useQueries, UseQueryOptions } from '@tanstack/react-query';
-import { useRootStore } from 'src/store/root';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { POLLING_INTERVAL, queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
-import { GHO_MINTING_MARKETS } from 'src/utils/ghoUtilities';
+import { useRootStore } from '@/store/root';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { POLLING_INTERVAL, queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
+import { GHO_MINTING_MARKETS } from '@/utils/ghoUtilities';
 
 import { HookOpts } from '../commonTypes';
 
@@ -23,7 +23,7 @@ export const useUserGhoPoolsReserve = <T = GhoUserData>(
           refetchInterval: POLLING_INTERVAL,
           enabled: !!user && GHO_MINTING_MARKETS.includes(marketData.market),
           ...opts,
-        } as UseQueryOptions<GhoUserData | null, Error, T>)
+        }) as UseQueryOptions<GhoUserData | null, Error, T>
     ),
   });
 };

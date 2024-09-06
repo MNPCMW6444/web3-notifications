@@ -1,12 +1,12 @@
 import { valueToBigNumber } from '@aave/math-utils';
 import { SxProps, Theme } from '@mui/system';
 import { createContext, ReactNode, useContext } from 'react';
-import { BorrowCapMaxedTooltip } from 'src/components/infoTooltips/BorrowCapMaxedTooltip';
-import { DebtCeilingMaxedTooltip } from 'src/components/infoTooltips/DebtCeilingMaxedTooltip';
-import { SupplyCapMaxedTooltip } from 'src/components/infoTooltips/SupplyCapMaxedTooltip';
-import { BorrowCapWarning } from 'src/components/transactions/Warnings/BorrowCapWarning';
-import { DebtCeilingWarning } from 'src/components/transactions/Warnings/DebtCeilingWarning';
-import { SupplyCapWarning } from 'src/components/transactions/Warnings/SupplyCapWarning';
+import { BorrowCapMaxedTooltip } from '@/components/infoTooltips/BorrowCapMaxedTooltip';
+import { DebtCeilingMaxedTooltip } from '@/components/infoTooltips/DebtCeilingMaxedTooltip';
+import { SupplyCapMaxedTooltip } from '@/components/infoTooltips/SupplyCapMaxedTooltip';
+import { BorrowCapWarning } from '@/components/transactions/Warnings/BorrowCapWarning';
+import { DebtCeilingWarning } from '@/components/transactions/Warnings/DebtCeilingWarning';
+import { SupplyCapWarning } from '@/components/transactions/Warnings/SupplyCapWarning';
 
 import { ComputedReserveData } from './app-data-provider/useAppDataProvider';
 

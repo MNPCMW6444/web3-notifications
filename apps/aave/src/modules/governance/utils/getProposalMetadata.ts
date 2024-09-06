@@ -2,7 +2,7 @@ import { ProposalMetadata } from '@aave/contract-helpers';
 import { base58 } from 'ethers/lib/utils';
 import matter from 'gray-matter';
 import fetch from 'isomorphic-unfetch';
-import { fallbackIpfsGateway, ipfsGateway } from 'src/ui-config/governanceConfig';
+import { fallbackIpfsGateway, ipfsGateway } from '@/ui-config/governanceConfig';
 
 type MemorizeMetadata = Record<string, ProposalMetadata>;
 const MEMORIZE: MemorizeMetadata = {};

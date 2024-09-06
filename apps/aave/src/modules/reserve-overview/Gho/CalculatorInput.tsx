@@ -2,10 +2,10 @@ import { Trans } from '@lingui/macro';
 import { Box, OutlinedInput, Slider, Tooltip, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { NumberFormatValues } from 'react-number-format';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { NumberFormatCustom } from 'src/components/transactions/AssetInput';
-import { useRootStore } from 'src/store/root';
-import { RESERVE_DETAILS } from 'src/utils/mixPanelEvents';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { NumberFormatCustom } from '@/components/transactions/AssetInput';
+import { useRootStore } from '@/store/root';
+import { RESERVE_DETAILS } from '@/utils/mixPanelEvents';
 
 const sliderStyles = {
   color: '#669AFF',

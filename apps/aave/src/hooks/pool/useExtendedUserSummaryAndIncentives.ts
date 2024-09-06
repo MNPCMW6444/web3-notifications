@@ -1,7 +1,7 @@
 import { FormatUserSummaryAndIncentivesResponse } from '@aave/math-utils';
-import { UserReservesDataHumanized } from 'src/services/UIPoolService';
-import { reserveSortFn } from 'src/store/poolSelectors';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { UserReservesDataHumanized } from '@/services/UIPoolService';
+import { reserveSortFn } from '@/store/poolSelectors';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 import { FormattedReservesAndIncentives } from './usePoolFormattedReserves';
 import { useUserPoolsReservesHumanized } from './useUserPoolReserves';

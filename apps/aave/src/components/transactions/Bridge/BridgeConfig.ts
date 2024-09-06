@@ -5,8 +5,8 @@ import {
   AaveV3Ethereum,
   AaveV3Sepolia,
 } from '@bgd-labs/aave-address-book';
-import { BaseNetworkConfig, networkConfigs } from 'src/ui-config/networksConfig';
-import { ENABLE_TESTNET } from 'src/utils/marketsAndNetworksConfig';
+import { BaseNetworkConfig, networkConfigs } from '@/ui-config/networksConfig';
+import { ENABLE_TESTNET } from '@/utils/marketsAndNetworksConfig';
 
 export const bridgeGasLimit = '252000';
 

@@ -3,9 +3,9 @@ import {
   VotingMachineDataHelperService,
   VotingMachineProposal,
 } from '@aave/contract-helpers';
-import { ZERO_ADDRESS } from 'src/modules/governance/utils/formatProposal';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { ZERO_ADDRESS } from '@/modules/governance/utils/formatProposal';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 type VotingChainProposal = {
   [chainId: number]: {

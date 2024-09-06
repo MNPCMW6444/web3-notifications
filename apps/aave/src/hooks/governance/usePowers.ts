@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { useRootStore } from 'src/store/root';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { POLLING_INTERVAL, queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useRootStore } from '@/store/root';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { POLLING_INTERVAL, queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const usePowers = (blockHash?: string) => {
   const { governanceService } = useSharedDependencies();

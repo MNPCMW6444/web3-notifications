@@ -2,16 +2,16 @@ import { valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Skeleton, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { BigNumber } from 'bignumber.js';
-import GhoBorrowApyRange from 'src/components/GhoBorrowApyRange';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
+import GhoBorrowApyRange from '@/components/GhoBorrowApyRange';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
 import {
   ComputedReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useRootStore } from 'src/store/root';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useRootStore } from '@/store/root';
 
 interface GhoBannerProps {
   reserve?: ComputedReserveData;

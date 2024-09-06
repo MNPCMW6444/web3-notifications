@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
 import { ReactNode } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
 
 export type Asset = {
   underlyingAsset: string;

@@ -1,9 +1,9 @@
 import { ProtocolAction } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
-import { Reward } from 'src/helpers/types';
-import { useTransactionHandler } from 'src/helpers/useTransactionHandler';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useRootStore } from 'src/store/root';
+import { Reward } from '@/helpers/types';
+import { useTransactionHandler } from '@/helpers/useTransactionHandler';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useRootStore } from '@/store/root';
 
 import { TxActionsWrapper } from '../TxActionsWrapper';
 

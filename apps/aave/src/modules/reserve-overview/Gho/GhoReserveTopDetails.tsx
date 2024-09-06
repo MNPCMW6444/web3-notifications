@@ -2,13 +2,13 @@ import { valueToBigNumber } from '@aave/math-utils';
 import { Trans } from '@lingui/macro';
 import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { BigNumber } from 'bignumber.js';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { TopInfoPanelItem } from 'src/components/TopInfoPanel/TopInfoPanelItem';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { TopInfoPanelItem } from '@/components/TopInfoPanel/TopInfoPanelItem';
 import {
   ComputedReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
+} from '@/hooks/app-data-provider/useAppDataProvider';
 
 export const GhoReserveTopDetails = ({ reserve }: { reserve: ComputedReserveData }) => {
   const { ghoLoadingData } = useAppDataContext();

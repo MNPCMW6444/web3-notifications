@@ -1,7 +1,7 @@
 import { PERMISSION, PermissionManager } from '@aave/contract-helpers';
 import React, { useContext, useEffect, useState } from 'react';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { getProvider, isFeatureEnabled } from 'src/utils/marketsAndNetworksConfig';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { getProvider, isFeatureEnabled } from '@/utils/marketsAndNetworksConfig';
 
 import { useProtocolDataContext } from './useProtocolDataContext';
 

@@ -1,5 +1,5 @@
 import { Skeleton, Typography, TypographyProps } from '@mui/material';
-import { textCenterEllipsis } from 'src/helpers/text-center-ellipsis';
+import { textCenterEllipsis } from '@/helpers/text-center-ellipsis';
 
 export interface CompactableTypographyProps extends TypographyProps {
   children: string;

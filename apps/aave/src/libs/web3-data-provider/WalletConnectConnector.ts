@@ -4,7 +4,7 @@ import {
 } from '@walletconnect/ethereum-provider/dist/types/EthereumProvider';
 import { AbstractConnector } from '@web3-react/abstract-connector';
 import { ConnectorUpdate } from '@web3-react/types';
-import { getNetworkConfig, getSupportedChainIds } from 'src/utils/marketsAndNetworksConfig';
+import { getNetworkConfig, getSupportedChainIds } from '@/utils/marketsAndNetworksConfig';
 import invariant from 'tiny-invariant';
 
 export const URI_AVAILABLE = 'URI_AVAILABLE';
@@ -27,11 +27,14 @@ export class WalletConnectConnector extends AbstractConnector {
 
     const supportedChainIds = getSupportedChainIds();
 
-    const rpcMap = supportedChainIds.reduce((acc, network) => {
-      const config = getNetworkConfig(network);
-      acc[network] = config.privateJsonRPCUrl || config.publicJsonRPCUrl[0];
-      return acc;
-    }, {} as { [networkId: number]: string });
+    const rpcMap = supportedChainIds.reduce(
+      (acc, network) => {
+        const config = getNetworkConfig(network);
+        acc[network] = config.privateJsonRPCUrl || config.publicJsonRPCUrl[0];
+        return acc;
+      },
+      {} as { [networkId: number]: string }
+    );
 
     this.config = {
       chains: [defaultChainId],

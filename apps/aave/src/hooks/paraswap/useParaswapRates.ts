@@ -2,7 +2,7 @@ import { OptimalRate, SwapSide } from '@paraswap/sdk';
 import { RateOptions } from '@paraswap/sdk/dist/methods/swap/rates';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { BigNumber, constants, PopulatedTransaction } from 'ethers';
-import { queryKeysFactory } from 'src/ui-config/queries';
+import { queryKeysFactory } from '@/ui-config/queries';
 
 import { getFeeClaimerAddress, getParaswap } from './common';
 

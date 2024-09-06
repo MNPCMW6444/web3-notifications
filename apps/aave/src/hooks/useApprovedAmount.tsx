@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { useRootStore } from 'src/store/root';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useRootStore } from '@/store/root';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const useApprovedAmount = ({
   chainId,

@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button } from '@mui/material';
 import { useState } from 'react';
-import { DarkTooltip } from 'src/components/infoTooltips/DarkTooltip';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { DarkTooltip } from '@/components/infoTooltips/DarkTooltip';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { GetABPTokenModal } from './GetABPTokenModal';
 

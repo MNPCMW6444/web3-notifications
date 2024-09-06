@@ -6,8 +6,8 @@ import {
 } from '@aave/contract-helpers';
 import { Provider } from '@ethersproject/providers';
 import { PopulatedTransaction } from 'ethers';
-import { FixedPointDecimal } from 'src/architecture/FixedPointDecimal';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
+import { FixedPointDecimal } from '@/architecture/FixedPointDecimal';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
 
 export interface TokenDelegationPower {
   address: string;

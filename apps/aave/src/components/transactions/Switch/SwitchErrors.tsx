@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
-import { Warning } from 'src/components/primitives/Warning';
+import { Warning } from '@/components/primitives/Warning';
 
 import { ParaswapRatesError } from './ParaswapRatesError';
 

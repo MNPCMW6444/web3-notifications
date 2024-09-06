@@ -2,9 +2,9 @@ import { DelegationType } from '@aave/contract-helpers';
 import { Box, FormControlLabel, Radio, RadioGroup, Typography } from '@mui/material';
 import FormControl from '@mui/material/FormControl';
 import { useEffect } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Row } from 'src/components/primitives/Row';
-import { useGovernanceTokens } from 'src/hooks/governance/useGovernanceTokens';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Row } from '@/components/primitives/Row';
+import { useGovernanceTokens } from '@/hooks/governance/useGovernanceTokens';
 
 import { TokenIcon } from '../../primitives/TokenIcon';
 

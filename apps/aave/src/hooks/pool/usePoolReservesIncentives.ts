@@ -1,8 +1,8 @@
 import { ReservesIncentiveDataHumanized } from '@aave/contract-helpers';
 import { useQueries, UseQueryOptions } from '@tanstack/react-query';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { POLLING_INTERVAL, queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { POLLING_INTERVAL, queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { HookOpts } from '../commonTypes';
 
@@ -19,7 +19,7 @@ export const usePoolsReservesIncentivesHumanized = <T = ReservesIncentiveDataHum
           queryFn: () => uiIncentivesService.getReservesIncentivesDataHumanized(marketData),
           refetchInterval: POLLING_INTERVAL,
           ...opts,
-        } as UseQueryOptions<ReservesIncentiveDataHumanized[], Error>)
+        }) as UseQueryOptions<ReservesIncentiveDataHumanized[], Error>
     ),
   });
 };

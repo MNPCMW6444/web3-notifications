@@ -5,27 +5,27 @@ import BigNumber from 'bignumber.js';
 import { constants } from 'ethers';
 import { formatUnits, parseUnits } from 'ethers/lib/utils';
 import React, { useEffect, useState } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { NoData } from 'src/components/primitives/NoData';
-import { Row } from 'src/components/primitives/Row';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { Warning } from 'src/components/primitives/Warning';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { NoData } from '@/components/primitives/NoData';
+import { Row } from '@/components/primitives/Row';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { Warning } from '@/components/primitives/Warning';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
 import {
   DetailsNumberLine,
   TxModalDetails,
-} from 'src/components/transactions/FlowCommons/TxModalDetails';
-import { NetworkSelect } from 'src/components/transactions/NetworkSelect';
-import { ConnectWalletButton } from 'src/components/WalletConnection/ConnectWalletButton';
-import { useBridgeTokens } from 'src/hooks/bridge/useBridgeWalletBalance';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { TokenInfo } from 'src/ui-config/TokenList';
-import { GHO_SYMBOL } from 'src/utils/ghoUtilities';
-import { getNetworkConfig, marketsData } from 'src/utils/marketsAndNetworksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+} from '@/components/transactions/FlowCommons/TxModalDetails';
+import { NetworkSelect } from '@/components/transactions/NetworkSelect';
+import { ConnectWalletButton } from '@/components/WalletConnection/ConnectWalletButton';
+import { useBridgeTokens } from '@/hooks/bridge/useBridgeWalletBalance';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { TokenInfo } from '@/ui-config/TokenList';
+import { GHO_SYMBOL } from '@/utils/ghoUtilities';
+import { getNetworkConfig, marketsData } from '@/utils/marketsAndNetworksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { AssetInput } from '../AssetInput';
 import { TxErrorView } from '../FlowCommons/Error';

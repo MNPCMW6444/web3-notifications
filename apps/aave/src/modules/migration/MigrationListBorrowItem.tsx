@@ -1,7 +1,7 @@
 import { InterestRate } from '@aave/contract-helpers';
 import { useMemo } from 'react';
-import { MigrationUserReserve, V3Rates } from 'src/store/v3MigrationSelectors';
-import { MigrationSelectedBorrowAsset } from 'src/store/v3MigrationSlice';
+import { MigrationUserReserve, V3Rates } from '@/store/v3MigrationSelectors';
+import { MigrationSelectedBorrowAsset } from '@/store/v3MigrationSlice';
 
 import { MigrationListItem } from './MigrationListItem';
 

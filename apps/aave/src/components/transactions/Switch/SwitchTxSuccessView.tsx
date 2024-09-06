@@ -1,8 +1,8 @@
 import { ArrowRightIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, SvgIcon, Typography } from '@mui/material';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ExternalTokenIcon } from 'src/components/primitives/TokenIcon';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ExternalTokenIcon } from '@/components/primitives/TokenIcon';
 
 import { BaseSuccessView } from '../FlowCommons/BaseSuccess';
 

@@ -2,10 +2,10 @@ import { DuplicateIcon, RefreshIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Link, Paper, SvgIcon, Typography, useTheme } from '@mui/material';
 import { useEffect } from 'react';
-import { ContentContainer } from 'src/components/ContentContainer';
-import { TopInfoPanel } from 'src/components/TopInfoPanel/TopInfoPanel';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { useRootStore } from 'src/store/root';
+import { ContentContainer } from '@/components/ContentContainer';
+import { TopInfoPanel } from '@/components/TopInfoPanel/TopInfoPanel';
+import { MainLayout } from '@/layouts/MainLayout';
+import { useRootStore } from '@/store/root';
 
 export default function Aave500Page() {
   const theme = useTheme();

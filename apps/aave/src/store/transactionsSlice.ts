@@ -1,6 +1,6 @@
 import { ProtocolAction } from '@aave/contract-helpers';
 import { produce } from 'immer';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
+import { CustomMarket } from '@/ui-config/marketsConfig';
 import { StateCreator } from 'zustand';
 
 import { RootStore } from './root';

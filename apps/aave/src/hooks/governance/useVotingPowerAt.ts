@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { useRootStore } from 'src/store/root';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useRootStore } from '@/store/root';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const useVotingPowerAt = (blockhash: string, votingAssets: string[]) => {
   const { governanceV3Service } = useSharedDependencies();

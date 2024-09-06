@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { useRootStore } from 'src/store/root';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { useRootStore } from '@/store/root';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 export const useIsContractAddress = (address: string, chainId?: number) => {
   const defaultChainId = useRootStore((store) => store.currentChainId);

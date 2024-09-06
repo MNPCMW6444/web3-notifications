@@ -4,7 +4,7 @@ import {
   AaveV3Optimism,
   AaveV3Polygon,
 } from '@bgd-labs/aave-address-book';
-import { unPrefixSymbol } from 'src/hooks/app-data-provider/useAppDataProvider';
+import { unPrefixSymbol } from '@/hooks/app-data-provider/useAppDataProvider';
 
 /**
  * Maps onchain symbols to different symbols.

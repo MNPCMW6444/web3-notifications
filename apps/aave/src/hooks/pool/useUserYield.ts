@@ -5,12 +5,12 @@ import {
 } from '@aave/math-utils';
 import BigNumber from 'bignumber.js';
 import memoize from 'micro-memoize';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 import {
   displayGhoForMintableMarket,
   GHO_MINTING_MARKETS,
   weightedAverageAPY,
-} from 'src/utils/ghoUtilities';
+} from '@/utils/ghoUtilities';
 
 import { useGhoPoolsFormattedReserve } from './useGhoPoolFormattedReserve';
 import {

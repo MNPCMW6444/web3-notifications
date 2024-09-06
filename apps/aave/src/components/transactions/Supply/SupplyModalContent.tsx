@@ -4,32 +4,29 @@ import { Trans } from '@lingui/macro';
 import { Skeleton, Stack, Typography } from '@mui/material';
 import BigNumber from 'bignumber.js';
 import React, { useEffect, useState } from 'react';
-import { WrappedTokenTooltipContent } from 'src/components/infoTooltips/WrappedTokenToolTipContent';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { Warning } from 'src/components/primitives/Warning';
-import { TextWithTooltip } from 'src/components/TextWithTooltip';
-import { AMPLWarning } from 'src/components/Warnings/AMPLWarning';
-import { CollateralType } from 'src/helpers/types';
-import { useWalletBalances } from 'src/hooks/app-data-provider/useWalletBalances';
+import { WrappedTokenTooltipContent } from '@/components/infoTooltips/WrappedTokenToolTipContent';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { Warning } from '@/components/primitives/Warning';
+import { TextWithTooltip } from '@/components/TextWithTooltip';
+import { AMPLWarning } from '@/components/Warnings/AMPLWarning';
+import { CollateralType } from '@/helpers/types';
+import { useWalletBalances } from '@/hooks/app-data-provider/useWalletBalances';
 import {
   useTokenInForTokenOut,
   useTokenOutForTokenIn,
-} from 'src/hooks/token-wrapper/useTokenWrapper';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWrappedTokens, WrappedTokenConfig } from 'src/hooks/useWrappedTokens';
-import { ERC20TokenType } from 'src/libs/web3-data-provider/Web3Provider';
-import { useRootStore } from 'src/store/root';
-import {
-  getMaxAmountAvailableToSupply,
-  remainingCap,
-} from 'src/utils/getMaxAmountAvailableToSupply';
-import { calculateHFAfterSupply } from 'src/utils/hfUtils';
-import { isFeatureEnabled } from 'src/utils/marketsAndNetworksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
-import { roundToTokenDecimals } from 'src/utils/utils';
+} from '@/hooks/token-wrapper/useTokenWrapper';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWrappedTokens, WrappedTokenConfig } from '@/hooks/useWrappedTokens';
+import { ERC20TokenType } from '@/libs/web3-data-provider/Web3Provider';
+import { useRootStore } from '@/store/root';
+import { getMaxAmountAvailableToSupply, remainingCap } from '@/utils/getMaxAmountAvailableToSupply';
+import { calculateHFAfterSupply } from '@/utils/hfUtils';
+import { isFeatureEnabled } from '@/utils/marketsAndNetworksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
+import { roundToTokenDecimals } from '@/utils/utils';
 
 import {
   ExtendedFormattedUser,

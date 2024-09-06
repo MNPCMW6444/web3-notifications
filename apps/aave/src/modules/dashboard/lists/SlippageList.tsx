@@ -12,9 +12,9 @@ import {
   Typography,
 } from '@mui/material';
 import * as React from 'react';
-import { SlippageTooltip } from 'src/components/infoTooltips/SlippageTooltip';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { SlippageTooltip } from '@/components/infoTooltips/SlippageTooltip';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import Paraswap from '/public/icons/other/paraswap.svg';
 

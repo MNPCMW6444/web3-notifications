@@ -1,10 +1,10 @@
 import { ExternalLinkIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Button, SvgIcon, Typography } from '@mui/material';
-import { BasicModal } from 'src/components/primitives/BasicModal';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { BasicModal } from '@/components/primitives/BasicModal';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 type GetABPTokenModalProps = {
   open: boolean;

@@ -13,8 +13,8 @@ import { WithTooltipProvidedProps } from '@visx/tooltip/lib/enhancers/withToolti
 import { bisector, extent, max } from 'd3-array';
 import { timeFormat } from 'd3-time-format';
 import React, { Fragment, useCallback, useMemo } from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ReserveRateTimeRange } from 'src/hooks/useReservesHistory';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ReserveRateTimeRange } from '@/hooks/useReservesHistory';
 
 type TooltipData = GhoInterestRate;
 

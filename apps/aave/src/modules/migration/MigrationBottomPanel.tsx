@@ -14,13 +14,13 @@ import {
   useTheme,
 } from '@mui/material';
 import { useState } from 'react';
-import { Row } from 'src/components/primitives/Row';
-import { Warning } from 'src/components/primitives/Warning';
-import { IsolationModeWarning } from 'src/components/transactions/Warnings/IsolationModeWarning';
-import { UserSummaryAfterMigration } from 'src/hooks/migration/useUserSummaryAfterMigration';
-import { UserSummaryAndIncentives } from 'src/hooks/pool/useUserSummaryAndIncentives';
-import { useModalContext } from 'src/hooks/useModal';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { Row } from '@/components/primitives/Row';
+import { Warning } from '@/components/primitives/Warning';
+import { IsolationModeWarning } from '@/components/transactions/Warnings/IsolationModeWarning';
+import { UserSummaryAfterMigration } from '@/hooks/migration/useUserSummaryAfterMigration';
+import { UserSummaryAndIncentives } from '@/hooks/pool/useUserSummaryAndIncentives';
+import { useModalContext } from '@/hooks/useModal';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 import { MigrationMarketCard, SelectableMarkets } from './MigrationMarketCard';
 

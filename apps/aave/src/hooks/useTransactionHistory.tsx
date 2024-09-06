@@ -7,14 +7,14 @@ import {
   hasReserve,
   HistoryFilters,
   TransactionHistoryItemUnion,
-} from 'src/modules/history/types';
+} from '@/modules/history/types';
 import {
   USER_TRANSACTIONS_V2,
   USER_TRANSACTIONS_V2_WITH_POOL,
-} from 'src/modules/history/v2-user-history-query';
-import { USER_TRANSACTIONS_V3 } from 'src/modules/history/v3-user-history-query';
-import { useRootStore } from 'src/store/root';
-import { queryKeysFactory } from 'src/ui-config/queries';
+} from '@/modules/history/v2-user-history-query';
+import { USER_TRANSACTIONS_V3 } from '@/modules/history/v3-user-history-query';
+import { useRootStore } from '@/store/root';
+import { queryKeysFactory } from '@/ui-config/queries';
 
 export const applyTxHistoryFilters = ({
   searchQuery,

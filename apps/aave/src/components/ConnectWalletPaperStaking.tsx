@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { CircularProgress, Grid, Paper, PaperProps, Typography } from '@mui/material';
 import { ReactNode } from 'react';
-import { StakingPanelNoWallet } from 'src/modules/staking/StakingPanelNoWallet';
+import { StakingPanelNoWallet } from '@/modules/staking/StakingPanelNoWallet';
 
 import { ConnectWalletButton } from './WalletConnection/ConnectWalletButton';
 

@@ -13,9 +13,9 @@ import {
   Typography,
 } from '@mui/material';
 import { FC, useState } from 'react';
-import { HealthFactorNumber } from 'src/components/HealthFactorNumber';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+import { HealthFactorNumber } from '@/components/HealthFactorNumber';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 const formatMarketName = (market: MarketDataType) => {
   return `Aave ${market.v3 ? 'V3' : 'V2'} - ${market.marketTitle}${market.isFork ? ' Fork' : ''}`;

@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 import { blo } from 'blo';
 import { useMemo } from 'react';
-import useGetEns from 'src/libs/hooks/use-get-ens';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
+import useGetEns from '@/libs/hooks/use-get-ens';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
 import shallow from 'zustand/shallow';
 
 import { Avatar, AvatarProps } from './Avatar';

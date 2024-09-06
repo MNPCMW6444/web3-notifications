@@ -1,13 +1,13 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button, Divider } from '@mui/material';
-import { SuperFestTooltip } from 'src/components/infoTooltips/SuperFestTooltip';
-import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
-import { NoData } from 'src/components/primitives/NoData';
-import { ReserveSubheader } from 'src/components/ReserveSubheader';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { MARKETS } from 'src/utils/mixPanelEvents';
-import { showSuperFestTooltip, Side } from 'src/utils/utils';
+import { SuperFestTooltip } from '@/components/infoTooltips/SuperFestTooltip';
+import { VariableAPYTooltip } from '@/components/infoTooltips/VariableAPYTooltip';
+import { NoData } from '@/components/primitives/NoData';
+import { ReserveSubheader } from '@/components/ReserveSubheader';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { MARKETS } from '@/utils/mixPanelEvents';
+import { showSuperFestTooltip, Side } from '@/utils/utils';
 
 import { IncentivesCard } from '../../components/incentives/IncentivesCard';
 import { FormattedNumber } from '../../components/primitives/FormattedNumber';

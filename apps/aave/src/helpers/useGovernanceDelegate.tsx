@@ -10,14 +10,14 @@ import { TransactionResponse } from '@ethersproject/providers';
 import { useQueryClient } from '@tanstack/react-query';
 import { utils } from 'ethers';
 import { useEffect, useState } from 'react';
-import { DelegationTokenType } from 'src/components/transactions/GovDelegation/DelegationTokenSelector';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { getErrorTextFromError, TxAction } from 'src/ui-config/errorMapping';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { DelegationTokenType } from '@/components/transactions/GovDelegation/DelegationTokenSelector';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { getErrorTextFromError, TxAction } from '@/ui-config/errorMapping';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { MOCK_SIGNED_HASH } from './useTransactionHandler';
 
@@ -305,8 +305,8 @@ export const useGovernanceDelegate = (
               delegationTokenType === DelegationTokenType.AAVE
                 ? governanceV3Config.votingAssets.aaveTokenAddress
                 : delegationTokenType === DelegationTokenType.STKAAVE
-                ? governanceV3Config.votingAssets.stkAaveTokenAddress
-                : governanceV3Config.votingAssets.aAaveTokenAddress,
+                  ? governanceV3Config.votingAssets.stkAaveTokenAddress
+                  : governanceV3Config.votingAssets.aAaveTokenAddress,
             // delegationTokenType === DelegationTokenType.AAVE
             //   ? governanceConfig.aaveTokenAddress
             //   : governanceConfig.stkAaveTokenAddress,
@@ -321,8 +321,8 @@ export const useGovernanceDelegate = (
               delegationTokenType === DelegationTokenType.AAVE
                 ? governanceV3Config.votingAssets.aaveTokenAddress
                 : delegationTokenType === DelegationTokenType.STKAAVE
-                ? governanceV3Config.votingAssets.stkAaveTokenAddress
-                : governanceV3Config.votingAssets.aAaveTokenAddress,
+                  ? governanceV3Config.votingAssets.stkAaveTokenAddress
+                  : governanceV3Config.votingAssets.aAaveTokenAddress,
             // delegationTokenType === DelegationTokenType.AAVE
             //   ? governanceConfig.aaveTokenAddress
             //   : governanceConfig.stkAaveTokenAddress,

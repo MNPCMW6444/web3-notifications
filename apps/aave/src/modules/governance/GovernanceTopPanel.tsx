@@ -3,10 +3,10 @@ import { ExternalLinkIcon } from '@heroicons/react/outline';
 import { Trans } from '@lingui/macro';
 import { Box, Button, SvgIcon, Typography, useMediaQuery, useTheme } from '@mui/material';
 import * as React from 'react';
-import { ChainAvailabilityText } from 'src/components/ChainAvailabilityText';
-import { Link } from 'src/components/primitives/Link';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { ChainAvailabilityText } from '@/components/ChainAvailabilityText';
+import { Link } from '@/components/primitives/Link';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { TopInfoPanel } from '../../components/TopInfoPanel/TopInfoPanel';
 

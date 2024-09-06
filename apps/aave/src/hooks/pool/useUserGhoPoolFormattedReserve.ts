@@ -1,6 +1,6 @@
 import { formatGhoUserData, GhoReserveData, GhoUserData } from '@aave/math-utils';
 import dayjs from 'dayjs';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 import { useGhoPoolsReserve } from './useGhoPoolReserve';
 import { useUserGhoPoolsReserve } from './useUserGhoPoolReserve';

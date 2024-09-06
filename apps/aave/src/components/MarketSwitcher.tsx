@@ -13,9 +13,9 @@ import {
   useTheme,
 } from '@mui/material';
 import React, { useState } from 'react';
-import { useRootStore } from 'src/store/root';
-import { BaseNetworkConfig } from 'src/ui-config/networksConfig';
-import { DASHBOARD } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { BaseNetworkConfig } from '@/ui-config/networksConfig';
+import { DASHBOARD } from '@/utils/mixPanelEvents';
 
 import { useProtocolDataContext } from '../hooks/useProtocolDataContext';
 import {

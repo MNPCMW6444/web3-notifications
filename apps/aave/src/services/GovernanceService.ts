@@ -1,8 +1,8 @@
 import { AaveGovernanceService, ChainId, Power } from '@aave/contract-helpers';
 import { normalize, valueToBigNumber } from '@aave/math-utils';
 import { Provider } from '@ethersproject/providers';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-// import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+// import { MarketDataType } from '@/ui-config/marketsConfig';
 
 export interface Powers {
   votingPower: string;

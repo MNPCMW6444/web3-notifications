@@ -1,4 +1,4 @@
-import { useRootStore } from 'src/store/root';
+import { useRootStore } from '@/store/root';
 
 import { useExtendedUserSummaryAndIncentives } from './pool/useExtendedUserSummaryAndIncentives';
 

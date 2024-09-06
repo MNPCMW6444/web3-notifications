@@ -1,9 +1,9 @@
 import { Box, Paper, Skeleton, Stack } from '@mui/material';
 import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import { NoSearchResults } from 'src/components/NoSearchResults';
-import { Proposal, useProposals } from 'src/hooks/governance/useProposals';
-import { useProposalsSearch } from 'src/hooks/governance/useProposalsSearch';
+import { NoSearchResults } from '@/components/NoSearchResults';
+import { Proposal, useProposals } from '@/hooks/governance/useProposals';
+import { useProposalsSearch } from '@/hooks/governance/useProposalsSearch';
 
 import { ProposalListHeader } from './ProposalListHeader';
 import { ProposalV3ListItem } from './ProposalV3ListItem';

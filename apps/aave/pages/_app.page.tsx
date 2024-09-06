@@ -1,5 +1,5 @@
-import '/public/fonts/inter/inter.css';
-import '/src/styles/variables.css';
+// import '/public/fonts/inter/inter.css';
+// import '@/styles/variables.css';
 
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -11,15 +11,15 @@ import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { ReactNode, useEffect, useState } from 'react';
-import { AddressBlocked } from 'src/components/AddressBlocked';
-import { Meta } from 'src/components/Meta';
-import { TransactionEventHandler } from 'src/components/TransactionEventHandler';
-import { GasStationProvider } from 'src/components/transactions/GasStation/GasStationProvider';
-import { AppDataProvider } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { ModalContextProvider } from 'src/hooks/useModal';
-import { Web3ContextProvider } from 'src/libs/web3-data-provider/Web3Provider';
-import { useRootStore } from 'src/store/root';
-import { SharedDependenciesProvider } from 'src/ui-config/SharedDependenciesProvider';
+import { AddressBlocked } from '@/components/AddressBlocked';
+import { Meta } from '@/components/Meta';
+import { TransactionEventHandler } from '@/components/TransactionEventHandler';
+import { GasStationProvider } from '@/components/transactions/GasStation/GasStationProvider';
+import { AppDataProvider } from '@/hooks/app-data-provider/useAppDataProvider';
+import { ModalContextProvider } from '@/hooks/useModal';
+import { Web3ContextProvider } from '@/libs/web3-data-provider/Web3Provider';
+import { useRootStore } from '@/store/root';
+import { SharedDependenciesProvider } from '@/ui-config/SharedDependenciesProvider';
 
 import createEmotionCache from '../src/createEmotionCache';
 import { AppGlobalStyles } from '../src/layouts/AppGlobalStyles';

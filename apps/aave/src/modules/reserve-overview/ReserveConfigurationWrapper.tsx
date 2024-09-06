@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Box, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
 import dynamic from 'next/dynamic';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
 
 type ReserveConfigurationProps = {
   reserve: ComputedReserveData;

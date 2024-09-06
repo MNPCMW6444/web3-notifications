@@ -2,21 +2,18 @@ import { ProposalMetadata, ProposalV3State, VotingMachineProposal } from '@aave/
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 import { constants } from 'ethers';
 import request, { gql } from 'graphql-request';
-import { lifecycleToBadge, ProposalBadgeState } from 'src/modules/governance/StateBadge';
+import { lifecycleToBadge, ProposalBadgeState } from '@/modules/governance/StateBadge';
 import {
   getLifecycleState,
   getProposalVoteInfo,
   ProposalLifecycleStep,
   ProposalVoteInfo,
-} from 'src/modules/governance/utils/formatProposal';
-import {
-  getProposalMetadata,
-  parseRawIpfs,
-} from 'src/modules/governance/utils/getProposalMetadata';
-import { EnhancedPayload, GovernanceV3Service } from 'src/services/GovernanceV3Service';
-import { VotingMachineService } from 'src/services/VotingMachineService';
-import { governanceV3Config, ipfsGateway } from 'src/ui-config/governanceConfig';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+} from '@/modules/governance/utils/formatProposal';
+import { getProposalMetadata, parseRawIpfs } from '@/modules/governance/utils/getProposalMetadata';
+import { EnhancedPayload, GovernanceV3Service } from '@/services/GovernanceV3Service';
+import { VotingMachineService } from '@/services/VotingMachineService';
+import { governanceV3Config, ipfsGateway } from '@/ui-config/governanceConfig';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 import invariant from 'tiny-invariant';
 
 export interface SubgraphConstants {
@@ -277,8 +274,8 @@ export async function fetchProposals(
       votingMachineAddress: p.votingPortal.votingMachine,
     })) ?? [];
 
-  const payloadParams = (proposals
-    .map(
+  const payloadParams = (
+    proposals.map(
       (proposal) =>
         proposal.payloads.map((p) => {
           return {
@@ -287,8 +284,8 @@ export async function fetchProposals(
             chainId: +p.chainId,
           };
         }) || []
-    ) as unknown as any)
-    .flat();
+    ) as unknown as any
+  ).flat();
 
   const [proposalsMetadata, votingMachineDataes, payloadsDataes] = await Promise.all([
     Promise.all(proposals.map(getSubgraphProposalMetadata)),
@@ -297,9 +294,9 @@ export async function fetchProposals(
   ]);
   const enhancedProposals = proposals.map<Proposal>((proposal, index) => {
     const votingMachineData = votingMachineDataes.find(
-      (proposalData:any) => proposalData.proposalData.id === proposal.id
+      (proposalData: any) => proposalData.proposalData.id === proposal.id
     );
-    const payloadsData = payloadsDataes.filter((payloadData:any) =>
+    const payloadsData = payloadsDataes.filter((payloadData: any) =>
       proposal.payloads.find(
         (p) => p.id.split('_')[1] === payloadData.id && +p.chainId === payloadData.chainId
       )

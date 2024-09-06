@@ -1,11 +1,11 @@
 import { Trans } from '@lingui/macro';
 import { useMediaQuery } from '@mui/material';
 import { useState } from 'react';
-import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
+import { VariableAPYTooltip } from '@/components/infoTooltips/VariableAPYTooltip';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
 
 import { MarketAssetsListItem } from './MarketAssetsListItem';
 import { MarketAssetsListItemLoader } from './MarketAssetsListItemLoader';

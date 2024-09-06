@@ -1,6 +1,6 @@
 import { ReserveDataHumanized } from '@aave/contract-helpers';
-import { EmodeCategory } from 'src/helpers/types';
-import { CustomMarket, marketsData, NetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+import { EmodeCategory } from '@/helpers/types';
+import { CustomMarket, marketsData, NetworkConfig } from '@/utils/marketsAndNetworksConfig';
 
 import { PoolReserve } from './poolSlice';
 
@@ -51,20 +51,23 @@ export const reserveSortFn = (
 };
 
 export const formatEmodes = (reserves: ReserveDataHumanized[]) => {
-  const eModes = reserves?.reduce((acc, r) => {
-    if (!acc[r.eModeCategoryId])
-      acc[r.eModeCategoryId] = {
-        liquidationBonus: r.eModeLiquidationBonus,
-        id: r.eModeCategoryId,
-        label: r.eModeLabel,
-        liquidationThreshold: r.eModeLiquidationThreshold,
-        ltv: r.eModeLtv,
-        priceSource: r.eModePriceSource,
-        assets: [r.symbol],
-      };
-    else acc[r.eModeCategoryId].assets.push(r.symbol);
-    return acc;
-  }, {} as Record<number, EmodeCategory>);
+  const eModes = reserves?.reduce(
+    (acc, r) => {
+      if (!acc[r.eModeCategoryId])
+        acc[r.eModeCategoryId] = {
+          liquidationBonus: r.eModeLiquidationBonus,
+          id: r.eModeCategoryId,
+          label: r.eModeLabel,
+          liquidationThreshold: r.eModeLiquidationThreshold,
+          ltv: r.eModeLtv,
+          priceSource: r.eModePriceSource,
+          assets: [r.symbol],
+        };
+      else acc[r.eModeCategoryId].assets.push(r.symbol);
+      return acc;
+    },
+    {} as Record<number, EmodeCategory>
+  );
 
   // If all reserves have an eMode cateogry other than 0, we need to add the default empty one.
   // The UI assumes that there is always an eMode category 0, which is 'none'.

@@ -2,18 +2,18 @@ import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import StyledToggleButton from 'src/components/StyledToggleButton';
-import StyledToggleButtonGroup from 'src/components/StyledToggleButtonGroup';
+import StyledToggleButton from '@/components/StyledToggleButton';
+import StyledToggleButtonGroup from '@/components/StyledToggleButtonGroup';
 import {
   ComputedReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { ReserveActions } from 'src/modules/reserve-overview/ReserveActions';
-import { ReserveConfigurationWrapper } from 'src/modules/reserve-overview/ReserveConfigurationWrapper';
-import { ReserveTopDetailsWrapper } from 'src/modules/reserve-overview/ReserveTopDetailsWrapper';
-import { useRootStore } from 'src/store/root';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { AssetCapsProvider } from '@/hooks/useAssetCaps';
+import { MainLayout } from '@/layouts/MainLayout';
+import { ReserveActions } from '@/modules/reserve-overview/ReserveActions';
+import { ReserveConfigurationWrapper } from '@/modules/reserve-overview/ReserveConfigurationWrapper';
+import { ReserveTopDetailsWrapper } from '@/modules/reserve-overview/ReserveTopDetailsWrapper';
+import { useRootStore } from '@/store/root';
 
 import { ContentContainer } from '../src/components/ContentContainer';
 

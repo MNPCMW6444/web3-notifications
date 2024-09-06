@@ -18,9 +18,9 @@ import {
   Typography,
 } from '@mui/material';
 import * as React from 'react';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { CustomMarket } from '@/ui-config/marketsConfig';
 
 interface ListItemAPYButtonProps {
   stableBorrowRateEnabled: boolean;

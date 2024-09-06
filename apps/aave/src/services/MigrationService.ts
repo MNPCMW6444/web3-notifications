@@ -4,9 +4,9 @@ import {
   MIGRATION_ASSETS_EXCEPTIONS,
   MigrationException,
   MigrationSupplyException,
-} from 'src/store/v3MigrationSlice';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
+} from '@/store/v3MigrationSlice';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
 import invariant from 'tiny-invariant';
 
 export class MigrationService {

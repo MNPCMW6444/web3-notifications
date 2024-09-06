@@ -1,5 +1,5 @@
-import { BasicModal } from 'src/components/primitives/BasicModal';
-import { ModalType, useModalContext } from 'src/hooks/useModal';
+import { BasicModal } from '@/components/primitives/BasicModal';
+import { ModalType, useModalContext } from '@/hooks/useModal';
 
 import { BridgeModalContent } from './BridgeModalContent';
 

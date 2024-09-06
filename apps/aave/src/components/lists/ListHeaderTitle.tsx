@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { ReactNode } from 'react';
-import { useRootStore } from 'src/store/root';
+import { useRootStore } from '@/store/root';
 
 import { MARKETS } from '../../utils/mixPanelEvents';
 

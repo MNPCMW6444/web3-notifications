@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Box, Skeleton } from '@mui/material';
 import BigNumber from 'bignumber.js';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { FormattedNumber } from '../primitives/FormattedNumber';
 import { TextWithTooltip, TextWithTooltipProps } from '../TextWithTooltip';

@@ -5,7 +5,7 @@ import LinearProgress, {
   linearProgressClasses,
   LinearProgressProps,
 } from '@mui/material/LinearProgress';
-import { AssetCapHookData } from 'src/hooks/useAssetCaps';
+import { AssetCapHookData } from '@/hooks/useAssetCaps';
 
 import { FormattedNumber } from '../primitives/FormattedNumber';
 import { Link } from '../primitives/Link';

@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import StyledToggleButton from 'src/components/StyledToggleButton';
-import StyledToggleButtonGroup from 'src/components/StyledToggleButtonGroup';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
+import StyledToggleButton from '@/components/StyledToggleButton';
+import StyledToggleButtonGroup from '@/components/StyledToggleButtonGroup';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
 
 import { ConnectWalletPaper } from '../src/components/ConnectWalletPaper';
 import { ContentContainer } from '../src/components/ContentContainer';

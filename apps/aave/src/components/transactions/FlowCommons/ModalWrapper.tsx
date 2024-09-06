@@ -5,15 +5,15 @@ import {
   ComputedReserveData,
   ComputedUserReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useWalletBalances } from 'src/hooks/app-data-provider/useWalletBalances';
-import { AssetCapsProvider } from 'src/hooks/useAssetCaps';
-import { useIsWrongNetwork } from 'src/hooks/useIsWrongNetwork';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { useRootStore } from 'src/store/root';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useWalletBalances } from '@/hooks/app-data-provider/useWalletBalances';
+import { AssetCapsProvider } from '@/hooks/useAssetCaps';
+import { useIsWrongNetwork } from '@/hooks/useIsWrongNetwork';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { useRootStore } from '@/store/root';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { TxModalTitle } from '../FlowCommons/TxModalTitle';
 import { ChangeNetworkWarning } from '../Warnings/ChangeNetworkWarning';

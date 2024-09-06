@@ -20,16 +20,16 @@ import {
 } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { LensIcon } from 'src/components/icons/LensIcon';
-import { Warning } from 'src/components/primitives/Warning';
-import { Proposal } from 'src/hooks/governance/useProposals';
-// import { FormattedProposalTime } from 'src/modules/governance/FormattedProposalTime';
-import { StateBadge } from 'src/modules/governance/StateBadge';
-// import { IpfsType } from 'src/static-build/ipfs';
-// import { CustomProposalType } from 'src/static-build/proposal';
-import { useRootStore } from 'src/store/root';
-import { ipfsGateway } from 'src/ui-config/governanceConfig';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { LensIcon } from '@/components/icons/LensIcon';
+import { Warning } from '@/components/primitives/Warning';
+import { Proposal } from '@/hooks/governance/useProposals';
+// import { FormattedProposalTime } from '@/modules/governance/FormattedProposalTime';
+import { StateBadge } from '@/modules/governance/StateBadge';
+// import { IpfsType } from '@/static-build/ipfs';
+// import { CustomProposalType } from '@/static-build/proposal';
+import { useRootStore } from '@/store/root';
+import { ipfsGateway } from '@/ui-config/governanceConfig';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 const CenterAlignedImage = styled('img')({
   display: 'block',

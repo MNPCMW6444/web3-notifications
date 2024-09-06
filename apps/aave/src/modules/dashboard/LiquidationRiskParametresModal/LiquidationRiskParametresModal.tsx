@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { AlertColor, Typography } from '@mui/material';
-import { useRootStore } from 'src/store/root';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { useRootStore } from '@/store/root';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { HealthFactorNumber } from '../../../components/HealthFactorNumber';
 import { BasicModal } from '../../../components/primitives/BasicModal';

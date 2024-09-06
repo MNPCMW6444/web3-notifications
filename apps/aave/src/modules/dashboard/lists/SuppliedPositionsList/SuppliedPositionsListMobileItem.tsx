@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button } from '@mui/material';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useAssetCaps } from 'src/hooks/useAssetCaps';
-import { DashboardReserve } from 'src/utils/dashboardSortUtils';
-import { showSuperFestTooltip, Side } from 'src/utils/utils';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useAssetCaps } from '@/hooks/useAssetCaps';
+import { DashboardReserve } from '@/utils/dashboardSortUtils';
+import { showSuperFestTooltip, Side } from '@/utils/utils';
 
 import { IncentivesCard } from '../../../../components/incentives/IncentivesCard';
 import { Row } from '../../../../components/primitives/Row';

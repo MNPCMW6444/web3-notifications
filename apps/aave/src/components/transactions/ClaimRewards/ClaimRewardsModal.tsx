@@ -1,7 +1,7 @@
 import React from 'react';
-import { UserAuthenticated } from 'src/components/UserAuthenticated';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { ModalType, useModalContext } from 'src/hooks/useModal';
+import { UserAuthenticated } from '@/components/UserAuthenticated';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
+import { ModalType, useModalContext } from '@/hooks/useModal';
 
 import { BasicModal } from '../../primitives/BasicModal';
 import { ClaimRewardsModalContent } from './ClaimRewardsModalContent';

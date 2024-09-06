@@ -11,9 +11,9 @@ import { TorusConnector } from '@web3-react/torus-connector';
 import { WalletLinkConnector } from '@web3-react/walletlink-connector';
 import { BigNumber, PopulatedTransaction, providers } from 'ethers';
 import React, { ReactElement, useCallback, useEffect, useState } from 'react';
-import { useRootStore } from 'src/store/root';
-import { getNetworkConfig } from 'src/utils/marketsAndNetworksConfig';
-import { hexToAscii } from 'src/utils/utils';
+import { useRootStore } from '@/store/root';
+import { getNetworkConfig } from '@/utils/marketsAndNetworksConfig';
+import { hexToAscii } from '@/utils/utils';
 
 // import { isLedgerDappBrowserProvider } from 'web3-ledgerhq-frame-connector';
 import { Web3Context } from '../hooks/useWeb3Context';

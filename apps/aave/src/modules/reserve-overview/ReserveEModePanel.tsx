@@ -1,15 +1,15 @@
 import { Trans } from '@lingui/macro';
 import { Box, SvgIcon, Typography } from '@mui/material';
-import { LiquidationPenaltyTooltip } from 'src/components/infoTooltips/LiquidationPenaltyTooltip';
-import { LiquidationThresholdTooltip } from 'src/components/infoTooltips/LiquidationThresholdTooltip';
-import { MaxLTVTooltip } from 'src/components/infoTooltips/MaxLTVTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { ReserveOverviewBox } from 'src/components/ReserveOverviewBox';
-import { getEmodeMessage } from 'src/components/transactions/Emode/EmodeNaming';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useRootStore } from 'src/store/root';
-import { GENERAL, RESERVE_DETAILS } from 'src/utils/mixPanelEvents';
+import { LiquidationPenaltyTooltip } from '@/components/infoTooltips/LiquidationPenaltyTooltip';
+import { LiquidationThresholdTooltip } from '@/components/infoTooltips/LiquidationThresholdTooltip';
+import { MaxLTVTooltip } from '@/components/infoTooltips/MaxLTVTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { ReserveOverviewBox } from '@/components/ReserveOverviewBox';
+import { getEmodeMessage } from '@/components/transactions/Emode/EmodeNaming';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useRootStore } from '@/store/root';
+import { GENERAL, RESERVE_DETAILS } from '@/utils/mixPanelEvents';
 
 import LightningBoltGradient from '/public/lightningBoltGradient.svg';
 

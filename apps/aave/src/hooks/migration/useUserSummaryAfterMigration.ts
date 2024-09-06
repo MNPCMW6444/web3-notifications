@@ -2,22 +2,22 @@ import { InterestRate, valueToWei } from '@aave/contract-helpers';
 import { rayDiv, valueToBigNumber } from '@aave/math-utils';
 import dayjs from 'dayjs';
 import memoize from 'micro-memoize';
-import { selectFormatBaseCurrencyData } from 'src/store/poolSelectors';
-import { PoolReserve } from 'src/store/poolSlice';
-import { useRootStore } from 'src/store/root';
+import { selectFormatBaseCurrencyData } from '@/store/poolSelectors';
+import { PoolReserve } from '@/store/poolSlice';
+import { useRootStore } from '@/store/root';
 import {
   selectedUserSupplyReservesForMigration,
   selectFormatUserSummaryForMigration,
   selectMigrationSelectedSupplyIndex,
   selectMigrationUnderluingAssetWithExceptionsByV3Key,
   selectSelectedBorrowReservesForMigrationV3,
-} from 'src/store/v3MigrationSelectors';
+} from '@/store/v3MigrationSelectors';
 import {
   MigrationException,
   MigrationSelectedAsset,
   MigrationSelectedBorrowAsset,
-} from 'src/store/v3MigrationSlice';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+} from '@/store/v3MigrationSlice';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 import { combineQueries, SimplifiedUseQueryResult } from '../pool/utils';
 import { useMigrationExceptionsSupplyBalance } from './useMigrationExceptionsSupplyBalance';
@@ -114,15 +114,21 @@ const select = memoize(
       userMigrationReserves
     );
 
-    const suppliesMap = supplies.reduce((obj, item) => {
-      obj[item.underlyingAsset] = item;
-      return obj;
-    }, {} as Record<string, typeof userMigrationReserves.supplyReserves[0]>);
+    const suppliesMap = supplies.reduce(
+      (obj, item) => {
+        obj[item.underlyingAsset] = item;
+        return obj;
+      },
+      {} as Record<string, (typeof userMigrationReserves.supplyReserves)[0]>
+    );
 
-    const borrowsMap = borrows.reduce((obj, item) => {
-      obj[item.debtKey] = item;
-      return obj;
-    }, {} as Record<string, typeof userMigrationReserves.borrowReserves[0]>);
+    const borrowsMap = borrows.reduce(
+      (obj, item) => {
+        obj[item.debtKey] = item;
+        return obj;
+      },
+      {} as Record<string, (typeof userMigrationReserves.borrowReserves)[0]>
+    );
 
     const userReserves = toUserSummary.userReservesData.map((userReserveData) => {
       const stableBorrowAsset = borrowsMap[userReserveData.reserve.stableDebtTokenAddress];

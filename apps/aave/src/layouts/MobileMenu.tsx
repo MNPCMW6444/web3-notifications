@@ -13,7 +13,7 @@ import {
   Typography,
 } from '@mui/material';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { PROD_ENV } from 'src/utils/marketsAndNetworksConfig';
+import { PROD_ENV } from '@/utils/marketsAndNetworksConfig';
 
 import { Link } from '../components/primitives/Link';
 import { moreNavigation } from '../ui-config/menu-items';

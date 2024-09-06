@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import { useAddressAllowed } from 'src/hooks/useAddressAllowed';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { ENABLE_TESTNET } from 'src/utils/marketsAndNetworksConfig';
+import { useAddressAllowed } from '@/hooks/useAddressAllowed';
+import { MainLayout } from '@/layouts/MainLayout';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { ENABLE_TESTNET } from '@/utils/marketsAndNetworksConfig';
 
 import { AddressBlockedModal } from './AddressBlockedModal';
 

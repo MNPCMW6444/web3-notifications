@@ -14,30 +14,30 @@ import {
 } from '@mui/material';
 import BigNumber from 'bignumber.js';
 import React, { ReactNode, useState } from 'react';
-import { WalletIcon } from 'src/components/icons/WalletIcon';
-import { getMarketInfoById } from 'src/components/MarketSwitcher';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Warning } from 'src/components/primitives/Warning';
-import { StyledTxModalToggleButton } from 'src/components/StyledToggleButton';
-import { StyledTxModalToggleGroup } from 'src/components/StyledToggleButtonGroup';
-import { ConnectWalletButton } from 'src/components/WalletConnection/ConnectWalletButton';
+import { WalletIcon } from '@/components/icons/WalletIcon';
+import { getMarketInfoById } from '@/components/MarketSwitcher';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Warning } from '@/components/primitives/Warning';
+import { StyledTxModalToggleButton } from '@/components/StyledToggleButton';
+import { StyledTxModalToggleGroup } from '@/components/StyledToggleButtonGroup';
+import { ConnectWalletButton } from '@/components/WalletConnection/ConnectWalletButton';
 import {
   ComputedReserveData,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useWalletBalances } from 'src/hooks/app-data-provider/useWalletBalances';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { BuyWithFiat } from 'src/modules/staking/BuyWithFiat';
-import { useRootStore } from 'src/store/root';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { useWalletBalances } from '@/hooks/app-data-provider/useWalletBalances';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { BuyWithFiat } from '@/modules/staking/BuyWithFiat';
+import { useRootStore } from '@/store/root';
 import {
   getMaxAmountAvailableToBorrow,
   getMaxGhoMintAmount,
-} from 'src/utils/getMaxAmountAvailableToBorrow';
-import { getMaxAmountAvailableToSupply } from 'src/utils/getMaxAmountAvailableToSupply';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
-import { GENERAL } from 'src/utils/mixPanelEvents';
-import { amountToUsd } from 'src/utils/utils';
+} from '@/utils/getMaxAmountAvailableToBorrow';
+import { getMaxAmountAvailableToSupply } from '@/utils/getMaxAmountAvailableToSupply';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
+import { GENERAL } from '@/utils/mixPanelEvents';
+import { amountToUsd } from '@/utils/utils';
 
 import { CapType } from '../../components/caps/helper';
 import { AvailableTooltip } from '../../components/infoTooltips/AvailableTooltip';

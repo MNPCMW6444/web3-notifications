@@ -5,7 +5,7 @@ import {
   UserReserveDataHumanized,
 } from '@aave/contract-helpers';
 import { Provider } from '@ethersproject/providers';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 export type UserReservesDataHumanized = {
   userReserves: UserReserveDataHumanized[];

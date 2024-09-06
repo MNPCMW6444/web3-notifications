@@ -17,8 +17,8 @@ import {
 } from '@mui/material';
 import React, { ReactNode } from 'react';
 import NumberFormat, { NumberFormatProps } from 'react-number-format';
-import { TrackEventProps } from 'src/store/analyticsSlice';
-import { useRootStore } from 'src/store/root';
+import { TrackEventProps } from '@/store/analyticsSlice';
+import { useRootStore } from '@/store/root';
 
 import { CapType } from '../caps/helper';
 import { AvailableTooltip } from '../infoTooltips/AvailableTooltip';

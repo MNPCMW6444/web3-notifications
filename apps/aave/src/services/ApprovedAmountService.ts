@@ -1,6 +1,6 @@
 import { ApproveType } from '@aave/contract-helpers';
 import { Provider } from '@ethersproject/providers';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 export class ApprovedAmountService {
   constructor(private readonly getProvider: (chainId: number) => Provider) {}

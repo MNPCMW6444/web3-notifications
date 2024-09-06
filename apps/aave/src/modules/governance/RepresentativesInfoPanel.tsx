@@ -3,13 +3,13 @@ import { PlusIcon } from '@heroicons/react/outline';
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, Button, IconButton, Paper, Stack, SvgIcon, Typography } from '@mui/material';
-import { CompactableTypography, CompactMode } from 'src/components/CompactableTypography';
-import { Link } from 'src/components/primitives/Link';
-import { useRepresentatives } from 'src/hooks/governance/useRepresentatives';
-// import { useIsContractAddress } from 'src/hooks/useIsContractAddress';
-import { useModalContext } from 'src/hooks/useModal';
-import { useRootStore } from 'src/store/root';
-import { networkConfigs } from 'src/ui-config/networksConfig';
+import { CompactableTypography, CompactMode } from '@/components/CompactableTypography';
+import { Link } from '@/components/primitives/Link';
+import { useRepresentatives } from '@/hooks/governance/useRepresentatives';
+// import { useIsContractAddress } from '@/hooks/useIsContractAddress';
+import { useModalContext } from '@/hooks/useModal';
+import { useRootStore } from '@/store/root';
+import { networkConfigs } from '@/ui-config/networksConfig';
 
 import { ZERO_ADDRESS } from './utils/formatProposal';
 

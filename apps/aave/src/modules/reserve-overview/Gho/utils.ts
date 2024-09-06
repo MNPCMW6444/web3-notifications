@@ -1,7 +1,7 @@
 import { calculateCompoundedRate, RAY_DECIMALS, valueToBigNumber } from '@aave/math-utils';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
-import { weightedAverageAPY } from 'src/utils/ghoUtilities';
+import { weightedAverageAPY } from '@/utils/ghoUtilities';
 
 import { ESupportedTimeRanges } from '../TimeRangeSelector';
 

@@ -1,4 +1,4 @@
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
 
 import { useProtocolDataContext } from './useProtocolDataContext';
 

@@ -1,11 +1,11 @@
 import { Trans } from '@lingui/macro';
 import React, { useState } from 'react';
-import { UserAuthenticated } from 'src/components/UserAuthenticated';
-import { ModalContextType, ModalType, useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { displayGhoForMintableMarket } from 'src/utils/ghoUtilities';
-import { GENERAL } from 'src/utils/mixPanelEvents';
+import { UserAuthenticated } from '@/components/UserAuthenticated';
+import { ModalContextType, ModalType, useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { displayGhoForMintableMarket } from '@/utils/ghoUtilities';
+import { GENERAL } from '@/utils/mixPanelEvents';
 
 import { BasicModal } from '../../primitives/BasicModal';
 import { ModalWrapper } from '../FlowCommons/ModalWrapper';

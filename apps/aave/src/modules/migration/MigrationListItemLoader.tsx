@@ -1,6 +1,6 @@
 import { Box, Skeleton, useMediaQuery, useTheme } from '@mui/material';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListItem } from 'src/components/lists/ListItem';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListItem } from '@/components/lists/ListItem';
 
 export const MigrationListItemLoader = () => {
   const theme = useTheme();

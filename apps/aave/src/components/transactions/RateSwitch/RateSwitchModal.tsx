@@ -1,7 +1,7 @@
 import { InterestRate } from '@aave/contract-helpers';
 import { Trans } from '@lingui/macro';
 import React from 'react';
-import { ModalContextType, ModalType, useModalContext } from 'src/hooks/useModal';
+import { ModalContextType, ModalType, useModalContext } from '@/hooks/useModal';
 
 import { BasicModal } from '../../primitives/BasicModal';
 import { ModalWrapper } from '../FlowCommons/ModalWrapper';

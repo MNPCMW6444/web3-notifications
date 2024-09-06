@@ -1,8 +1,8 @@
 import { BookOpenIcon, CreditCardIcon, QuestionMarkCircleIcon } from '@heroicons/react/outline';
 import { t } from '@lingui/macro';
 import { ReactNode } from 'react';
-import { ROUTES } from 'src/components/primitives/Link';
-import { ENABLE_TESTNET } from 'src/utils/marketsAndNetworksConfig';
+import { ROUTES } from '@/components/primitives/Link';
+import { ENABLE_TESTNET } from '@/utils/marketsAndNetworksConfig';
 
 import { MarketDataType } from '../marketsConfig';
 

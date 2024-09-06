@@ -3,28 +3,28 @@ import { ArrowDownIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Box, Checkbox, Stack, SvgIcon, Typography } from '@mui/material';
 import { useRef, useState } from 'react';
-import { PriceImpactTooltip } from 'src/components/infoTooltips/PriceImpactTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { Warning } from 'src/components/primitives/Warning';
+import { PriceImpactTooltip } from '@/components/infoTooltips/PriceImpactTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { Warning } from '@/components/primitives/Warning';
 import {
   ComputedUserReserveData,
   ExtendedFormattedUser,
   useAppDataContext,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
-import { minimumReceivedAfterSlippage } from 'src/hooks/paraswap/common';
-import { useCollateralSwap } from 'src/hooks/paraswap/useCollateralSwap';
-import { useTokenInForTokenOut } from 'src/hooks/token-wrapper/useTokenWrapper';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useWrappedTokens } from 'src/hooks/useWrappedTokens';
-import { useZeroLTVBlockingWithdraw } from 'src/hooks/useZeroLTVBlockingWithdraw';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { ListSlippageButton } from 'src/modules/dashboard/lists/SlippageList';
-import { useRootStore } from 'src/store/root';
-import { calculateHFAfterWithdraw } from 'src/utils/hfUtils';
-import { GENERAL } from 'src/utils/mixPanelEvents';
-import { roundToTokenDecimals } from 'src/utils/utils';
+} from '@/hooks/app-data-provider/useAppDataProvider';
+import { minimumReceivedAfterSlippage } from '@/hooks/paraswap/common';
+import { useCollateralSwap } from '@/hooks/paraswap/useCollateralSwap';
+import { useTokenInForTokenOut } from '@/hooks/token-wrapper/useTokenWrapper';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useWrappedTokens } from '@/hooks/useWrappedTokens';
+import { useZeroLTVBlockingWithdraw } from '@/hooks/useZeroLTVBlockingWithdraw';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { ListSlippageButton } from '@/modules/dashboard/lists/SlippageList';
+import { useRootStore } from '@/store/root';
+import { calculateHFAfterWithdraw } from '@/utils/hfUtils';
+import { GENERAL } from '@/utils/mixPanelEvents';
+import { roundToTokenDecimals } from '@/utils/utils';
 
 import { Asset, AssetInput } from '../AssetInput';
 import { GasEstimationError } from '../FlowCommons/GasEstimationError';

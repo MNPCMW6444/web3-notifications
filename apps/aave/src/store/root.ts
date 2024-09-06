@@ -1,5 +1,5 @@
 import { enableMapSet } from 'immer';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
+import { CustomMarket } from '@/ui-config/marketsConfig';
 import create from 'zustand';
 import { devtools, subscribeWithSelector } from 'zustand/middleware';
 

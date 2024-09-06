@@ -2,10 +2,10 @@ import { CogIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import { Button, Menu, MenuItem, SvgIcon, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { DEFAULT_LOCALE } from 'src/libs/LanguageProvider';
-import { useRootStore } from 'src/store/root';
-import { PROD_ENV } from 'src/utils/marketsAndNetworksConfig';
-import { SETTINGS } from 'src/utils/mixPanelEvents';
+import { DEFAULT_LOCALE } from '@/libs/LanguageProvider';
+import { useRootStore } from '@/store/root';
+import { PROD_ENV } from '@/utils/marketsAndNetworksConfig';
+import { SETTINGS } from '@/utils/mixPanelEvents';
 
 import { DarkModeSwitcher } from './components/DarkModeSwitcher';
 import { LanguageListItem, LanguagesList } from './components/LanguageSwitcher';

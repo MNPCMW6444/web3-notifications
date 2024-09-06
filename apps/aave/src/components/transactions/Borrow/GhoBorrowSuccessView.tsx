@@ -17,12 +17,12 @@ import {
 } from '@mui/material';
 import dynamic from 'next/dynamic.js';
 import { ReactNode, useRef, useState } from 'react';
-import { HeyIcon } from 'src/components/icons/HeyIcon';
-import { compactNumber, FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { useModalContext } from 'src/hooks/useModal';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { GHO_SUCCESS_MODAL } from 'src/utils/mixPanelEvents';
+import { HeyIcon } from '@/components/icons/HeyIcon';
+import { compactNumber, FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { useModalContext } from '@/hooks/useModal';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { GHO_SUCCESS_MODAL } from '@/utils/mixPanelEvents';
 
 const GhoSuccessImage = dynamic(() => import('./GhoSuccessImage'));
 

@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
-import { Warning } from 'src/components/primitives/Warning';
-import { convertParaswapErrorMessage } from 'src/hooks/paraswap/common';
+import { Warning } from '@/components/primitives/Warning';
+import { convertParaswapErrorMessage } from '@/hooks/paraswap/common';
 
 interface ParaswapRatesErrorProps {
   error: unknown;

@@ -1,12 +1,12 @@
 import { Trans } from '@lingui/macro';
 import { useQueryClient } from '@tanstack/react-query';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { ZERO_ADDRESS } from 'src/modules/governance/utils/formatProposal';
-import { useRootStore } from 'src/store/root';
-import { getErrorTextFromError, TxAction } from 'src/ui-config/errorMapping';
-import { queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { ZERO_ADDRESS } from '@/modules/governance/utils/formatProposal';
+import { useRootStore } from '@/store/root';
+import { getErrorTextFromError, TxAction } from '@/ui-config/errorMapping';
+import { queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 import { TxActionsWrapper } from '../TxActionsWrapper';
 import { UIRepresentative } from './GovRepresentativesModalContent';

@@ -4,7 +4,7 @@ import {
   ComputedReserveData,
   ComputedUserReserveData,
   ExtendedFormattedUser,
-} from 'src/hooks/app-data-provider/useAppDataProvider';
+} from '@/hooks/app-data-provider/useAppDataProvider';
 
 export const calculateMaxWithdrawAmount = (
   user: ExtendedFormattedUser,

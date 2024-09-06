@@ -11,8 +11,8 @@ import {
   EnhancedSubgraphProposal,
   Proposal,
   SubgraphProposal,
-} from 'src/hooks/governance/useProposals';
-import { EnhancedPayload } from 'src/services/GovernanceV3Service';
+} from '@/hooks/governance/useProposals';
+import { EnhancedPayload } from '@/services/GovernanceV3Service';
 import invariant from 'tiny-invariant';
 
 import { isDifferentialReached, isQuorumReached } from '../helpers';

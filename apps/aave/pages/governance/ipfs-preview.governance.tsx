@@ -1,16 +1,16 @@
 import { Grid } from '@mui/material';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { ContentContainer } from 'src/components/ContentContainer';
-import { Meta } from 'src/components/Meta';
-import { Proposal } from 'src/hooks/governance/useProposals';
-import { MainLayout } from 'src/layouts/MainLayout';
-import { ProposalOverview } from 'src/modules/governance/proposal/ProposalOverview';
-import { ProposalTopPanel } from 'src/modules/governance/proposal/ProposalTopPanel';
-import { ProposalBadgeState } from 'src/modules/governance/StateBadge';
-import { ProposalLifecycleStep } from 'src/modules/governance/utils/formatProposal';
-import { getProposalMetadata } from 'src/modules/governance/utils/getProposalMetadata';
-import { ipfsGateway } from 'src/ui-config/governanceConfig';
+import { ContentContainer } from '@/components/ContentContainer';
+import { Meta } from '@/components/Meta';
+import { Proposal } from '@/hooks/governance/useProposals';
+import { MainLayout } from '@/layouts/MainLayout';
+import { ProposalOverview } from '@/modules/governance/proposal/ProposalOverview';
+import { ProposalTopPanel } from '@/modules/governance/proposal/ProposalTopPanel';
+import { ProposalBadgeState } from '@/modules/governance/StateBadge';
+import { ProposalLifecycleStep } from '@/modules/governance/utils/formatProposal';
+import { getProposalMetadata } from '@/modules/governance/utils/getProposalMetadata';
+import { ipfsGateway } from '@/ui-config/governanceConfig';
 
 // proposal metadata is fetched using the ipfs hash,
 // but all other data is mocked so the page can be rendered

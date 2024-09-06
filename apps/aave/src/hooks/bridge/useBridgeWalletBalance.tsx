@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { BigNumber, Contract } from 'ethers';
-import { useRootStore } from 'src/store/root';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
-import { POLLING_INTERVAL, queryKeysFactory } from 'src/ui-config/queries';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
-import { getProvider } from 'src/utils/marketsAndNetworksConfig';
+import { useRootStore } from '@/store/root';
+import { MarketDataType } from '@/ui-config/marketsConfig';
+import { POLLING_INTERVAL, queryKeysFactory } from '@/ui-config/queries';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
+import { getProvider } from '@/utils/marketsAndNetworksConfig';
 
 export const useBridgeTokens = (currentMarketData: MarketDataType, tokenOracle: string) => {
   const { poolTokensBalanceService } = useSharedDependencies();

@@ -7,29 +7,29 @@ import { Trans } from '@lingui/macro';
 import { Box, ListItemText, ListSubheader, Stack, SvgIcon, Typography } from '@mui/material';
 import BigNumber from 'bignumber.js';
 import React, { useRef, useState } from 'react';
-import { GhoIncentivesCard } from 'src/components/incentives/GhoIncentivesCard';
-import { PriceImpactTooltip } from 'src/components/infoTooltips/PriceImpactTooltip';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ROUTES } from 'src/components/primitives/Link';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { Warning } from 'src/components/primitives/Warning';
-import { Asset, AssetInput } from 'src/components/transactions/AssetInput';
-import { TxModalDetails } from 'src/components/transactions/FlowCommons/TxModalDetails';
-import { maxInputAmountWithSlippage } from 'src/hooks/paraswap/common';
-import { useDebtSwitch } from 'src/hooks/paraswap/useDebtSwitch';
-import { useGhoPoolReserve } from 'src/hooks/pool/useGhoPoolReserve';
-import { useUserGhoPoolReserve } from 'src/hooks/pool/useUserGhoPoolReserve';
-import { useModalContext } from 'src/hooks/useModal';
-import { useWeb3Context } from 'src/libs/hooks/useWeb3Context';
-import { ListSlippageButton } from 'src/modules/dashboard/lists/SlippageList';
-import { useRootStore } from 'src/store/root';
-import { CustomMarket } from 'src/ui-config/marketsConfig';
-import { assetCanBeBorrowedByUser } from 'src/utils/getMaxAmountAvailableToBorrow';
+import { GhoIncentivesCard } from '@/components/incentives/GhoIncentivesCard';
+import { PriceImpactTooltip } from '@/components/infoTooltips/PriceImpactTooltip';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ROUTES } from '@/components/primitives/Link';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { Warning } from '@/components/primitives/Warning';
+import { Asset, AssetInput } from '@/components/transactions/AssetInput';
+import { TxModalDetails } from '@/components/transactions/FlowCommons/TxModalDetails';
+import { maxInputAmountWithSlippage } from '@/hooks/paraswap/common';
+import { useDebtSwitch } from '@/hooks/paraswap/useDebtSwitch';
+import { useGhoPoolReserve } from '@/hooks/pool/useGhoPoolReserve';
+import { useUserGhoPoolReserve } from '@/hooks/pool/useUserGhoPoolReserve';
+import { useModalContext } from '@/hooks/useModal';
+import { useWeb3Context } from '@/libs/hooks/useWeb3Context';
+import { ListSlippageButton } from '@/modules/dashboard/lists/SlippageList';
+import { useRootStore } from '@/store/root';
+import { CustomMarket } from '@/ui-config/marketsConfig';
+import { assetCanBeBorrowedByUser } from '@/utils/getMaxAmountAvailableToBorrow';
 import {
   displayGhoForMintableMarket,
   ghoUserQualifiesForDiscount,
   weightedAverageAPY,
-} from 'src/utils/ghoUtilities';
+} from '@/utils/ghoUtilities';
 
 import {
   ComputedUserReserveData,

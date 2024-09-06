@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button } from '@mui/material';
-import { VariableAPYTooltip } from 'src/components/infoTooltips/VariableAPYTooltip';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { DashboardReserve } from 'src/utils/dashboardSortUtils';
-import { showSuperFestTooltip, Side } from 'src/utils/utils';
+import { VariableAPYTooltip } from '@/components/infoTooltips/VariableAPYTooltip';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { DashboardReserve } from '@/utils/dashboardSortUtils';
+import { showSuperFestTooltip, Side } from '@/utils/utils';
 
 import { CapsHint } from '../../../../components/caps/CapsHint';
 import { CapType } from '../../../../components/caps/helper';

@@ -4,7 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import * as React from 'react';
-import { EmodeCategory } from 'src/helpers/types';
+import { EmodeCategory } from '@/helpers/types';
 
 import { getEmodeMessage } from './EmodeNaming';
 

@@ -3,11 +3,11 @@ import { Trans } from '@lingui/macro';
 import { Box, Button, SvgIcon, Typography } from '@mui/material';
 import Menu from '@mui/material/Menu';
 import React, { useState } from 'react';
-import { EmodeModalType } from 'src/components/transactions/Emode/EmodeModalContent';
-import { useAppDataContext } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useModalContext } from 'src/hooks/useModal';
-import { useRootStore } from 'src/store/root';
-import { DASHBOARD, GENERAL } from 'src/utils/mixPanelEvents';
+import { EmodeModalType } from '@/components/transactions/Emode/EmodeModalContent';
+import { useAppDataContext } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useModalContext } from '@/hooks/useModal';
+import { useRootStore } from '@/store/root';
+import { DASHBOARD, GENERAL } from '@/utils/mixPanelEvents';
 
 import LightningBoltGradient from '/public/lightningBoltGradient.svg';
 

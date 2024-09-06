@@ -2,8 +2,8 @@ import { ChainId, WalletBalanceProvider } from '@aave/contract-helpers';
 import { normalize } from '@aave/math-utils';
 import { Provider } from '@ethersproject/providers';
 import { formatUnits } from 'ethers/lib/utils';
-import { governanceV3Config } from 'src/ui-config/governanceConfig';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+import { governanceV3Config } from '@/ui-config/governanceConfig';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 export interface GovernanceTokensBalance {
   aave: string;

@@ -12,9 +12,9 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ListWrapper } from 'src/components/lists/ListWrapper';
-import { SearchInput } from 'src/components/SearchInput';
-import { applyTxHistoryFilters, useTransactionHistory } from 'src/hooks/useTransactionHistory';
+import { ListWrapper } from '@/components/lists/ListWrapper';
+import { SearchInput } from '@/components/SearchInput';
+import { applyTxHistoryFilters, useTransactionHistory } from '@/hooks/useTransactionHistory';
 
 import { downloadData, formatTransactionData, groupByDate } from './helpers';
 import { HistoryFilterMenu } from './HistoryFilterMenu';

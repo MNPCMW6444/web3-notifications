@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { BigNumber } from 'ethers';
 import { formatUnits, parseUnits } from 'ethers/lib/utils';
-import { useSharedDependencies } from 'src/ui-config/SharedDependenciesProvider';
+import { useSharedDependencies } from '@/ui-config/SharedDependenciesProvider';
 
 export const useTokenInForTokenOut = (
   amount: string,

@@ -1,4 +1,4 @@
-import { reserveRateTimeRangeOptions } from 'src/hooks/useReservesHistory';
+import { reserveRateTimeRangeOptions } from '@/hooks/useReservesHistory';
 
 import { ESupportedTimeRanges, TimeRangeSelector } from '../TimeRangeSelector';
 

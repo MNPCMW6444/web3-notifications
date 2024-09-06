@@ -6,8 +6,8 @@ import {
 import { ComputedUserReserve, valueToBigNumber } from '@aave/math-utils';
 import dayjs from 'dayjs';
 import memoize from 'micro-memoize';
-import { UserReservesDataHumanized } from 'src/services/UIPoolService';
-import { useRootStore } from 'src/store/root';
+import { UserReservesDataHumanized } from '@/services/UIPoolService';
+import { useRootStore } from '@/store/root';
 import {
   IsolatedReserve,
   MigrationDisabled,
@@ -19,9 +19,9 @@ import {
   selectSplittedBorrowsForMigration,
   selectUserReservesMapFromUserReserves,
   V3Rates,
-} from 'src/store/v3MigrationSelectors';
-import { MigrationException, MigrationSelectedAsset } from 'src/store/v3MigrationSlice';
-import { MarketDataType } from 'src/ui-config/marketsConfig';
+} from '@/store/v3MigrationSelectors';
+import { MigrationException, MigrationSelectedAsset } from '@/store/v3MigrationSlice';
+import { MarketDataType } from '@/ui-config/marketsConfig';
 
 import { FormattedReservesAndIncentives } from '../pool/usePoolFormattedReserves';
 import { usePoolReservesHumanized } from '../pool/usePoolReserves';

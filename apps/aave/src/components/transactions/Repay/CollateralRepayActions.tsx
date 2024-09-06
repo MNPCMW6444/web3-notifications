@@ -7,10 +7,10 @@ import {
 import { SignatureLike } from '@ethersproject/bytes';
 import { Trans } from '@lingui/macro';
 import { BoxProps } from '@mui/material';
-import { useParaSwapTransactionHandler } from 'src/helpers/useParaSwapTransactionHandler';
-import { ComputedReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { calculateSignedAmount, SwapTransactionParams } from 'src/hooks/paraswap/common';
-import { useRootStore } from 'src/store/root';
+import { useParaSwapTransactionHandler } from '@/helpers/useParaSwapTransactionHandler';
+import { ComputedReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { calculateSignedAmount, SwapTransactionParams } from '@/hooks/paraswap/common';
+import { useRootStore } from '@/store/root';
 
 import { TxActionsWrapper } from '../TxActionsWrapper';
 

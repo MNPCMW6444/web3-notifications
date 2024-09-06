@@ -4,19 +4,19 @@ import { ArrowNarrowRightIcon, CheckIcon } from '@heroicons/react/solid';
 import { Trans } from '@lingui/macro';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import { Box, Button, SvgIcon, Typography, useTheme } from '@mui/material';
-import { IncentivesCard } from 'src/components/incentives/IncentivesCard';
-import { MigrationDisabledTooltip } from 'src/components/infoTooltips/MigrationDisabledTooltip';
-import { IsolatedEnabledBadge } from 'src/components/isolationMode/IsolatedBadge';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListItem } from 'src/components/lists/ListItem';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { ROUTES } from 'src/components/primitives/Link';
-import { NoData } from 'src/components/primitives/NoData';
-import { Row } from 'src/components/primitives/Row';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { ComputedUserReserveData } from 'src/hooks/app-data-provider/useAppDataProvider';
-import { useRootStore } from 'src/store/root';
-import { MigrationDisabled, V3Rates } from 'src/store/v3MigrationSelectors';
+import { IncentivesCard } from '@/components/incentives/IncentivesCard';
+import { MigrationDisabledTooltip } from '@/components/infoTooltips/MigrationDisabledTooltip';
+import { IsolatedEnabledBadge } from '@/components/isolationMode/IsolatedBadge';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListItem } from '@/components/lists/ListItem';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { ROUTES } from '@/components/primitives/Link';
+import { NoData } from '@/components/primitives/NoData';
+import { Row } from '@/components/primitives/Row';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { ComputedUserReserveData } from '@/hooks/app-data-provider/useAppDataProvider';
+import { useRootStore } from '@/store/root';
+import { MigrationDisabled, V3Rates } from '@/store/v3MigrationSelectors';
 
 import { MigrationListItemToggler } from './MigrationListItemToggler';
 import { StETHMigrationWarning } from './StETHMigrationWarning';
@@ -100,8 +100,8 @@ export const MigrationListMobileItem = ({
                 disabled !== undefined
                   ? theme.palette.background.disabled
                   : checked
-                  ? theme.palette.text.secondary
-                  : theme.palette.background.paper,
+                    ? theme.palette.text.secondary
+                    : theme.palette.background.paper,
               width: 16,
               height: 16,
               borderRadius: '2px',

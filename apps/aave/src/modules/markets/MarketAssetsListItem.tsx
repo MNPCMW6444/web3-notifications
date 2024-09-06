@@ -1,17 +1,17 @@
 import { Trans } from '@lingui/macro';
 import { Box, Button, Typography } from '@mui/material';
 import { useRouter } from 'next/router';
-import { OffboardingTooltip } from 'src/components/infoTooltips/OffboardingToolTip';
-import { RenFILToolTip } from 'src/components/infoTooltips/RenFILToolTip';
-import { SuperFestTooltip } from 'src/components/infoTooltips/SuperFestTooltip';
-import { IsolatedEnabledBadge } from 'src/components/isolationMode/IsolatedBadge';
-import { NoData } from 'src/components/primitives/NoData';
-import { ReserveSubheader } from 'src/components/ReserveSubheader';
-import { AssetsBeingOffboarded } from 'src/components/Warnings/OffboardingWarning';
-import { useProtocolDataContext } from 'src/hooks/useProtocolDataContext';
-import { useRootStore } from 'src/store/root';
-import { MARKETS } from 'src/utils/mixPanelEvents';
-import { showSuperFestTooltip, Side } from 'src/utils/utils';
+import { OffboardingTooltip } from '@/components/infoTooltips/OffboardingToolTip';
+import { RenFILToolTip } from '@/components/infoTooltips/RenFILToolTip';
+import { SuperFestTooltip } from '@/components/infoTooltips/SuperFestTooltip';
+import { IsolatedEnabledBadge } from '@/components/isolationMode/IsolatedBadge';
+import { NoData } from '@/components/primitives/NoData';
+import { ReserveSubheader } from '@/components/ReserveSubheader';
+import { AssetsBeingOffboarded } from '@/components/Warnings/OffboardingWarning';
+import { useProtocolDataContext } from '@/hooks/useProtocolDataContext';
+import { useRootStore } from '@/store/root';
+import { MARKETS } from '@/utils/mixPanelEvents';
+import { showSuperFestTooltip, Side } from '@/utils/utils';
 
 import { IncentivesCard } from '../../components/incentives/IncentivesCard';
 import { AMPLToolTip } from '../../components/infoTooltips/AMPLToolTip';

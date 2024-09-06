@@ -18,17 +18,17 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { formatUnits } from 'ethers/lib/utils';
 import { useEffect, useState } from 'react';
-import { DarkTooltip } from 'src/components/infoTooltips/DarkTooltip';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListItem } from 'src/components/lists/ListItem';
-import { MarketLogo } from 'src/components/MarketSwitcher';
-import { FormattedNumber } from 'src/components/primitives/FormattedNumber';
-import { Link } from 'src/components/primitives/Link';
-import { TokenIcon } from 'src/components/primitives/TokenIcon';
-import { MessageExecutionState } from 'src/components/transactions/Bridge/BridgeConfig';
-import { BridgeTransaction as Transaction } from 'src/hooks/useBridgeTransactionHistory';
-import { useGetExecutionState, useGetOffRampForLane } from 'src/hooks/useBridgeTransactionStatus';
-import { networkConfigs } from 'src/ui-config/networksConfig';
+import { DarkTooltip } from '@/components/infoTooltips/DarkTooltip';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListItem } from '@/components/lists/ListItem';
+import { MarketLogo } from '@/components/MarketSwitcher';
+import { FormattedNumber } from '@/components/primitives/FormattedNumber';
+import { Link } from '@/components/primitives/Link';
+import { TokenIcon } from '@/components/primitives/TokenIcon';
+import { MessageExecutionState } from '@/components/transactions/Bridge/BridgeConfig';
+import { BridgeTransaction as Transaction } from '@/hooks/useBridgeTransactionHistory';
+import { useGetExecutionState, useGetOffRampForLane } from '@/hooks/useBridgeTransactionStatus';
+import { networkConfigs } from '@/ui-config/networksConfig';
 
 import {
   TransactionListItemLoader,

@@ -1,14 +1,14 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { ReactNode } from 'react';
-import { ListColumn } from 'src/components/lists/ListColumn';
-import { ListHeaderTitle } from 'src/components/lists/ListHeaderTitle';
-import { ListHeaderWrapper } from 'src/components/lists/ListHeaderWrapper';
-import { ListWrapper } from 'src/components/lists/ListWrapper';
-import { Link, ROUTES } from 'src/components/primitives/Link';
-import { Warning } from 'src/components/primitives/Warning';
-import { useRootStore } from 'src/store/root';
-import { IsolatedReserve } from 'src/store/v3MigrationSelectors';
+import { ListColumn } from '@/components/lists/ListColumn';
+import { ListHeaderTitle } from '@/components/lists/ListHeaderTitle';
+import { ListHeaderWrapper } from '@/components/lists/ListHeaderWrapper';
+import { ListWrapper } from '@/components/lists/ListWrapper';
+import { Link, ROUTES } from '@/components/primitives/Link';
+import { Warning } from '@/components/primitives/Warning';
+import { useRootStore } from '@/store/root';
+import { IsolatedReserve } from '@/store/v3MigrationSelectors';
 
 import { MigrationMobileList } from './MigrationMobileList';
 import { MigrationSelectionBox } from './MigrationSelectionBox';
