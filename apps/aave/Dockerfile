@@ -17,8 +17,8 @@ COPY --from=builder ./apps/aave/public ./public
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 # Automatically leverage output traces to reduce image size
-COPY --from=builder --chown=nextjs:nodejs ./apps/aave/xx/standalone ./
-COPY --from=builder --chown=nextjs:nodejs ./apps/aave/xx/static ./.next/static
+COPY --from=builder ./apps/aave/xx/standalone ./
+COPY --from=builder ./apps/aave/xx/static ./.next/static
 USER nextjs
 EXPOSE 3001
 ENV PORT 3001
