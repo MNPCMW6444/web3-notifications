@@ -300,7 +300,7 @@ jobs:
 
 
   deploy_to_ecs:
-    needs: [ prepare, build_server, build_dashboard ]
+    needs: [ prepare, build_server, build_dashboard , build_aave  , build_swap ]
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS credentials
