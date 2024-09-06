@@ -1,4 +1,3 @@
-import mixpanel from 'mixpanel-browser';
 import { StateCreator } from 'zustand';
 
 import { RootStore } from './root';
@@ -49,7 +48,6 @@ export const createAnalyticsSlice: StateCreator<
 
       try {
         if (!EXCLUDED_NETWORKS.includes(get().currentMarket)) {
-          mixpanel.track(eventName, eventProperties);
         }
       } catch (err) {
         console.log('something went wrong tracking event', err);
@@ -68,18 +66,15 @@ export const createAnalyticsSlice: StateCreator<
 
       if (userAcceptedAnalytics) {
         if (!isInitialized) {
-          mixpanel.init(MIXPANEL_TOKEN, { ip: false });
           set({ mixpanelInitialized: true });
         }
 
-        mixpanel.opt_in_tracking();
         set({ isTrackingEnabled: true });
       } else {
         if (!isInitialized) {
-          mixpanel.init(MIXPANEL_TOKEN, { ip: false });
           set({ mixpanelInitialized: true });
         }
-        mixpanel.opt_out_tracking();
+
         set({ isTrackingEnabled: false });
       }
     },
@@ -91,7 +86,7 @@ export const createAnalyticsSlice: StateCreator<
     },
     rejectAnalytics: () => {
       localStorage.setItem('userAcceptedAnalytics', 'false');
-      // mixpanel.opt_out_tracking();
+
       set({ isTrackingEnabled: false, analyticsConfigOpen: false });
     },
     setAnalyticsConfigOpen: (value: boolean) => {
