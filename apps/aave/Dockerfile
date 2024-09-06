@@ -11,7 +11,6 @@ ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-./apps/aave/.next
 COPY --from=builder ./apps/aave/public ./public
 # Set the correct permission for prerender cache
 RUN mkdir .next
