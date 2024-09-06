@@ -1,37 +1,25 @@
 ARG DEP_HASH
-FROM 654654441147.dkr.ecr.us-east-1.amazonaws.com/web3/base:$DEP_HASH as deps
-
-
+FROM 654654441147.dkr.ecr.us-east-1.amazonaws.com/web3/base:$DEP_HASH as builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-
+COPY package.json nx.json tsconfig.base.json ./
+COPY apps/aave/ apps/aave/
 RUN npx nx build aave
 
-FROM node:lts AS runner
+FROM node:lts
 WORKDIR /app
-
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
-
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-
-COPY --from=deps /app/public ./public
-
+COPY --from=builder /app/public ./public
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
-
 # Automatically leverage output traces to reduce image size
-COPY --from=deps --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=deps --chown=nextjs:nodejs /app/.next/static ./.next/static
-
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
-
 EXPOSE 3001
-
 ENV PORT 3001
-
 # server.js is created by next build from the standalone output
 CMD HOSTNAME="0.0.0.0" node server.js
