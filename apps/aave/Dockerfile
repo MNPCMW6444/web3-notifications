@@ -8,7 +8,7 @@ COPY . .
 
 RUN npx nx build aave
 
-FROM node-lts AS runner
+FROM node:lts AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
