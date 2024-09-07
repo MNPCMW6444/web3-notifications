@@ -1,8 +1,7 @@
 import { startMongoAndExpress } from '@the-libs/base-backend';
 import { apiRouter } from './new/apiRouter';
+import { xxw } from './pup';
 
-startMongoAndExpress(apiRouter, [], [], true, true)
+startMongoAndExpress(apiRouter, [], [], true, true);
 
-fetch("http://aave:80/").then((x)=>console.log(x)).catch((x)=>console.log(x))
-
-
+xxw();
