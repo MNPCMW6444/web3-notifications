@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json nx.json tsconfig.base.json ./
 COPY apps/aave/ apps/aave/
 RUN npx nx build aave
-RUN ls -a ./apps/aave/.next/
+RUN chmod -R 755 ./apps/aave/.next/
 
 FROM node:lts
 WORKDIR /app
