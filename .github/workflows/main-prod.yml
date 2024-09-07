@@ -396,7 +396,7 @@ jobs:
         id: register-task-def-w3dashboard
         run: |
           TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3dashboard-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
-          echo "TASK_DEF_ARN_DASHBOARD=$TASK_DEF_ARN" >> $GITHUB_ENV
+          echo "TASK_DEF_ARN_DASH=$TASK_DEF_ARN" >> $GITHUB_ENV
 
 
 
@@ -404,7 +404,7 @@ jobs:
         id: register-task-def-s3aave
         run: |
           TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-s3aave-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
-          echo "TASK_DEF_ARN_DASHBOARD=$TASK_DEF_ARN" >> $GITHUB_ENV
+          echo "TASK_DEF_ARN_AAVE=$TASK_DEF_ARN" >> $GITHUB_ENV
 
 
 
@@ -412,24 +412,24 @@ jobs:
         id: register-task-def-w3swap
         run: |
           TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3swap-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
-          echo "TASK_DEF_ARN_DASHBOARD=$TASK_DEF_ARN" >> $GITHUB_ENV
+          echo "TASK_DEF_ARN_SWAP=$TASK_DEF_ARN" >> $GITHUB_ENV
 
 
       - name: Update ECS Service for server
         run: |
           aws ecs update-service --cluster w3 --service server --task-definition $TASK_DEF_ARN_SERVER
 
-      - name: Update ECS Service for dashboard
+      - name: Update ECS Service for dashbaord
         run: |
-          aws ecs update-service --cluster w3 --service dashbaord --task-definition $TASK_DEF_ARN_DASHBOARD
+          aws ecs update-service --cluster w3 --service dashbaord --task-definition $TASK_DEF_ARN_DASH
 
 
 
       - name: Update ECS Service for aave
         run: |
-          aws ecs update-service --cluster w3 --service aave --task-definition $TASK_DEF_ARN_DASHBOARD
+          aws ecs update-service --cluster w3 --service aave --task-definition $TASK_DEF_ARN_AAVE
 
       - name: Update ECS Service for swap
         run: |
-          aws ecs update-service --cluster w3 --service swap --task-definition $TASK_DEF_ARN_DASHBOARD
+          aws ecs update-service --cluster w3 --service swap --task-definition $TASK_DEF_ARN_SWAP
 
