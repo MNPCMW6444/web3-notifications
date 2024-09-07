@@ -4,7 +4,6 @@ WORKDIR /app
 COPY package.json nx.json tsconfig.base.json ./
 COPY apps/swap/ apps/swap/
 RUN npx nx build swap
-RUN cp -r apps/swap/.next apps/swap/xx
 
 FROM node:lts
 WORKDIR /app
@@ -12,13 +11,13 @@ ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
-COPY --from=builder ./apps/swap/public ./public
+COPY --from=builder app/apps/swap/public ./public
 # Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 # Automatically leverage output traces to reduce image size
-COPY --from=builder --chown=nextjs:nodejs ./apps/swap/xx/standalone ./
-COPY --from=builder --chown=nextjs:nodejs ./apps/swap/xx/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/static ./.next/static
 USER nextjs
 EXPOSE 3000
 ENV PORT 3000
