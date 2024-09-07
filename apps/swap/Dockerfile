@@ -16,7 +16,8 @@ COPY --from=builder app/apps/swap/public ./public
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 # Automatically leverage output traces to reduce image size
-COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/standalone/apps/swap ./
+COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/standalone/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/static ./.next/static
 USER nextjs
 EXPOSE 3000
