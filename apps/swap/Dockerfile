@@ -1,26 +1,58 @@
+# Stage 1: Builder
 ARG DEP_HASH
 FROM 654654441147.dkr.ecr.us-east-1.amazonaws.com/web3/base:$DEP_HASH as builder
 WORKDIR /app
 COPY package.json nx.json tsconfig.base.json ./
-COPY apps/swap/ apps/swap/
-RUN npx nx build swap
+COPY apps/server/ apps/server/
+RUN npm install
+RUN npm run build:server
 
-FROM node:lts
+# Stage 2: Final image
+FROM node:lts-slim
+
+# Install necessary dependencies for Puppeteer and Chrome
+RUN apt-get update && apt-get install -y \
+    wget \
+    gnupg \
+    ca-certificates \
+    fonts-liberation \
+    libasound2 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libgbm1 \
+    libgtk-3-0 \
+    libnss3 \
+    libdrm2 \
+    libx11-xcb1 \
+    libx11-6 \
+    libxext6 \
+    libxfixes3 \
+    libxtst6 \
+    libxrender1 \
+    libxcb1 \
+    libxss1 \
+    libdbus-glib-1-2 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add Google's official GPG key for Chrome and set up the repository
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list' \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set environment variables to run Puppeteer in Docker
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
+
+# Copy built server files from the builder stage
 WORKDIR /app
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-COPY --from=builder app/apps/swap/public ./public
-# Set the correct permission for prerender cache
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-# Automatically leverage output traces to reduce image size
-COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/standalone/apps/swap ./
-COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/standalone/node_modules ./node_modules
-COPY --from=builder --chown=nextjs:nodejs app/apps/swap/.next/static ./.next/static
-USER nextjs
-EXPOSE 3000
-ENV PORT 3000
-# server.js is created by next build from the standalone output
-CMD HOSTNAME="0.0.0.0" node server.js
+COPY --from=builder /app .
+
+# Expose port and set command
+EXPOSE 3450
+CMD ["node", "dist/apps/server/index.mjs"]
