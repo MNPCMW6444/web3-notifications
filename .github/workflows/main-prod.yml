@@ -348,10 +348,10 @@ jobs:
           aws ecs describe-task-definition --task-definition w3dashboard > current-w3dashboard-task-def.json
 
 
-      - name: Fetch current w3aave task definition
+      - name: Fetch current s3aave task definition
         id: current-task-defaave
         run: |
-          aws ecs describe-task-definition --task-definition w3aave > current-w3aave-task-def.json
+          aws ecs describe-task-definition --task-definition s3aave > current-s3aave-task-def.json
 
 
 
@@ -373,10 +373,10 @@ jobs:
           jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-w3dashboard-task-def.json > final-w3dashboard-task-def.json
 
 
-      - name: Update task definition for w3aave
+      - name: Update task definition for s3aave
         run: |
-          jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/aave:" + $image_tag' current-w3aave-task-def.json > intermediate-w3aave-task-def.json
-          jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-w3aave-task-def.json > final-w3aave-task-def.json
+          jq --arg image_tag "$VERSION" --arg ecr_registry "${{ steps.login-ecr.outputs.registry }}" '.taskDefinition.containerDefinitions[0].image = $ecr_registry + "/web3/aave:" + $image_tag' current-s3aave-task-def.json > intermediate-s3aave-task-def.json
+          jq '.taskDefinition | del(.taskDefinitionArn, .status, .revision, .registeredAt, .registeredBy, .requiresAttributes, .compatibilities)' intermediate-s3aave-task-def.json > final-s3aave-task-def.json
 
 
       - name: Update task definition for w3swap
@@ -400,10 +400,10 @@ jobs:
 
 
 
-      - name: Register task definition for w3aave
-        id: register-task-def-w3aave
+      - name: Register task definition for s3aave
+        id: register-task-def-s3aave
         run: |
-          TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-w3aave-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
+          TASK_DEF_ARN=$(aws ecs register-task-definition --cli-input-json file://final-s3aave-task-def.json | jq -r '.taskDefinition.taskDefinitionArn')
           echo "TASK_DEF_ARN_DASHBOARD=$TASK_DEF_ARN" >> $GITHUB_ENV
 
 
