@@ -36,6 +36,7 @@ export const xxw = async () => {
     // Your Puppeteer code here
 
     await browser.close();
+    console.log('closed good');
   } catch (error) {
     console.error('Failed to launch browser:', error);
   }
