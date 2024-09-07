@@ -3,7 +3,10 @@ const require = createRequire(import.meta.url);
 const puppeteer = require('puppeteer');
 const os = require('os');
 
-export const xxw = async () => {
+export const goSomeWhereAndWait = async (
+  whereTo: string,
+  howLong: number = 30,
+) => {
   let launchOptions: any = {
     args: [
       '--no-sandbox', // Required for running in Docker/Linux
@@ -31,19 +34,13 @@ export const xxw = async () => {
   try {
     const browser = await puppeteer.launch(launchOptions);
     const page = await browser.newPage();
-    await page.goto('https://example.com');
+    await page.goto(whereTo);
 
-    // Your Puppeteer code here
-
-    await browser.close();
-    console.log('closed good');
+    setTimeout(
+      () => browser.close().then(() => console.log('closed good')),
+      howLong * 1000,
+    );
   } catch (error) {
     console.error('Failed to launch browser:', error);
   }
 };
-
-const avveURL =
-  'http://aave:80/reserve-overview/?underlyingAsset=0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee&marketName=proto_mainnet_v3';
-
-const swapURL =
-  'http://swap:80/?chain=ethereum&from=0xdac17f958d2ee523a2206206994597c13d831ec7&tab=swap&to=0x4c9edd5852cd905f086c759e8383e09bff1e68b3';
