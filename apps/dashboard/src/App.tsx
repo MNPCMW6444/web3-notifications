@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-// import { ServerProvider } from '@the-libs/base-frontend';
+import { ServerProvider } from '@the-libs/base-frontend';
 import Dashboard from './Dashboard';
 
 const MainMessage = ({ text }: { text: string }) => (
@@ -9,9 +9,9 @@ const MainMessage = ({ text }: { text: string }) => (
 
 const App = () => {
   return (
-    // <ServerProvider domain="server.w3notif.com" MainMessage={MainMessage}>
-    <Dashboard />
-    // </ServerProvider>
+    <ServerProvider domain="server.w3notif.com" MainMessage={MainMessage}>
+      <Dashboard />
+    </ServerProvider>
   );
 };
 
