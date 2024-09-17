@@ -6,8 +6,10 @@
     "start": "nx serve server & nx serve dashboard & nx serve host & nx serve admin",
     "clean": "rm -rf node_modules dist tmp package-lock.json ./.nx",
     "update": "npx npm-check-updates -u",
-    "build:server": "nx build server",
-    "build:dashboard": "nx build dashboard && tsc --outDir dist/apps/dashboard --esModuleInterop apps/dashboard/server.ts"
+    "build:server": "nx build server --verbose",
+    "build:dashboard": "nx build dashboard --verbose && tsc --outDir dist/apps/dashboard --esModuleInterop apps/dashboard/server.ts",
+    "build:aave": "nx build aave --verbose",
+    "build:swap": "nx build swap --verbose"
   },
   "main": "index.js",
   "private": true,
