@@ -1,6 +1,6 @@
 {
   "name": "@w3notif/source",
-  "version": "7.0.61",
+  "version": "7.0.62",
   "license": "MIT",
   "scripts": {
     "start": "nx serve server & nx serve dashboard & nx serve host & nx serve admin",
@@ -73,7 +73,8 @@
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/torus-connector": "^6.2.9",
     "@web3-react/types": "^6.0.7",
-    "@web3-react/walletlink-connector": "^6.2.14",   "ariakit": "^2.0.0-next.44",
+    "@web3-react/walletlink-connector": "^6.2.14",
+    "ariakit": "^2.0.0-next.44",
     "axios": "^1.7.7",
     "bignumber.js": "^9.1.2",
     "blo": "^1.2.0",
