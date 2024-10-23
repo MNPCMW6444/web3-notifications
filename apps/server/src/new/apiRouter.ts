@@ -115,7 +115,7 @@ apiRouter.post(
 
 import { gql, request } from 'graphql-request';
 // import {doOnce} from "@the-libs/redis-backend"
-
+let tellError=true
 setInterval(
   () =>
     request(
@@ -134,7 +134,7 @@ setInterval(
         }
       `,
     ).then(async (x: any) => {
-      const l = /*x.marketByUniqueKey.state.liquidityAssetsUsd;*/ 50000
+      const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
       console.log('l is ', l);
       if (l > 0) {
         const devices = await (await pushDevice()).find();
@@ -161,6 +161,34 @@ setInterval(
           );
         });
       }
+    }).catch(async()=>{
+      if(tellError){
+        tellError=false
+        const devices = await (await pushDevice()).find();
+        devices.forEach(({ subscription }) => {
+          sendPushNotification(
+            subscription,
+            {
+              title: 'morpho stopped responding',
+              body: 'error',
+            },
+            {
+              domain: '',
+            },
+          ),
+            sendEmail(
+              'benji5337831@gmail.com',
+              'morpho stopped responding',
+              'error',
+            );
+          sendEmail(
+            'mnpcmw6444@gmail.com',
+            'morpho stopped responding',
+            'error',
+          );
+        });
+      }
+
     }),
   30000,
 );
