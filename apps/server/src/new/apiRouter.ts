@@ -135,6 +135,7 @@ setInterval(
       `,
     )
       .then(async (x: any) => {
+        console.log(x)
         const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
         console.log('l is ', l);
         if (l > 500000) {
