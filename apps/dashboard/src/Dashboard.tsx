@@ -1,16 +1,23 @@
-import { Button, Grid2, Typography } from '@mui/material';
-import { useContext, useEffect, useState } from 'react';
+import { Button, Grid, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
 import { TODO, handleSubscribeClick } from '@the-libs/base-shared';
+import axios from 'axios';
 import pj from '../../../package.json';
-import { ServerContext } from '@the-libs/base-frontend';
+
+const d =
+  // frontendSettings().VITE_NODE_ENV === 'development'
+  //  ? 'http://localhost:3450'
+  // :
+  'https://server.w3notif.com';
 
 const App = () => {
-  const server = useContext(ServerContext);
+  // const server = useContext(ServerContext);
   const [devices, setDevices] = useState<TODO[]>([]);
 
   const fetchDevices = async () => {
     try {
-      const res = await server?.axiosInstance?.get('/api/' + 'devices');
+      //const res = await server?.axiosInstance?.get('devices');
+      const res = await axios.get(d + '/api/' + 'devices');
       setDevices(res?.data || []);
     } catch {}
   };
@@ -20,15 +27,18 @@ const App = () => {
   }, []);
 
   return (
-    <Grid2 container direction="column">
-      <Grid2>
+    <Grid container direction="column">
+      <Grid>
         <Button
           onClick={() => {
             handleSubscribeClick(
               'BEVTZDBLq4rn0uWqN3N3-DxpAJUuwjEtwcKggfdGcwFFLawai-g2gmuHsgBMdocSywRpoGUboFkau4QCfkhFgOc',
               (pushSubscription) => {
-                server?.axiosInstance
-                  ?.post(+'/api/' + 'registerDevice', {
+                /*  const res = await server?.axiosInstance?.post('/registerDevice', {
+                subscription: pushSubscription,
+              });*/
+                axios
+                  .post(d + '/api/' + 'registerDevice', {
                     subscription: pushSubscription,
                   })
                   .then(() => fetchDevices().then());
@@ -38,14 +48,14 @@ const App = () => {
         >
           Add this device
         </Button>
-      </Grid2>
-      <Grid2>{pj.version}</Grid2>
+      </Grid>
+      <Grid>{pj.version}</Grid>
       {devices.map((device) => (
-        <Grid2>
+        <Grid>
           <Typography>{device.name}</Typography>
-        </Grid2>
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   );
 };
 
