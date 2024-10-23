@@ -1,6 +1,7 @@
 import { Button, Grid, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { TODO, handleSubscribeClick } from '@the-libs/base-shared';
+import { TODO } from '@the-libs/base-shared';
+import { handleSubscribeClick } from '@the-libs/base-frontend';
 import axios from 'axios';
 import pj from '../../../package.json';
 

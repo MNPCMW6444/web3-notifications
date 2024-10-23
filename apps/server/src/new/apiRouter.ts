@@ -29,12 +29,12 @@ const spn = async (x: string) => {
         domain: '',
       },
     ),
-      sendEmail(
+       sendEmail(
         'benji5337831@gmail.com',
         'new usdt usde alert',
         '99900 to 100025 alert',
       );
-    sendEmail(
+     sendEmail(
       'mnpcmw6444@gmail.com',
       'new usdt usde alert',
       '99900 to 100025 alert',
@@ -55,12 +55,12 @@ const spnX = async (x: string) => {
         domain: '',
       },
     ),
-      sendEmail(
+       sendEmail(
         'benji5337831@gmail.com',
         'new wETH cap lift',
         'there is more than 2k now',
       );
-    sendEmail(
+     sendEmail(
       'mnpcmw6444@gmail.com',
       'new wETH cap lift',
       'there is more than 2k now',
@@ -115,7 +115,7 @@ apiRouter.post(
 
 import { gql, request } from 'graphql-request';
 // import {doOnce} from "@the-libs/redis-backend"
-let tellError=true
+let tellError = true;
 setInterval(
   () =>
     request(
@@ -133,62 +133,64 @@ setInterval(
           }
         }
       `,
-    ).then(async (x: any) => {
-      const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
-      console.log('l is ', l);
-      if (l > 0) {
-        const devices = await (await pushDevice()).find();
-        devices.forEach(({ subscription }) => {
-          sendPushNotification(
-            subscription,
-            {
-              title: 'Available Liquidity in morpho',
-              body: 'its is ' + l + ' now',
-            },
-            {
-              domain: '',
-            },
-          ),
-            sendEmail(
-              'benji5337831@gmail.com',
-              'new wETH cap lift',
-              'there is more than 2k now',
-            );
-          sendEmail(
+    )
+      .then(async (x: any) => {
+        const l =/* x.marketByUniqueKey.state.liquidityAssetsUsd*/50000;
+        console.log('l is ', l);
+        if (l > 0) {
+          const devices = await (await pushDevice()).find();
+          devices.forEach(({ subscription }) =>
+            sendPushNotification(
+              subscription,
+              {
+                title: 'Available Liquidity in morpho',
+                body: 'its is ' + l + ' now',
+              },
+              {
+                domain: '',
+              },
+            ),
+          );
+
+          await sendEmail(
+            'benji5337831@gmail.com',
+            'new wETH cap lift',
+            'there is more than 2k now',
+          );
+          await sendEmail(
             'mnpcmw6444@gmail.com',
             'Available Liquidity in morpho',
             'its is ' + l + ' now',
           );
-        });
-      }
-    }).catch(async()=>{
-      if(tellError){
-        tellError=false
-        const devices = await (await pushDevice()).find();
-        devices.forEach(({ subscription }) => {
-          sendPushNotification(
-            subscription,
-            {
-              title: 'morpho stopped responding',
-              body: 'error',
-            },
-            {
-              domain: '',
-            },
-          ),
-            sendEmail(
-              'benji5337831@gmail.com',
-              'morpho stopped responding',
-              'error',
-            );
-          sendEmail(
+        }
+      })
+      .catch(async () => {
+        if (tellError) {
+          tellError = false;
+          const devices = await (await pushDevice()).find();
+          devices.forEach(({ subscription }) =>
+            sendPushNotification(
+              subscription,
+              {
+                title: 'morpho stopped responding',
+                body: 'error',
+              },
+              {
+                domain: '',
+              },
+            ),
+          );
+          await sendEmail(
+            'benji5337831@gmail.com',
+            'morpho stopped responding',
+            'error',
+          );
+          await sendEmail(
             'mnpcmw6444@gmail.com',
             'morpho stopped responding',
             'error',
           );
-        });
-      }
-
-    }),
+        }
+      }),
   30000,
 );
