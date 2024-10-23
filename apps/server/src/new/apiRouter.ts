@@ -1,4 +1,4 @@
-/*import { highOrderHandler } from '@the-libs/base-backend';
+import { highOrderHandler } from '@the-libs/base-backend';
 import { createRequire } from 'module';
 import {
   pushDevice,
@@ -6,38 +6,46 @@ import {
 } from '@the-libs/notifications-backend';
 import { sendEmail } from '@the-libs/email-backend';
 const require = createRequire(import.meta.url);
-const { Router } = require('express');*/
-/*
+const { Router } = require('express');
 
 export const apiRouter = Router();
 
 let tmpSWAP = 'false';
 let tmpCAP = 'false';
 
-const spn = async (x:string) => {
-  const devices = await pushDevice().find();
-  devices.forEach(({ subscription }) =>
-   {sendPushNotification(
+const spn = async (x: string) => {
+  const devices = await (await pushDevice()).find();
+  devices.forEach(({ subscription }) => {
+    sendPushNotification(
       subscription,
       {
         title: 'new usdt usde update',
-        body: '99900 usdt is now' +
-          (x==='true' ? '' : ' not!') +
+        body:
+          '99900 usdt is now' +
+          (x === 'true' ? '' : ' not!') +
           ' more than 100025 usde',
       },
       {
         domain: '',
       },
     ),
-    sendEmail('benji5337831@gmail.com','new usdt usde alert' ,"99900 to 100025 alert");
-      sendEmail('mnpcmw6444@gmail.com','new usdt usde alert' ,"99900 to 100025 alert")
- } );
+      sendEmail(
+        'benji5337831@gmail.com',
+        'new usdt usde alert',
+        '99900 to 100025 alert',
+      );
+    sendEmail(
+      'mnpcmw6444@gmail.com',
+      'new usdt usde alert',
+      '99900 to 100025 alert',
+    );
+  });
 };
 
-const spnX = async (x:string) => {
-  const devices = await pushDevice().find();
-  devices.forEach(({ subscription }) =>
-   {sendPushNotification(
+const spnX = async (x: string) => {
+  const devices = await (await pushDevice()).find();
+  devices.forEach(({ subscription }) => {
+    sendPushNotification(
       subscription,
       {
         title: 'new wETH cap lift',
@@ -47,10 +55,19 @@ const spnX = async (x:string) => {
         domain: '',
       },
     ),
-    sendEmail('benji5337831@gmail.com','new wETH cap lift' ,"there is more than 2k now");
-      sendEmail('mnpcmw6444@gmail.com','new wETH cap lift' ,"there is more than 2k now")
- } );
+      sendEmail(
+        'benji5337831@gmail.com',
+        'new wETH cap lift',
+        'there is more than 2k now',
+      );
+    sendEmail(
+      'mnpcmw6444@gmail.com',
+      'new wETH cap lift',
+      'there is more than 2k now',
+    );
+  });
 };
+/*
 
 apiRouter.get(
   '/event/:data',
@@ -74,11 +91,12 @@ apiRouter.get(
     return { statusCode: 200 };
   }),
 );
+*/
 
 apiRouter.get(
   '/devices',
   highOrderHandler(async () => {
-    return { statusCode: 200, body: await pushDevice().find() };
+    return { statusCode: 200, body: await (await pushDevice()).find() };
   }),
 );
 
@@ -86,46 +104,63 @@ apiRouter.post(
   '/registerDevice',
   highOrderHandler(async (req) => {
     const { subscription } = req.body;
-    const newDevice = new (pushDevice())({
+    const newDevice = new (await pushDevice())({
       subscription,
-      name: 'device ' + (await pushDevice().find()).length,
+      name: 'device ' + (await (await pushDevice()).find()).length,
     });
     await newDevice.save();
     return { statusCode: 201 };
   }),
 );
-*/
+
 import { gql, request } from 'graphql-request';
 // import {doOnce} from "@the-libs/redis-backend"
 
-setInterval(()=> request("https://blue-api.morpho.org/graphql", gql`
-  query {
-    marketByUniqueKey(uniqueKey: "0x5e3e6b1e01c5708055548d82d01db741e37d03b948a7ef9f3d4b962648bcbfa7") {
-      state {
-        supplyAssetsUsd
-        borrowAssetsUsd
-        liquidityAssetsUsd
+setInterval(
+  () =>
+    request(
+      'https://blue-api.morpho.org/graphql',
+      gql`
+        query {
+          marketByUniqueKey(
+            uniqueKey: "0x5e3e6b1e01c5708055548d82d01db741e37d03b948a7ef9f3d4b962648bcbfa7"
+          ) {
+            state {
+              supplyAssetsUsd
+              borrowAssetsUsd
+              liquidityAssetsUsd
+            }
+          }
+        }
+      `,
+    ).then(async (x: any) => {
+      const l = /*x.marketByUniqueKey.state.liquidityAssetsUsd;*/ 50000
+      console.log('l is ', l);
+      if (l > 0) {
+        const devices = await (await pushDevice()).find();
+        devices.forEach(({ subscription }) => {
+          sendPushNotification(
+            subscription,
+            {
+              title: 'Available Liquidity in morpho',
+              body: 'its is ' + l + ' now',
+            },
+            {
+              domain: '',
+            },
+          ),
+            sendEmail(
+              'benji5337831@gmail.com',
+              'new wETH cap lift',
+              'there is more than 2k now',
+            );
+          sendEmail(
+            'mnpcmw6444@gmail.com',
+            'Available Liquidity in morpho',
+            'its is ' + l + ' now',
+          );
+        });
       }
-    }
-  }
-
-`).then(async(x)=>{
-  console.log(x)
- /* const devices = await pushDevice().find();
-  devices.forEach(({ subscription }) =>
-  {sendPushNotification(
-    subscription,
-    {
-      title: 'new wETH cap lift',
-      body: 'there is more than 2k now',
-    },
-    {
-      domain: '',
-    },
-  ),
-    sendEmail('benji5337831@gmail.com','new wETH cap lift' ,"there is more than 2k now");
-    sendEmail('mnpcmw6444@gmail.com','new wETH cap lift' ,"there is more than 2k now")
-  } );*/
-
-}))
-
+    }),
+  30000,
+);
