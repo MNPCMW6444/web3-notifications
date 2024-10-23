@@ -135,7 +135,7 @@ setInterval(
       `,
     )
       .then(async (x: any) => {
-        const l =/* x.marketByUniqueKey.state.liquidityAssetsUsd*/50000;
+        const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
         console.log('l is ', l);
         if (l > 0) {
           const devices = await (await pushDevice()).find();
