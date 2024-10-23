@@ -1,4 +1,4 @@
-import { highOrderHandler } from '@the-libs/base-backend';
+/*import { highOrderHandler } from '@the-libs/base-backend';
 import { createRequire } from 'module';
 import {
   pushDevice,
@@ -6,7 +6,8 @@ import {
 } from '@the-libs/notifications-backend';
 import { sendEmail } from '@the-libs/email-backend';
 const require = createRequire(import.meta.url);
-const { Router } = require('express');
+const { Router } = require('express');*/
+/*
 
 export const apiRouter = Router();
 
@@ -93,3 +94,38 @@ apiRouter.post(
     return { statusCode: 201 };
   }),
 );
+*/
+import { gql, request } from 'graphql-request';
+// import {doOnce} from "@the-libs/redis-backend"
+
+setInterval(()=> request("https://blue-api.morpho.org/graphql", gql`
+  query {
+    marketByUniqueKey(uniqueKey: "0x5e3e6b1e01c5708055548d82d01db741e37d03b948a7ef9f3d4b962648bcbfa7") {
+      state {
+        supplyAssetsUsd
+        borrowAssetsUsd
+        liquidityAssetsUsd
+      }
+    }
+  }
+
+`).then(async(x)=>{
+  console.log(x)
+ /* const devices = await pushDevice().find();
+  devices.forEach(({ subscription }) =>
+  {sendPushNotification(
+    subscription,
+    {
+      title: 'new wETH cap lift',
+      body: 'there is more than 2k now',
+    },
+    {
+      domain: '',
+    },
+  ),
+    sendEmail('benji5337831@gmail.com','new wETH cap lift' ,"there is more than 2k now");
+    sendEmail('mnpcmw6444@gmail.com','new wETH cap lift' ,"there is more than 2k now")
+  } );*/
+
+}))
+

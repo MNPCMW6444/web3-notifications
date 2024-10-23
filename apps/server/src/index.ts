@@ -3,7 +3,7 @@ import { apiRouter } from './new/apiRouter';
 import { goSomeWhereAndWait } from './pup';
 
 startMongoAndExpress(apiRouter, [], [], true, true);
-
+/*
 const avveURL =
   'http://aave:80/reserve-overview/?underlyingAsset=0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee&marketName=proto_mainnet_v3';
 
@@ -15,4 +15,4 @@ setTimeout(() => {
   goSomeWhereAndWait(avveURL);
 
   goSomeWhereAndWait(swapURL);
-}, 60000);
+}, 60000);*/
