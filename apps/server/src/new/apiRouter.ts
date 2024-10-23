@@ -10,7 +10,7 @@ const { Router } = require('express');
 
 export const apiRouter = Router();
 
-let tmpSWAP = 'false';
+/*let tmpSWAP = 'false';
 let tmpCAP = 'false';
 
 const spn = async (x: string) => {
@@ -66,7 +66,7 @@ const spnX = async (x: string) => {
       'there is more than 2k now',
     );
   });
-};
+};*/
 /*
 
 apiRouter.get(
@@ -137,7 +137,7 @@ setInterval(
       .then(async (x: any) => {
         const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
         console.log('l is ', l);
-        if (l > 0) {
+        if (l > 500000) {
           const devices = await (await pushDevice()).find();
           devices.forEach(({ subscription }) =>
             sendPushNotification(
@@ -151,11 +151,10 @@ setInterval(
               },
             ),
           );
-
           await sendEmail(
             'benji5337831@gmail.com',
-            'new wETH cap lift',
-            'there is more than 2k now',
+            'Available Liquidity in morpho',
+            'its is ' + l + ' now',
           );
           await sendEmail(
             'mnpcmw6444@gmail.com',
