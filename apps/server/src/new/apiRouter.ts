@@ -115,7 +115,7 @@ apiRouter.post(
 
 import { gql, request } from 'graphql-request';
 // import {doOnce} from "@the-libs/redis-backend"
-let tellError = true;
+let tellError = false;
 setInterval(
   () =>
     request(
@@ -138,6 +138,32 @@ setInterval(
         console.log(x)
         const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
         console.log('l is ', l);
+        if(!tellError){
+          tellError=true
+          const devices = await (await pushDevice()).find();
+          devices.forEach(({ subscription }) =>
+            sendPushNotification(
+              subscription,
+              {
+                title: 'morpho is working again',
+                body: 'Available Liquidity is '+l+", and the bot is now checking every 30 seconds again",
+              },
+              {
+                domain: '',
+              },
+            ),
+          );
+          await sendEmail(
+            'benji5337831@gmail.com',
+            'morpho is working again',
+            'Available Liquidity is '+l+", and the bot is now checking every 30 seconds again",
+          );
+          await sendEmail(
+            'mnpcmw6444@gmail.com',
+            'morpho is working again',
+            'Available Liquidity is '+l+", and the bot is now checking every 30 seconds again",
+          );
+        }
         if (l > 500000) {
           const devices = await (await pushDevice()).find();
           devices.forEach(({ subscription }) =>
