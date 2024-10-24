@@ -116,107 +116,114 @@ apiRouter.post(
 import { gql, request } from 'graphql-request';
 // import {doOnce} from "@the-libs/redis-backend"
 let tellError = false;
-setInterval(
-  () =>
-    request(
-      'https://blue-api.morpho.org/graphql',
-      gql`
-        query {
-          marketByUniqueKey(
-            uniqueKey: "0x5e3e6b1e01c5708055548d82d01db741e37d03b948a7ef9f3d4b962648bcbfa7"
-          ) {
-            state {
-              supplyAssetsUsd
-              borrowAssetsUsd
-              liquidityAssetsUsd
-            }
+
+const cc = () =>
+  request(
+    'https://blue-api.morpho.org/graphql',
+    gql`
+      query {
+        marketByUniqueKey(
+          uniqueKey: "0x5e3e6b1e01c5708055548d82d01db741e37d03b948a7ef9f3d4b962648bcbfa7"
+        ) {
+          state {
+            supplyAssetsUsd
+            borrowAssetsUsd
+            liquidityAssetsUsd
           }
         }
-      `,
-    )
-      .then(async (x: any) => {
-        console.log(x)
-        const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
-        console.log('l is ', l);
-        if(!tellError){
-          tellError=true
-          const devices = await (await pushDevice()).find();
-          devices.forEach(({ subscription }) =>
-            sendPushNotification(
-              subscription,
-              {
-                title: 'morpho is working again',
-                body: 'Available Liquidity is '+l+", and the bot is now checking every 30 seconds again",
-              },
-              {
-                domain: '',
-              },
-            ),
-          );
-          await sendEmail(
-            'benji5337831@gmail.com',
-            'morpho is working again',
-            'Available Liquidity is '+l+", and the bot is now checking every 30 seconds again",
-          );
-          await sendEmail(
-            'mnpcmw6444@gmail.com',
-            'morpho is working again',
-            'Available Liquidity is '+l+", and the bot is now checking every 30 seconds again",
-          );
-        }
-        if (l > 500000) {
-          const devices = await (await pushDevice()).find();
-          devices.forEach(({ subscription }) =>
-            sendPushNotification(
-              subscription,
-              {
-                title: 'Available Liquidity in morpho',
-                body: 'its is ' + l + ' now',
-              },
-              {
-                domain: '',
-              },
-            ),
-          );
-          await sendEmail(
-            'benji5337831@gmail.com',
-            'Available Liquidity in morpho',
-            'its is ' + l + ' now',
-          );
-          await sendEmail(
-            'mnpcmw6444@gmail.com',
-            'Available Liquidity in morpho',
-            'its is ' + l + ' now',
-          );
-        }
-      })
-      .catch(async () => {
-        if (tellError) {
-          tellError = false;
-          const devices = await (await pushDevice()).find();
-          devices.forEach(({ subscription }) =>
-            sendPushNotification(
-              subscription,
-              {
-                title: 'morpho stopped responding',
-                body: 'error',
-              },
-              {
-                domain: '',
-              },
-            ),
-          );
-          await sendEmail(
-            'benji5337831@gmail.com',
-            'morpho stopped responding',
-            'error',
-          );
-          await sendEmail(
-            'mnpcmw6444@gmail.com',
-            'morpho stopped responding',
-            'error',
-          );
-        }
-      }),
-  30000,
-);
+      }
+    `,
+  )
+    .then(async (x: any) => {
+      console.log(x);
+      const l = x.marketByUniqueKey.state.liquidityAssetsUsd;
+      console.log('l is ', l);
+      if (!tellError) {
+        tellError = true;
+        const devices = await (await pushDevice()).find();
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'morpho is working again',
+              body:
+                'Available Liquidity is ' +
+                l +
+                ', and the bot is now checking every 30 seconds again',
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'morpho is working again',
+          'Available Liquidity is ' +
+            l +
+            ', and the bot is now checking every 30 seconds again',
+        );
+        await sendEmail(
+          'mnpcmw6444@gmail.com',
+          'morpho is working again',
+          'Available Liquidity is ' +
+            l +
+            ', and the bot is now checking every 30 seconds again',
+        );
+      }
+      if (l > 500000) {
+        const devices = await (await pushDevice()).find();
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'Available Liquidity in morpho',
+              body: 'its is ' + l + ' now',
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'Available Liquidity in morpho',
+          'its is ' + l + ' now',
+        );
+        await sendEmail(
+          'mnpcmw6444@gmail.com',
+          'Available Liquidity in morpho',
+          'its is ' + l + ' now',
+        );
+        setTimeout(() => cc(), 6000000);
+      } else setTimeout(() => cc(), 30000);
+    })
+    .catch(async () => {
+      if (tellError) {
+        tellError = false;
+        const devices = await (await pushDevice()).find();
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'morpho stopped responding',
+              body: 'error',
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'morpho stopped responding',
+          'error',
+        );
+        await sendEmail(
+          'mnpcmw6444@gmail.com',
+          'morpho stopped responding',
+          'error',
+        );
+      }
+    });
+cc()
