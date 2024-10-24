@@ -198,7 +198,8 @@ const cc = () =>
         setTimeout(() => cc(), 6000000);
       } else setTimeout(() => cc(), 30000);
     })
-    .catch(async () => {
+    .catch(async (e) => {
+      console.log(e)
       if (tellError) {
         tellError = false;
         const devices = await (await pushDevice()).find();
