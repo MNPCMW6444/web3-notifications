@@ -8,6 +8,11 @@ import { sendEmail } from '@the-libs/email-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
 
+
+const MILIS_IN_SEC = 1000
+const SECS_IN_MIN= 60
+const MINS_IN_H = 60
+
 export const apiRouter = Router();
 
 /*let tmpSWAP = 'false';
@@ -195,8 +200,9 @@ const cc = () =>
           'Available Liquidity in morpho',
           'its is ' + l + ' now',
         );
-        setTimeout(() => cc(), 300000);
-      } else setTimeout(() => cc(), 30000);
+
+        setTimeout(() => cc(), (4*MINS_IN_H*SECS_IN_MIN*MILIS_IN_SEC));
+      } else setTimeout(() => cc(),( 30*MILIS_IN_SEC));
     })
     .catch(async (e) => {
       console.log(e)
