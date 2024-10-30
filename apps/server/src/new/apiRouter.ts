@@ -195,7 +195,7 @@ const cc = () =>
           'Available Liquidity in morpho',
           'its is ' + l + ' now',
         );
-        setTimeout(() => cc(), 6000000);
+        setTimeout(() => cc(), 300000);
       } else setTimeout(() => cc(), 30000);
     })
     .catch(async (e) => {
