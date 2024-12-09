@@ -300,7 +300,7 @@ const newcc = () =>
             +', and the bot is now checking every 30 seconds again',
         );
       }
-      if (1000000000 - number > 1000000) {
+      if (1000000000 - number > 500000) {
         const devices = await findDocs<true, PushDevice>((await pushDevice()),
           ((await pushDevice()) as any).find({}),
         );
