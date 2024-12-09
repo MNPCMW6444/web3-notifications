@@ -1,4 +1,4 @@
-import { highOrderHandler } from '@the-libs/base-backend';
+import { highOrderHandler } from '@the-libs/express-backend';
 import { createRequire } from 'module';
 import {
   pushDevice,
@@ -7,11 +7,13 @@ import {
 import { sendEmail } from '@the-libs/email-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
+import { gql, request } from 'graphql-request';
+import { PushDevice } from '@the-libs/notifications-shared';
+import { findDocs,createDoc } from '@the-libs/mongo-backend';
 
-
-const MILIS_IN_SEC = 1000
-const SECS_IN_MIN= 60
-const MINS_IN_H = 60
+const MILIS_IN_SEC = 1000;
+const SECS_IN_MIN = 60;
+const MINS_IN_H = 60;
 
 export const apiRouter = Router();
 
@@ -101,7 +103,8 @@ apiRouter.get(
 apiRouter.get(
   '/devices',
   highOrderHandler(async () => {
-    return { statusCode: 200, body: await (await pushDevice()).find() };
+    const Push: any = await pushDevice();
+    return { statusCode: 200, body: await findDocs(Push, Push.find()) };
   }),
 );
 
@@ -109,16 +112,16 @@ apiRouter.post(
   '/registerDevice',
   highOrderHandler(async (req) => {
     const { subscription } = req.body;
-    const newDevice = new (await pushDevice())({
+    const Push: any = await pushDevice();
+    await createDoc<PushDevice>(Push, {
       subscription,
-      name: 'device ' + (await (await pushDevice()).find()).length,
+      name: 'device ' + (await findDocs<true, PushDevice>(Push,Push.find())).length
     });
-    await newDevice.save();
     return { statusCode: 201 };
   }),
 );
 
-import { gql, request } from 'graphql-request';
+
 // import {doOnce} from "@the-libs/redis-backend"
 let tellError = false;
 let tellErrorNew = false;
@@ -146,7 +149,9 @@ const cc = () =>
       console.log('l is ', l);
       if (!tellError) {
         tellError = true;
-        const devices = await (await pushDevice()).find();
+        const devices = await findDocs<true, PushDevice>((await pushDevice()),
+          ((await pushDevice()) ).find({}),
+        );
         devices.forEach(({ subscription }) =>
           sendPushNotification(
             subscription,
@@ -178,7 +183,9 @@ const cc = () =>
         );
       }
       if (l > 500000) {
-        const devices = await (await pushDevice()).find();
+        const devices = await findDocs<true, PushDevice>((await pushDevice()),
+          ((await pushDevice()) ).find({}),
+        );
         devices.forEach(({ subscription }) =>
           sendPushNotification(
             subscription,
@@ -202,14 +209,16 @@ const cc = () =>
           'its is ' + l + ' now',
         );
 
-        setTimeout(() => cc(), (4*MINS_IN_H*SECS_IN_MIN*MILIS_IN_SEC));
-      } else setTimeout(() => cc(),( 30*MILIS_IN_SEC));
+        setTimeout(() => cc(), 4 * MINS_IN_H * SECS_IN_MIN * MILIS_IN_SEC);
+      } else setTimeout(() => cc(), 30 * MILIS_IN_SEC);
     })
     .catch(async (e) => {
-      console.log(e)
+      console.log(e);
       if (tellError) {
         tellError = false;
-        const devices = await (await pushDevice()).find();
+        const devices = await findDocs<true, PushDevice>((await pushDevice()),
+          ((await pushDevice()) ).find({}),
+        );
         devices.forEach(({ subscription }) =>
           sendPushNotification(
             subscription,
@@ -234,8 +243,7 @@ const cc = () =>
         );
       }
     });
-cc()
-
+cc();
 
 const newDec2024 = async () => {
   const url = 'https://api-v2.pendle.finance/bff/v1/1/markets'; // Replace with the actual endpoint
@@ -243,109 +251,110 @@ const newDec2024 = async () => {
     const response = await fetch(url);
     const data = await response.json();
 
-    const marketData =data
+    const marketData = data;
 
-    return marketData.results[2].extendedInfo.syCurrentSupply
-
-
-
-
+    return marketData.results[2].extendedInfo.syCurrentSupply;
   } catch (error) {
     console.error('Error fetching sUSDe data:', error);
   }
 };
 
-
-const newcc=()=>
-newDec2024().then(async (number: number) => {
-  if (!tellErrorNew) {
-    tellErrorNew = true;
-    const devices = await (await pushDevice()).find();
-    devices.forEach(({ subscription }) =>
-      sendPushNotification(
-        subscription,
-        {
-          title: 'pendle is working again',
-          body:
-            'Available sUSDe is ' +
-            (1000000000-number) +
+const newcc = () =>
+  newDec2024()
+    .then(async (number: number) => {
+      if (!tellErrorNew) {
+        tellErrorNew = true;
+        const devices = await findDocs<true, PushDevice>((await pushDevice()),
+          ((await pushDevice()) ).find({}),
+        );
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'pendle is working again',
+              body:
+                'Available sUSDe is ' +
+                (1000000000 - number) +
+                ', and the bot is now checking every 30 seconds again',
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'pendle is working again',
+          'Available sUSDe is ' +
+            (1000000000 - number) +
             ', and the bot is now checking every 30 seconds again',
-        },
-        {
-          domain: '',
-        },
-      ),
-    );
-    await sendEmail(
-      'benji5337831@gmail.com',
-      'pendle is working again',
-      'Available sUSDe is ' +
-      (1000000000-number) +
-      ', and the bot is now checking every 30 seconds again',
-    );
-    await sendEmail(
-      'mnpcmw6444@gmail.com',
-      'pendle is working again',
-      'Available sUSDe is ' +
-       +
-      ', and the bot is now checking every 30 seconds again',
-    );
-  }
-  if ((1000000000-number) > 1000000) {
-    const devices = await (await pushDevice()).find();
-    devices.forEach(({ subscription }) =>
-      sendPushNotification(
-        subscription,
-        {
-          title: 'Available sUSDe in pendle',
-          body: 'its is ' + (1000000000-number) + ' now',
-        },
-        {
-          domain: '',
-        },
-      ),
-    );
-    await sendEmail(
-      'benji5337831@gmail.com',
-      'Available sUSDe in pendle',
-      'its is ' + (1000000000-number) + ' now',
-    );
-    await sendEmail(
-      'mnpcmw6444@gmail.com',
-      'Available sUSDe in pendle',
-      'its is ' + (1000000000-number) + ' now',
-    );
+        );
+        await sendEmail(
+          'mnpcmw6444@gmail.com',
+          'pendle is working again',
+          'Available sUSDe is ' +
+            +', and the bot is now checking every 30 seconds again',
+        );
+      }
+      if (1000000000 - number > 1000000) {
+        const devices = await findDocs<true, PushDevice>((await pushDevice()),
+          ((await pushDevice()) as any).find({}),
+        );
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'Available sUSDe in pendle',
+              body: 'its is ' + (1000000000 - number) + ' now',
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'Available sUSDe in pendle',
+          'its is ' + (1000000000 - number) + ' now',
+        );
+        await sendEmail(
+          'mnpcmw6444@gmail.com',
+          'Available sUSDe in pendle',
+          'its is ' + (1000000000 - number) + ' now',
+        );
 
-    setTimeout(() => newcc(), (4*MINS_IN_H*SECS_IN_MIN*MILIS_IN_SEC));
-  } else setTimeout(() => newcc(),( 30*MILIS_IN_SEC));
-})
-  .catch(async (e) => {
-    console.log(e)
-    if (tellError) {
-      tellError = false;
-      const devices = await (await pushDevice()).find();
-      devices.forEach(({ subscription }) =>
-        sendPushNotification(
-          subscription,
-          {
-            title: 'pendle stopped responding',
-            body: 'error',
-          },
-          {
-            domain: '',
-          },
-        ),
-      );
-      await sendEmail(
-        'benji5337831@gmail.com',
-        'pendle stopped responding',
-        'error',
-      );
-      await sendEmail(
-        'mnpcmw6444@gmail.com',
-        'pendle stopped responding',
-        'error',
-      );
-    }
-  });
-newcc()
+        setTimeout(() => newcc(), 4 * MINS_IN_H * SECS_IN_MIN * MILIS_IN_SEC);
+      } else setTimeout(() => newcc(), 30 * MILIS_IN_SEC);
+    })
+    .catch(async (e) => {
+      console.log(e);
+      if (tellError) {
+        tellError = false;
+        const devices = await findDocs<true, PushDevice>((await pushDevice()),
+          ((await pushDevice()) ).find({}),
+        );
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'pendle stopped responding',
+              body: 'error',
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'pendle stopped responding',
+          'error',
+        );
+        await sendEmail(
+          'mnpcmw6444@gmail.com',
+          'pendle stopped responding',
+          'error',
+        );
+      }
+    });
+newcc();
