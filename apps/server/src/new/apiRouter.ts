@@ -255,6 +255,8 @@ const newDec2024 = async () => {
   }
 };
 
+
+const newcc=()=>
 newDec2024().then(async (number: number) => {
   if (!tellErrorNew) {
     tellErrorNew = true;
@@ -314,8 +316,8 @@ newDec2024().then(async (number: number) => {
       'its is ' + (1000000000-number) + ' now',
     );
 
-    setTimeout(() => cc(), (4*MINS_IN_H*SECS_IN_MIN*MILIS_IN_SEC));
-  } else setTimeout(() => cc(),( 30*MILIS_IN_SEC));
+    setTimeout(() => newcc(), (4*MINS_IN_H*SECS_IN_MIN*MILIS_IN_SEC));
+  } else setTimeout(() => newcc(),( 30*MILIS_IN_SEC));
 })
   .catch(async (e) => {
     console.log(e)
@@ -346,3 +348,4 @@ newDec2024().then(async (number: number) => {
       );
     }
   });
+newcc()
