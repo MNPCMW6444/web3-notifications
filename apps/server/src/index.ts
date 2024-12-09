@@ -2,7 +2,7 @@ import { startExpressServer } from '@the-libs/express-backend';
 import { apiRouter } from './new/apiRouter';
 import { goSomeWhereAndWait } from './pup';
 
-startExpressServer(apiRouter, [], [], true, true);
+startExpressServer(apiRouter, [], [], true, true).then(()=>setTimeout(()=>console.log("readyyy"),7000))
 /*
 const avveURL =
   'http://aave:80/reserve-overview/?underlyingAsset=0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee&marketName=proto_mainnet_v3';
