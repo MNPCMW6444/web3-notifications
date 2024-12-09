@@ -23,7 +23,8 @@
     "express": "^4.19.2",
     "next": "^14.2.8",
     "puppeteer": "^23.3.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "@aave/contract-helpers": "^1.30.2",

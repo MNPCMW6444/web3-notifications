@@ -121,6 +121,7 @@ apiRouter.post(
 import { gql, request } from 'graphql-request';
 // import {doOnce} from "@the-libs/redis-backend"
 let tellError = false;
+let tellErrorNew = false;
 
 const cc = () =>
   request(
@@ -234,3 +235,114 @@ const cc = () =>
       }
     });
 cc()
+
+
+const newDec2024 = async () => {
+  const url = 'https://api-v2.pendle.finance/bff/v1/1/markets'; // Replace with the actual endpoint
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const marketData =data
+
+    return marketData.results[2].extendedInfo.syCurrentSupply
+
+
+
+
+  } catch (error) {
+    console.error('Error fetching sUSDe data:', error);
+  }
+};
+
+newDec2024().then(async (number: number) => {
+  if (!tellErrorNew) {
+    tellErrorNew = true;
+    const devices = await (await pushDevice()).find();
+    devices.forEach(({ subscription }) =>
+      sendPushNotification(
+        subscription,
+        {
+          title: 'pendle is working again',
+          body:
+            'Available sUSDe is ' +
+            (1000000000-number) +
+            ', and the bot is now checking every 30 seconds again',
+        },
+        {
+          domain: '',
+        },
+      ),
+    );
+    await sendEmail(
+      'benji5337831@gmail.com',
+      'pendle is working again',
+      'Available sUSDe is ' +
+      (1000000000-number) +
+      ', and the bot is now checking every 30 seconds again',
+    );
+    await sendEmail(
+      'mnpcmw6444@gmail.com',
+      'pendle is working again',
+      'Available sUSDe is ' +
+       +
+      ', and the bot is now checking every 30 seconds again',
+    );
+  }
+  if ((1000000000-number) > 1000000) {
+    const devices = await (await pushDevice()).find();
+    devices.forEach(({ subscription }) =>
+      sendPushNotification(
+        subscription,
+        {
+          title: 'Available sUSDe in pendle',
+          body: 'its is ' + (1000000000-number) + ' now',
+        },
+        {
+          domain: '',
+        },
+      ),
+    );
+    await sendEmail(
+      'benji5337831@gmail.com',
+      'Available sUSDe in pendle',
+      'its is ' + (1000000000-number) + ' now',
+    );
+    await sendEmail(
+      'mnpcmw6444@gmail.com',
+      'Available sUSDe in pendle',
+      'its is ' + (1000000000-number) + ' now',
+    );
+
+    setTimeout(() => cc(), (4*MINS_IN_H*SECS_IN_MIN*MILIS_IN_SEC));
+  } else setTimeout(() => cc(),( 30*MILIS_IN_SEC));
+})
+  .catch(async (e) => {
+    console.log(e)
+    if (tellError) {
+      tellError = false;
+      const devices = await (await pushDevice()).find();
+      devices.forEach(({ subscription }) =>
+        sendPushNotification(
+          subscription,
+          {
+            title: 'pendle stopped responding',
+            body: 'error',
+          },
+          {
+            domain: '',
+          },
+        ),
+      );
+      await sendEmail(
+        'benji5337831@gmail.com',
+        'pendle stopped responding',
+        'error',
+      );
+      await sendEmail(
+        'mnpcmw6444@gmail.com',
+        'pendle stopped responding',
+        'error',
+      );
+    }
+  });
