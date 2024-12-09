@@ -1,8 +1,8 @@
-import { startExpress } from '@the-libs/express-backend';
+import { startExpressServer } from '@the-libs/express-backend';
 import { apiRouter } from './new/apiRouter';
 import { goSomeWhereAndWait } from './pup';
 
-startExpress(apiRouter, [], [], true, true);
+startExpressServer(apiRouter, [], [], true, true);
 /*
 const avveURL =
   'http://aave:80/reserve-overview/?underlyingAsset=0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee&marketName=proto_mainnet_v3';

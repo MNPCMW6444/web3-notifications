@@ -296,7 +296,7 @@ const newcc = () =>
         await sendEmail(
           'mnpcmw6444@gmail.com',
           'pendle is working again',
-          'Available sUSDe is ' +
+          'Available sUSDe is ' + (1000000000 - number)
             +', and the bot is now checking every 30 seconds again',
         );
       }
