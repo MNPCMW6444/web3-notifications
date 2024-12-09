@@ -267,6 +267,10 @@ const newcc = () =>
   newDec2024()
     .then(async (number: number) => {
       console.log(number)
+      console.log( 'Available sUSDe is ' +
+        (1000000000 - number))
+      console.log("is (1000000000 - number > 500000) ? ",(1000000000 - number > 500000))
+      console.log(number)
       if (!tellErrorNew) {
         tellErrorNew = true;
         const devices = await findDocs<true, PushDevice>((await pushDevice()),
