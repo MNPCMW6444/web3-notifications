@@ -266,6 +266,7 @@ const newDec2024 = async () => {
 const newcc = () =>
   newDec2024()
     .then(async (number: number) => {
+      console.log(number)
       if (!tellErrorNew) {
         tellErrorNew = true;
         const devices = await findDocs<true, PushDevice>((await pushDevice()),
