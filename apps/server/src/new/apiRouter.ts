@@ -123,8 +123,11 @@ apiRouter.post(
 
 
 // import {doOnce} from "@the-libs/redis-backend"
+/*
 let tellError = false;
+*/
 let tellErrorNew = false;
+/*
 
 const cc = () =>
   request(
@@ -244,6 +247,7 @@ const cc = () =>
       }
     });
 cc();
+*/
 
 const newDec2024 = async () => {
   const url = 'https://api-v2.pendle.finance/bff/v1/1/markets'; // Replace with the actual endpoint
@@ -328,8 +332,8 @@ const newcc = () =>
     })
     .catch(async (e) => {
       console.log(e);
-      if (tellError) {
-        tellError = false;
+      if (tellErrorNew) {
+        tellErrorNew = false;
         const devices = await findDocs<true, PushDevice>((await pushDevice()),
           ((await pushDevice()) ).find({}),
         );
