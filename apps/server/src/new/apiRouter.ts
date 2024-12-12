@@ -250,14 +250,14 @@ cc();
 */
 
 const newDec2024 = async () => {
-  const url = 'https://api-v2.pendle.finance/bff/v1/1/markets'; // Replace with the actual endpoint
+  const url = 'https://api-v2.pendle.finance/bff/v2/markets/all?isActive=true\n'; // Replace with the actual endpoint
   try {
     const response = await fetch(url);
     const data = await response.json();
 
     const marketData = data;
 
-    return marketData.results[2].extendedInfo.syCurrentSupply;
+    return marketData.results.find(({address}) => address === "0xcdd26eb5eb2ce0f203a84553853667ae69ca29ce").extendedInfo.syCurrentSupply;
   } catch (error) {
     console.error('Error fetching sUSDe data:', error);
   }
