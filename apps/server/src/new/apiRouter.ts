@@ -185,7 +185,7 @@ const cc = () =>
             ', and the bot is now checking every 30 seconds again',
         );
       }
-      if (l > 500000) {
+      if (l > 200000) {
         const devices = await findDocs<true, PushDevice>((await pushDevice()),
           ((await pushDevice()) ).find({}),
         );
@@ -269,7 +269,7 @@ const newcc = () =>
       console.log(number)
       console.log( 'Available sUSDe is ' +
         (1000000000 - number))
-      console.log("is (1000000000 - number > 500000) ? ",(1000000000 - number > 500000))
+      console.log("is (1000000000 - number > 200000) ? ",(1000000000 - number > 200000))
       console.log(number)
       if (!tellErrorNew) {
         tellErrorNew = true;
@@ -305,7 +305,7 @@ const newcc = () =>
             +', and the bot is now checking every 30 seconds again',
         );
       }
-      if (1000000000 - number > 500000) {
+      if (1000000000 - number > 200000) {
         const devices = await findDocs<true, PushDevice>((await pushDevice()),
           ((await pushDevice()) as any).find({}),
         );
