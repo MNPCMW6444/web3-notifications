@@ -332,7 +332,7 @@ const newcc = () =>
           'its is ' + (1000000000 - number) + ' now',
         );
 
-        setTimeout(() => newcc(), 30 * SECS_IN_MIN * MILIS_IN_SEC);
+        setTimeout(() => newcc(), 5 * SECS_IN_MIN * MILIS_IN_SEC);
       } else setTimeout(() => newcc(), 30 * MILIS_IN_SEC);
     })
     .catch(async (e) => {
