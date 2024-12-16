@@ -2,7 +2,7 @@ import { startExpressServer } from '@the-libs/express-backend';
 import { apiRouter } from './new/apiRouter';
 import { goSomeWhereAndWait } from './pup';
 
-startExpressServer(apiRouter, [], [], true).then(() =>
+startExpressServer(apiRouter, [], []).then(() =>
   setTimeout(() => console.log('readyyy'), 7000),
 );
 /*
