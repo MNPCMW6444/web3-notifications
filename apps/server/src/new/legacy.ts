@@ -1,10 +1,12 @@
-import { highOrderHandler } from '@the-libs/base-backend';
 import { createRequire } from 'module';
 import {
   pushDevice,
   sendPushNotification,
 } from '@the-libs/notifications-backend';
 import { sendEmail } from '@the-libs/email-backend';
+import { createDoc, findDocs } from '@the-libs/mongo-backend';
+import { makeArray } from '@the-libs/base-shared';
+import { highOrderHandler } from '@the-libs/express-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
 
@@ -16,7 +18,7 @@ let tmpSWAP = 'false';
 let tmpCAP = 'false';
 
 const spn = async (x: string) => {
-  const devices = await pushDevice().find();
+  const devices = makeArray(await findDocs(await pushDevice(), (await pushDevice()).find({})));
   devices.forEach(({ subscription }) => {
     sendPushNotification(
       subscription,
@@ -45,7 +47,7 @@ const spn = async (x: string) => {
 };
 
 const spnX = async (x: string) => {
-  const devices = await pushDevice().find();
+  const devices = makeArray(await findDocs(await pushDevice(), (await pushDevice()).find({})));
   devices.forEach(({ subscription }) => {
     sendPushNotification(
       subscription,
@@ -99,7 +101,7 @@ legacy.get(
 legacy.get(
   '/devices',
   highOrderHandler(async () => {
-    return { statusCode: 200, body: await pushDevice().find() };
+    return { statusCode: 200, body: makeArray(await findDocs(await pushDevice(), (await pushDevice()).find({}))) };
   }),
 );
 
@@ -107,11 +109,10 @@ legacy.post(
   '/registerDevice',
   highOrderHandler(async (req) => {
     const { subscription } = req.body;
-    const newDevice = new (pushDevice())({
+    const newDevice = createDoc(await pushDevice(),{
       subscription,
-      name: 'device ' + (await pushDevice().find()).length,
+      name: 'device ' + (makeArray((await findDocs(await pushDevice(),(await pushDevice()).find({}))))).length,
     });
-    await newDevice.save();
     return { statusCode: 201 };
   }),
 );

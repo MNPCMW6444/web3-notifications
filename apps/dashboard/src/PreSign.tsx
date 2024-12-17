@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import { Button, TextField, Typography, Box, List, ListItem, Container } from '@mui/material';
-
-
-const provider = new ethers.BrowserProvider(window.ethereum);
-const signer = await provider.getSigner();
-
-
+import {
+  Button,
+  TextField,
+  Typography,
+  Box,
+  List,
+  ListItem,
+  Container,
+} from '@mui/material';
 
 declare global {
   interface Window {
@@ -14,19 +16,13 @@ declare global {
   }
 }
 
-
-
-
-function App() {
+function PreSign() {
   const [signedTxs, setSignedTxs] = useState<string[]>([]);
   const [scheduleTime, setScheduleTime] = useState('');
   const [scheduled, setScheduled] = useState(false);
 
-
-  const HOLESKY_RPC_URL = "https://rpc.holesky.ethpandaops.io"; // Holešky RPC
-  const CHAIN_ID = 17000;
-
-
+  const HOLESKY_RPC_URL = 'https://rpc.holesky.ethpandaops.io'; // Holešky RPC
+  const CHAIN_ID = 17000; // Chain ID for Holešky
 
   // Generate 10 transactions with varying 6th parameter
   const generateTransactions = () => {
@@ -63,60 +59,56 @@ function App() {
     return transactions;
   };
 
-  // Sign transactions
+  // Sign transactions locally
   const signTransactions = async () => {
     if (!window.ethereum) {
-      alert('MetaMask is required!');
+      alert('MetaMask or compatible wallet (e.g., Rabby) is required!');
       return;
     }
 
-
-
     try {
-
-
-      const provider = new ethers.BrowserProvider(window.ethereum); // Initialize provider
-
-
-
-
+      const provider = new ethers.BrowserProvider(window.ethereum);
       const network = await provider.getNetwork();
-      console.log(String(network.chainId))
-      console.log(String(CHAIN_ID))
+
       if (String(network.chainId) !== String(CHAIN_ID)) {
-        alert("Please switch to the Holešky testnet in MetaMask.");
+        alert('Please switch to the Holešky testnet in your wallet.');
         return;
       }
 
-
-
-      const signer = await provider.getSigner(); // Get signer
-
+      const signer = await provider.getSigner();
+      const address = await signer.getAddress();
       const transactions = generateTransactions();
       const signedTransactions: string[] = [];
 
-      for (const tx of transactions) {
+      for (let i = 0; i < transactions.length; i++) {
+        const tx = transactions[i];
+
+        const nonce = await provider.getTransactionCount(address, 'latest'); // Current nonce
+        const feeData = await provider.getFeeData();
+
         const transaction = {
           to: '0x0000000000000000000000000000000000000000',
-          value: ethers.parseEther('0.0'), // Use ethers.parseEther
+          value: ethers.parseEther('0.0'),
           data: tx.MethodID + tx.parameters.join(''),
+          nonce,
+          gasLimit: ethers.toBigInt(100000), // Adjust gas limit as needed
+          gasPrice: feeData.gasPrice, // Replace getGasPrice
+          chainId: CHAIN_ID,
         };
 
-        // Send the transaction instead of signing it
-        const txResponse = await signer.sendTransaction(transaction);
+        console.log(`Signing Transaction ${i + 1}:`, transaction);
 
-        // Await confirmation (optional)
-        await txResponse.wait();
-
-        // Push transaction hash instead of signed data
-        signedTransactions.push(txResponse.hash);
+        // Sign the transaction locally
+        const rawSignedTransaction = await signer.signTransaction(transaction);
+        signedTransactions.push(rawSignedTransaction);
       }
 
       setSignedTxs(signedTransactions);
-      alert('Transactions sent successfully!');
+      alert('Transactions signed successfully! Check console for details.');
+      console.log('Signed Transactions:', signedTransactions);
     } catch (error) {
-      console.error('Transaction error:', error);
-      alert('Error sending transactions. See console for details.');
+      console.error('Signing error:', error);
+      alert('Error signing transactions. See console for details.');
     }
   };
 
@@ -142,7 +134,7 @@ function App() {
   return (
     <Container maxWidth="md">
       <Typography variant="h4" gutterBottom>
-        Transaction Scheduler
+        Holešky Transaction Signer
       </Typography>
 
       <Box mb={4}>
@@ -186,4 +178,4 @@ function App() {
   );
 }
 
-export default App;
+export default PreSign;

@@ -12,6 +12,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "@the-libs/base-shared": "^1.19.36",
     "@the-libs/email-backend": "^1.19.36",
     "@the-libs/express-backend": "^1.19.36",
     "@the-libs/mongo-backend": "^1.19.36",
