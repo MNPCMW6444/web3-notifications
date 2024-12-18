@@ -7,13 +7,39 @@ import {
 import { sendEmail } from '@the-libs/email-backend';
 const require = createRequire(import.meta.url);
 const { Router } = require('express');
-import { gql, request } from 'graphql-request';
 import { PushDevice } from '@the-libs/notifications-shared';
 import { findDocs, createDoc } from '@the-libs/mongo-backend';
+require('dotenv').config();
 
 const MILIS_IN_SEC = 1000;
 const SECS_IN_MIN = 60;
 const MINS_IN_H = 60;
+
+const twilio = require('twilio');
+
+const makeCall = async (
+  to,
+  url = 'http://demo.twilio.com/docs/voice.xml',
+  cb = async () => {},
+) => {
+  const client = twilio(process.env.T_I, process.env.T_S);
+
+  return client.calls
+    .create({
+      from: process.env.S, // Your Twilio phone number
+      to, // Recipient's phone number
+      url, // TwiML URL to control the call behavior
+    })
+    .then((call) => {
+      console.log(call.sid);
+      cb();
+    })
+    .catch((error) => {
+      console.error('Error initiating call:', error);
+    });
+};
+
+export { makeCall };
 
 export const apiRouter = Router();
 
@@ -337,7 +363,12 @@ const newcc = () =>
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
         );
-
+        try {
+          makeCall('+12673996344');
+          makeCall('+972528971871');
+        } catch (error) {
+          console.log(error);
+        }
         setTimeout(() => newcc(), 5 * SECS_IN_MIN * MILIS_IN_SEC);
       } else setTimeout(() => newcc(), 20 * MILIS_IN_SEC);
     })
