@@ -1,11 +1,11 @@
 {
   "ts-node": {
     "compilerOptions": {
-      "module": "es2022"
+      "module": "esnext"
     }
   },
   "compilerOptions": {
-    "target": "es2019",
+    "target": "esnext",
     "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

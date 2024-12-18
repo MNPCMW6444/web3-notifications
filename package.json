@@ -1,6 +1,6 @@
 {
   "name": "@w3notif/source",
-  "version": "7.0.97",
+  "version": "7.0.104",
   "license": "MIT",
   "scripts": {
     "start": "nx serve server & nx serve dashboard & nx serve host & nx serve admin",
@@ -17,7 +17,8 @@
     "@the-libs/express-backend": "^1.19.44",
     "@the-libs/mongo-backend": "^1.19.44",
     "@the-libs/notifications-backend": "^1.19.44",
-    "next": "^15.1.1"
+    "next": "^15.1.1",
+    "twilio": "^5.4.0"
   },
   "devDependencies": {
     "@ledgerhq/hw-app-eth": "^6.42.1",
@@ -33,6 +34,7 @@
     "nx": "^20.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vite": "^6.0.3"
+    "vite": "^6.0.3",
+    "@types/zxcvbn": "^4.4.5"
   }
 }
