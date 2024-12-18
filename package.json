@@ -12,18 +12,20 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@the-libs/base-shared": "^1.19.36",
-    "@the-libs/email-backend": "^1.19.36",
-    "@the-libs/express-backend": "^1.19.36",
-    "@the-libs/mongo-backend": "^1.19.36",
-    "@the-libs/notifications-backend": "^1.19.36",
-    "next": "^15.1.0"
+    "@the-libs/base-shared": "^1.19.44",
+    "@the-libs/email-backend": "^1.19.44",
+    "@the-libs/express-backend": "^1.19.44",
+    "@the-libs/mongo-backend": "^1.19.44",
+    "@the-libs/notifications-backend": "^1.19.44",
+    "next": "^15.1.1"
   },
   "devDependencies": {
-    "@mui/material": "^6.2.0",
+    "@ledgerhq/hw-app-eth": "^6.42.1",
+    "@ledgerhq/hw-transport-webusb": "^6.29.4",
+    "@mui/material": "^6.2.1",
     "@nx/eslint": "^20.2.2",
     "@nx/vite": "^20.2.2",
-    "@the-libs/base-frontend": "^1.19.36",
+    "@the-libs/base-frontend": "^1.19.44",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
