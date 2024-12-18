@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url);
 const { Router } = require('express');
 import { gql, request } from 'graphql-request';
 import { PushDevice } from '@the-libs/notifications-shared';
-import { findDocs,createDoc } from '@the-libs/mongo-backend';
+import { findDocs, createDoc } from '@the-libs/mongo-backend';
 
 const MILIS_IN_SEC = 1000;
 const SECS_IN_MIN = 60;
@@ -115,12 +115,19 @@ apiRouter.post(
     const Push: any = await pushDevice();
     await createDoc<PushDevice>(Push, {
       subscription,
-      name: 'device ' + (await findDocs<true, PushDevice>(Push,Push.find())).length
+      name:
+        'device ' +
+        (await findDocs<true, PushDevice>(Push, Push.find())).length,
     });
     return { statusCode: 201 };
   }),
 );
 
+const formatNumber = (num) => {
+  if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)}M`;
+  if (num >= 1_000) return `${Math.round(num / 1_000)}K`;
+  return num.toString();
+};
 
 // import {doOnce} from "@the-libs/redis-backend"
 /*
@@ -250,14 +257,16 @@ cc();
 */
 
 const newDec2024 = async () => {
-  const url = 'https://api-v2.pendle.finance/bff/v2/markets/all?isActive=true\n'; // Replace with the actual endpoint
+  const url = 'https://api-v2.pendle.finance/bff/v2/markets/all?isActive=true'; // Replace with the actual endpoint
   try {
     const response = await fetch(url);
     const data = await response.json();
 
     const marketData = data;
 
-    return marketData.results.find(({address}) => address === "0xcdd26eb5eb2ce0f203a84553853667ae69ca29ce").extendedInfo.syCurrentSupply;
+    return marketData.results.find(
+      ({ address }) => address === '0xcdd26eb5eb2ce0f203a84553853667ae69ca29ce',
+    ).extendedInfo.syCurrentSupply;
   } catch (error) {
     console.error('Error fetching sUSDe data:', error);
   }
@@ -265,26 +274,24 @@ const newDec2024 = async () => {
 
 const newcc = () =>
   newDec2024()
-    .then(async (number: number) => {
-      console.log(number)
-      console.log( 'Available sUSDe is ' +
-        (1000000000 - number))
-      console.log("is (1000000000 - number > 200000) ? ",(1000000000 - number > 200000))
-      console.log(number)
+    .then(async (number) => {
+      const available = 1_000_000_000 - number;
+
+      console.log(`Available sUSDe is ${formatNumber(available)}`);
+      console.log('Is availability > 200K?', available > 200_000);
+
       if (!tellErrorNew) {
         tellErrorNew = true;
-        const devices = await findDocs<true, PushDevice>((await pushDevice()),
-          ((await pushDevice()) ).find({}),
+        const devices = await findDocs<true, PushDevice>(
+          await pushDevice(),
+          (await pushDevice()).find({}),
         );
         devices.forEach(({ subscription }) =>
           sendPushNotification(
             subscription,
             {
-              title: 'pendle is working again',
-              body:
-                'Available sUSDe is ' +
-                (1000000000 - number) +
-                ', and the bot is now checking every 30 seconds again',
+              title: 'Pendle is working again',
+              body: `Available sUSDe is ${formatNumber(available)}, and the bot is now checking every 30 seconds again`,
             },
             {
               domain: '',
@@ -293,28 +300,27 @@ const newcc = () =>
         );
         await sendEmail(
           'benji5337831@gmail.com',
-          'pendle is working again',
-          'Available sUSDe is ' +
-            (1000000000 - number) +
-            ', and the bot is now checking every 30 seconds again',
+          'Pendle is working again',
+          `Available sUSDe is ${formatNumber(available)}, and the bot is now checking every 30 seconds again`,
         );
         await sendEmail(
           'mnpcmw6444@gmail.com',
-          'pendle is working again',
-          'Available sUSDe is ' + (1000000000 - number)
-            +', and the bot is now checking every 30 seconds again',
+          'Pendle is working again',
+          `Available sUSDe is ${formatNumber(available)}, and the bot is now checking every 30 seconds again`,
         );
       }
-      if (1000000000 - number > 200000) {
-        const devices = await findDocs<true, PushDevice>((await pushDevice()),
-          ((await pushDevice()) as any).find({}),
+
+      if (available > 200_000) {
+        const devices = await findDocs<true, PushDevice>(
+          await pushDevice(),
+          (await pushDevice()).find({}),
         );
         devices.forEach(({ subscription }) =>
           sendPushNotification(
             subscription,
             {
-              title: 'Available sUSDe in pendle',
-              body: 'its is ' + (1000000000 - number) + ' now',
+              title: 'Available sUSDe in Pendle',
+              body: `It is ${formatNumber(available)} now`,
             },
             {
               domain: '',
@@ -323,31 +329,32 @@ const newcc = () =>
         );
         await sendEmail(
           'benji5337831@gmail.com',
-          'Available sUSDe in pendle',
-          'its is ' + (1000000000 - number) + ' now',
+          'Available sUSDe in Pendle',
+          `It is ${formatNumber(available)} now`,
         );
         await sendEmail(
           'mnpcmw6444@gmail.com',
-          'Available sUSDe in pendle',
-          'its is ' + (1000000000 - number) + ' now',
+          'Available sUSDe in Pendle',
+          `It is ${formatNumber(available)} now`,
         );
 
         setTimeout(() => newcc(), 5 * SECS_IN_MIN * MILIS_IN_SEC);
-      } else setTimeout(() => newcc(), 30 * MILIS_IN_SEC);
+      } else setTimeout(() => newcc(), 20 * MILIS_IN_SEC);
     })
     .catch(async (e) => {
       console.log(e);
       if (tellErrorNew) {
         tellErrorNew = false;
-        const devices = await findDocs<true, PushDevice>((await pushDevice()),
-          ((await pushDevice()) ).find({}),
+        const devices = await findDocs<true, PushDevice>(
+          await pushDevice(),
+          (await pushDevice()).find({}),
         );
         devices.forEach(({ subscription }) =>
           sendPushNotification(
             subscription,
             {
-              title: 'pendle stopped responding',
-              body: 'error',
+              title: 'Pendle stopped responding',
+              body: 'Error',
             },
             {
               domain: '',
@@ -356,14 +363,15 @@ const newcc = () =>
         );
         await sendEmail(
           'benji5337831@gmail.com',
-          'pendle stopped responding',
-          'error',
+          'Pendle stopped responding',
+          'Error',
         );
         await sendEmail(
           'mnpcmw6444@gmail.com',
-          'pendle stopped responding',
-          'error',
+          'Pendle stopped responding',
+          'Error',
         );
       }
     });
+
 newcc();
