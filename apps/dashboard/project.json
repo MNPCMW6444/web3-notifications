@@ -28,6 +28,7 @@
       "options": {
         "buildTarget": "dashboard:build"
       },
+      "external": ["@the-libs/base-frontend"],
       "configurations": {
         "development": {
           "buildTarget": "dashboard:build:development",

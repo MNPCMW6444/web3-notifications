@@ -1,12 +1,16 @@
-/// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import inject from '@rollup/plugin-inject';
 
 export default defineConfig({
   root: __dirname,
   cacheDir: '../../node_modules/.vite/apps/dashboard',
-
+  resolve: {
+    alias: {
+      buffer: 'buffer',
+    },
+  },
   server: {
     port: 3500,
     host: '127.0.0.1',
@@ -17,7 +21,9 @@ export default defineConfig({
     host: '127.0.0.1',
   },
 
-  plugins: [react(), nxViteTsPaths()],
+  plugins: [react(), nxViteTsPaths(),inject({
+    Buffer: ['buffer', 'Buffer'],
+  })],
 
   // Uncomment this if you are using workers.
   // worker: {
@@ -30,20 +36,6 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
-  },
-
-  test: {
-    globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
-    environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-
-    reporters: ['default'],
-    coverage: {
-      reportsDirectory: '../../coverage/apps/dashboard',
-      provider: 'v8',
-    },
+    rollupOptions:{external:["@the-libs/base-frontend"]}
   },
 });
