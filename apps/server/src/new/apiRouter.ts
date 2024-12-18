@@ -19,7 +19,7 @@ const twilio = require('twilio');
 
 const makeCall = async (
   to,
-  url = 'http://demo.twilio.com/docs/voice.xml',
+  url = 'https://web-3-notifications-8775.twil.io/path_1',
   cb = async () => {},
 ) => {
   const client = twilio(process.env.T_I, process.env.T_S);
