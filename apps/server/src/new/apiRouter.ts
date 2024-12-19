@@ -21,6 +21,7 @@ const makeCall = async (
   to,
   url = 'https://web-3-notifications-8775.twil.io/path_1',
   cb = async () => {},
+  forSeconds=10
 ) => {
   const client = twilio(process.env.T_I, process.env.T_S);
 
@@ -29,6 +30,7 @@ const makeCall = async (
       from: process.env.S, // Your Twilio phone number
       to, // Recipient's phone number
       url, // TwiML URL to control the call behavior
+      timeout:forSeconds
     })
     .then((call) => {
       console.log(call.sid);
@@ -358,14 +360,14 @@ const newcc = () =>
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
         );
-        await sendEmail(
+       /* await sendEmail(
           'mnpcmw6444@gmail.com',
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
-        );
+        );*/
         try {
-        //  makeCall('+972526994122');
-          makeCall('+972528971871');
+        // makeCall('+');
+         makeCall('+972528971871');
         } catch (error) {
           console.log(error);
         }
@@ -407,4 +409,4 @@ const newcc = () =>
 
 /*
 newcc();
-*/
+makeCall('+972528971871');
