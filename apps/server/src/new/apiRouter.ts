@@ -364,7 +364,7 @@ const newcc = () =>
           `It is ${formatNumber(available)} now`,
         );
         try {
-          makeCall('+972526994122');
+        //  makeCall('+972526994122');
           makeCall('+972528971871');
         } catch (error) {
           console.log(error);
