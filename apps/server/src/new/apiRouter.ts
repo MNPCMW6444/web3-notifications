@@ -21,6 +21,7 @@ const makeCall = async (
   to,
   url = 'https://web-3-notifications-8775.twil.io/path_1',
   cb = async () => {},
+  forSeconds=5
 ) => {
   const client = twilio(process.env.T_I, process.env.T_S);
 
@@ -29,6 +30,7 @@ const makeCall = async (
       from: process.env.S, // Your Twilio phone number
       to, // Recipient's phone number
       url, // TwiML URL to control the call behavior
+      timeout:forSeconds
     })
     .then((call) => {
       console.log(call.sid);
