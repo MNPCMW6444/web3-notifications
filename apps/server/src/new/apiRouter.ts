@@ -406,7 +406,6 @@ const newcc = () =>
       }
     });
 
-/*
 newcc();
 makeCall('+972528971871');
 makeCall('+12673996344');
