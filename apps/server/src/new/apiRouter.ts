@@ -358,14 +358,14 @@ const newcc = () =>
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
         );
-        await sendEmail(
+       /* await sendEmail(
           'mnpcmw6444@gmail.com',
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
-        );
+        );*/
         try {
         //  makeCall('+972526994122');
-          makeCall('+972528971871');
+        //  makeCall('+972528971871');
         } catch (error) {
           console.log(error);
         }
