@@ -367,7 +367,7 @@ const newcc = () =>
         );*/
         try {
           makeCall('+12673996344');
-          makeCall('+972528971871');
+       //   makeCall('+972528971871');
         } catch (error) {
           console.log(error);
         }
