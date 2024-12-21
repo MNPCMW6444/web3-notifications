@@ -338,7 +338,7 @@ const newcc = () =>
         );
       }
 
-      if (available > 200_000) {
+      if (available > 50_000) {
         const devices = await findDocs<true, PushDevice>(
           await pushDevice(),
           (await pushDevice()).find({}),
