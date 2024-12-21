@@ -306,7 +306,7 @@ const newcc = () =>
       const available = 1_000_000_000 - number;
 
       console.log(`Available sUSDe is ${formatNumber(available)}`);
-      console.log('Is availability > 70K?', available > 70_000);
+      console.log('Is availability > 50K?', available > 50_000);
 
       if (!tellErrorNew) {
         tellErrorNew = true;
