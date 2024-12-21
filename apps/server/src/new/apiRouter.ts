@@ -306,7 +306,7 @@ const newcc = () =>
       const available = 1_000_000_000 - number;
 
       console.log(`Available sUSDe is ${formatNumber(available)}`);
-      console.log('Is availability > 200K?', available > 200_000);
+      console.log('Is availability > 70K?', available > 70_000);
 
       if (!tellErrorNew) {
         tellErrorNew = true;
@@ -367,7 +367,7 @@ const newcc = () =>
         );*/
         try {
           makeCall('+12673996344');
-       //   makeCall('+972528971871');
+          //   makeCall('+972528971871');
         } catch (error) {
           console.log(error);
         }
