@@ -409,7 +409,6 @@ const newcc = () =>
 
 newcc();*/
 
-
 const axios = require('axios');
 
 async function fetchInstantBorrowRate() {
@@ -440,10 +439,115 @@ async function fetchInstantBorrowRate() {
     // Extract the instant borrowApy
     const borrowApy = response.data.data.marketByUniqueKey.state.borrowApy;
 
-    console.log(`Instant Borrow APY: ${(borrowApy * 100).toFixed(2)}%`);
+    // console.log(`Instant Borrow APY: ${(borrowApy * 100).toFixed(2)}%`);
+    return borrowApy * 100;
   } catch (error) {
     console.error('Error fetching instant borrow rate:', error.message);
   }
 }
 
-fetchInstantBorrowRate().then((x)=>console.log(x))
+fetchInstantBorrowRate()
+  .then(async (borrowRate) => {
+    console.log(`borrowRate is ${formatNumber(borrowRate)}`);
+
+    if (!tellErrorNew) {
+      tellErrorNew = true;
+      const devices = await findDocs<true, PushDevice>(
+        await pushDevice(),
+        (await pushDevice()).find({}),
+      );
+      devices.forEach(({ subscription }) =>
+        sendPushNotification(
+          subscription,
+          {
+            title: 'borrowRate is monitored',
+            body: `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
+          },
+          {
+            domain: '',
+          },
+        ),
+      );
+      await sendEmail(
+        'benji5337831@gmail.com',
+        'Pendle is working again',
+        `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
+      );
+      /* await sendEmail(
+      'mnpcmw6444@gmail.com',
+      'Pendle is working again',
+      `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
+    );*/
+    }
+
+    if (borrowRate > 14) {
+      const devices = await findDocs<true, PushDevice>(
+        await pushDevice(),
+        (await pushDevice()).find({}),
+      );
+      devices.forEach(({ subscription }) =>
+        sendPushNotification(
+          subscription,
+          {
+            title: 'borrowRate is more than 14',
+            body: `It is ${formatNumber(borrowRate)} now`,
+          },
+          {
+            domain: '',
+          },
+        ),
+      );
+      await sendEmail(
+        'benji5337831@gmail.com',
+        'borrowRate is more than 14',
+        `It is ${formatNumber(borrowRate)} now`,
+      );
+      /*  await sendEmail(
+    'mnpcmw6444@gmail.com',
+      'Available sUSDe in Pendle',
+      `It is ${formatNumber(available)} now`,
+  );*/
+      try {
+        // makeCall('+12673996344');
+        //   makeCall('+972528971871');
+      } catch (error) {
+        console.log(error);
+      }
+      setTimeout(
+        () => fetchInstantBorrowRate(),
+        15 * SECS_IN_MIN * MILIS_IN_SEC,
+      );
+    } else setTimeout(() => fetchInstantBorrowRate(), 20 * MILIS_IN_SEC);
+  })
+  .catch(async (e) => {
+    console.log(e);
+    if (tellErrorNew) {
+      tellErrorNew = false;
+      const devices = await findDocs<true, PushDevice>(
+        await pushDevice(),
+        (await pushDevice()).find({}),
+      );
+      devices.forEach(({ subscription }) =>
+        sendPushNotification(
+          subscription,
+          {
+            title: 'Pendle stopped responding',
+            body: 'Error',
+          },
+          {
+            domain: '',
+          },
+        ),
+      );
+      await sendEmail(
+        'benji5337831@gmail.com',
+        'Pendle stopped responding',
+        'Error',
+      );
+      await sendEmail(
+        'mnpcmw6444@gmail.com',
+        'Pendle stopped responding',
+        'Error',
+      );
+    }
+  });
