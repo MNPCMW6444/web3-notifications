@@ -284,7 +284,7 @@ const cc = () =>
 cc();
 */
 
-const newDec2024 = async () => {
+/*const newDec2024 = async () => {
   const url = 'https://api-v2.pendle.finance/bff/v2/markets/all?isActive=true'; // Replace with the actual endpoint
   try {
     const response = await fetch(url);
@@ -360,11 +360,11 @@ const newcc = () =>
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
         );
-        /* await sendEmail(
+        /!* await sendEmail(
           'mnpcmw6444@gmail.com',
           'Available sUSDe in Pendle',
           `It is ${formatNumber(available)} now`,
-        );*/
+        );*!/
         try {
           makeCall('+12673996344');
           //   makeCall('+972528971871');
@@ -407,4 +407,43 @@ const newcc = () =>
       }
     });
 
-newcc();
+newcc();*/
+
+
+const axios = require('axios');
+
+async function fetchInstantBorrowRate() {
+  try {
+    const endpoint = 'https://blue-api.morpho.org/graphql';
+
+    // GraphQL query to fetch market details with instant borrow rate
+    const query = {
+      query: `
+        query {
+          marketByUniqueKey(uniqueKey: "0x27852bb453d4fe6ec918dd27b7136bb233d210aab1758a59ed8daaeec24f7b3d") {
+            state {
+              borrowApy
+            }
+          }
+        }
+      `,
+      variables: {},
+    };
+
+    // Send the request
+    const response = await axios.post(endpoint, query, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    // Extract the instant borrowApy
+    const borrowApy = response.data.data.marketByUniqueKey.state.borrowApy;
+
+    console.log(`Instant Borrow APY: ${(borrowApy * 100).toFixed(2)}%`);
+  } catch (error) {
+    console.error('Error fetching instant borrow rate:', error.message);
+  }
+}
+
+fetchInstantBorrowRate().then((x)=>console.log(x))
