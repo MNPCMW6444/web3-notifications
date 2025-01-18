@@ -517,17 +517,18 @@ fetchInstantBorrowRate()
         () => fetchInstantBorrowRate(),
         15 * SECS_IN_MIN * MILIS_IN_SEC,
       );
-    } else setTimeout(() => fetchInstantBorrowRate(), 20 * MILIS_IN_SEC);
+    } else setTimeout(() => fetchInstantBorrowRate(), 30 * MILIS_IN_SEC);
   })
   .catch(async (e) => {
     console.log(e);
+    setTimeout(() => fetchInstantBorrowRate(), 30 * MILIS_IN_SEC);
     if (tellErrorNew) {
       tellErrorNew = false;
       const devices = await findDocs<true, PushDevice>(
         await pushDevice(),
         (await pushDevice()).find({}),
       );
-      devices.forEach(({ subscription }) =>
+      /*devices.forEach(({ subscription }) =>
         sendPushNotification(
           subscription,
           {
@@ -548,6 +549,6 @@ fetchInstantBorrowRate()
         'mnpcmw6444@gmail.com',
         'Pendle stopped responding',
         'Error',
-      );
+      );*/
     }
   });
