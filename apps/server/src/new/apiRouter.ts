@@ -411,7 +411,7 @@ newcc();*/
 
 const axios = require('axios');
 
-async function fetchInstantBorrowRate() {
+const fetchInstantBorrowRate = async () => {
   try {
     const endpoint = 'https://blue-api.morpho.org/graphql';
 
@@ -444,91 +444,92 @@ async function fetchInstantBorrowRate() {
   } catch (error) {
     console.error('Error fetching instant borrow rate:', error.message);
   }
-}
+};
+const fetchInstantBorrowRateANDSIDE = () =>
+  fetchInstantBorrowRate()
+    .then(async (borrowRate) => {
+      console.log(`borrowRate is ${formatNumber(borrowRate)}`);
 
-fetchInstantBorrowRate()
-  .then(async (borrowRate) => {
-    console.log(`borrowRate is ${formatNumber(borrowRate)}`);
-
-    if (!tellErrorNew) {
-      tellErrorNew = true;
-      const devices = await findDocs<true, PushDevice>(
-        await pushDevice(),
-        (await pushDevice()).find({}),
-      );
-      devices.forEach(({ subscription }) =>
-        sendPushNotification(
-          subscription,
-          {
-            title: 'borrowRate is monitored',
-            body: `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
-          },
-          {
-            domain: '',
-          },
-        ),
-      );
-      await sendEmail(
-        'benji5337831@gmail.com',
-        'Pendle is working again',
-        `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
-      );
-      /* await sendEmail(
-      'mnpcmw6444@gmail.com',
-      'Pendle is working again',
-      `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
-    );*/
-    }
-
-    if (borrowRate > 14) {
-      const devices = await findDocs<true, PushDevice>(
-        await pushDevice(),
-        (await pushDevice()).find({}),
-      );
-      devices.forEach(({ subscription }) =>
-        sendPushNotification(
-          subscription,
-          {
-            title: 'borrowRate is more than 14',
-            body: `It is ${formatNumber(borrowRate)} now`,
-          },
-          {
-            domain: '',
-          },
-        ),
-      );
-      await sendEmail(
-        'benji5337831@gmail.com',
-        'borrowRate is more than 14',
-        `It is ${formatNumber(borrowRate)} now`,
-      );
-      /*  await sendEmail(
+      if (!tellErrorNew) {
+        tellErrorNew = true;
+        const devices = await findDocs<true, PushDevice>(
+          await pushDevice(),
+          (await pushDevice()).find({}),
+        );
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'borrowRate is monitored',
+              body: `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'borrowRate is monitored again',
+          `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
+        );
+        /* await sendEmail(
     'mnpcmw6444@gmail.com',
-      'Available sUSDe in Pendle',
-      `It is ${formatNumber(available)} now`,
+    'Pendle is working again',
+    `borrowRate is ${formatNumber(borrowRate)}, and the bot is now checking every 30 seconds again`,
   );*/
-      try {
-        // makeCall('+12673996344');
-        //   makeCall('+972528971871');
-      } catch (error) {
-        console.log(error);
       }
-      setTimeout(
-        () => fetchInstantBorrowRate(),
-        15 * SECS_IN_MIN * MILIS_IN_SEC,
-      );
-    } else setTimeout(() => fetchInstantBorrowRate(), 30 * MILIS_IN_SEC);
-  })
-  .catch(async (e) => {
-    console.log(e);
-    setTimeout(() => fetchInstantBorrowRate(), 30 * MILIS_IN_SEC);
-    if (tellErrorNew) {
-      tellErrorNew = false;
-      const devices = await findDocs<true, PushDevice>(
-        await pushDevice(),
-        (await pushDevice()).find({}),
-      );
-      /*devices.forEach(({ subscription }) =>
+
+      if (borrowRate > 14) {
+        const devices = await findDocs<true, PushDevice>(
+          await pushDevice(),
+          (await pushDevice()).find({}),
+        );
+        devices.forEach(({ subscription }) =>
+          sendPushNotification(
+            subscription,
+            {
+              title: 'borrowRate is more than 14',
+              body: `It is ${formatNumber(borrowRate)} now`,
+            },
+            {
+              domain: '',
+            },
+          ),
+        );
+        await sendEmail(
+          'benji5337831@gmail.com',
+          'borrowRate is more than 14',
+          `It is ${formatNumber(borrowRate)} now`,
+        );
+        /*  await sendEmail(
+  'mnpcmw6444@gmail.com',
+    'Available sUSDe in Pendle',
+    `It is ${formatNumber(available)} now`,
+);*/
+        try {
+          // makeCall('+12673996344');
+          //   makeCall('+972528971871');
+        } catch (error) {
+          console.log(error);
+        }
+        setTimeout(
+          () => fetchInstantBorrowRateANDSIDE(),
+          15 * SECS_IN_MIN * MILIS_IN_SEC,
+        );
+      } else
+        setTimeout(() => fetchInstantBorrowRateANDSIDE(), 30 * MILIS_IN_SEC);
+    })
+    .catch(async (e) => {
+      console.log(e);
+      setTimeout(() => fetchInstantBorrowRateANDSIDE(), 30 * MILIS_IN_SEC);
+      if (tellErrorNew) {
+        tellErrorNew = false;
+        const devices = await findDocs<true, PushDevice>(
+          await pushDevice(),
+          (await pushDevice()).find({}),
+        );
+        /*devices.forEach(({ subscription }) =>
         sendPushNotification(
           subscription,
           {
@@ -550,5 +551,7 @@ fetchInstantBorrowRate()
         'Pendle stopped responding',
         'Error',
       );*/
-    }
-  });
+      }
+    });
+
+fetchInstantBorrowRateANDSIDE();
