@@ -480,7 +480,7 @@ const fetchInstantBorrowRateANDSIDE = () =>
   );*/
       }
 
-      if (borrowRate > 14) {
+      if (borrowRate > 12.5) {
         const devices = await findDocs<true, PushDevice>(
           await pushDevice(),
           (await pushDevice()).find({}),
@@ -489,7 +489,7 @@ const fetchInstantBorrowRateANDSIDE = () =>
           sendPushNotification(
             subscription,
             {
-              title: 'borrowRate is more than 14',
+              title: 'borrowRate is more than 12.5',
               body: `It is ${formatNumber(borrowRate)} now`,
             },
             {
@@ -499,7 +499,7 @@ const fetchInstantBorrowRateANDSIDE = () =>
         );
         await sendEmail(
           'benji5337831@gmail.com',
-          'borrowRate is more than 14',
+          'borrowRate is more than 12.5',
           `It is ${formatNumber(borrowRate)} now`,
         );
         /*  await sendEmail(
